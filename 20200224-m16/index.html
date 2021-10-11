@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Python 中 eval 和 exec1 | X</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="X">
+    <meta name="author" content="LingXing">
+    <meta name="description" content="the self-cultivation of the programmer" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="X" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/googlecode.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">HOME</a></li>
+            <li><a href="/archives" class="animsition-link" title="Archives">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">CATEGORIES<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/debian/" class="animsition-link">debian<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(41)</small></a></li>
+				    
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/win10/" class="animsition-link">win10<small>(63)</small></a></li>
+				    
+				</ul>
+        	</li>
+	
+            
+            <li>
+                <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-软件/" class="animsition-link">Debian 软件<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-问题/" class="animsition-link">Debian 问题<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-个性化/" class="animsition-link">Win10 个性化<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-软件/" class="animsition-link">Win10 软件<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/file/" class="animsition-link">file<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/git/" class="animsition-link">git<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/gnome/" class="animsition-link">gnome<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/grub/" class="animsition-link">grub<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/macOS-个性化/" class="animsition-link">macOS 个性化<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
+                    
+                    <li><a href="/tags/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/python/" class="animsition-link">python<small>(18)</small></a></li>
+                    
+                    <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    
+                    <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/修复-Win10/" class="animsition-link">修复 Win10<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/安装-Win10/" class="animsition-link">安装 Win10<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/认识-Win10/" class="animsition-link">认识 Win10<small>(1)</small></a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">LINKS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://lingxing1017.party/" class="animsition-link">L</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search">SEARCH</a></li>
+            
+            <li><a href="mailto:lingxing1017@gmail.com" title="Email" class="animsition-link">EMAIL</a></li>
+            <li><a href="/about.html" class="animsition-link" title="About">ABOUT</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link" title="Home">X</a></li>
+                            <li class="nolink"><span>Always Creative</span></li>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="mailto:lingxing1017@gmail.com" title="Email" target="_blank">📧</a></li>
+                            
+                            
+                            <li><a href="javascript:;" class="popup-trigger" title="Search">🔍</a></li>
+                            
+                            <li class="nolink">Welcome</li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>得之我幸  失之我命</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>when someone abandons you，it is him that gets loss because he lost someone who truly loves him but you just lost one who doesn’t love you.</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-02-24T06:10:12.000Z" itemprop="datePublished">
+          2020-02-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/python/'>python</a>
+    
+    
+</span>
+                <h1>Python 中 eval 和 exec1</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="eval-函数">eval 函数</h2>
+<ol>
+<li>
+<p>函数的作用：</p>
+<p>计算指定表达式的值。也就是说它要执行的 Python 代码只能是单个运算表达式（注意 eval 不支持任意形式的赋值操作），而不能是复杂的代码逻辑，这一点和 lambda 表达式比较相似。</p>
+</li>
+<li>
+<p>函数定义：</p>
+<p>eval(expression, globals=None, locals=None)<span id="more"></span></p>
+</li>
+<li>
+<p>参数说明：</p>
+<ul>
+<li>expression：必选参数，可以是字符串，也可以是一个任意的 code 对象实例（可以通过 compile 函数创建）。如果它是一个字符串，它会被当作一个（使用 globals 和 locals 参数作为全局和本地命名空间的）Python 表达式进行分析和解释。</li>
+<li>globals：可选参数，表示全局命名空间（存放全局变量），如果被提供，则必须是一个字典对象。</li>
+<li>locals：可选参数，表示当前局部命名空间（存放局部变量），如果被提供，可以是任何映射对象。如果该参数被忽略，那么它将会取与 globals 相同的值。</li>
+<li>如果 globals 与 locals 都被忽略，那么它们将取 eval() 函数被调用环境下的全局命名空间和局部命名空间。</li>
+</ul>
+</li>
+<li>
+<p>返回值：</p>
+<ul>
+<li>expression 是一个 code 对象，且创建该 code 对象时，compile 函数的 mode 参数是 ‘exec’，那么 eval() 函数的返回值是 None；</li>
+<li>expression 是一个输出语句，如 print()，则 eval() 返回结果为 None；</li>
+<li>expression 表达式的结果就是 eval() 函数的返回值；</li>
+</ul>
+</li>
+<li>
+<p>实例</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    y = <span class="number">20</span></span><br><span class="line">    a = eval(<span class="string">&#x27;x + y&#x27;</span>)</span><br><span class="line">    print(<span class="string">&#x27;a: &#x27;</span>, a)</span><br><span class="line">    b = eval(<span class="string">&#x27;x + y&#x27;</span>, &#123;<span class="string">&#x27;x&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;y&#x27;</span>: <span class="number">2</span>&#125;)</span><br><span class="line">    print(<span class="string">&#x27;b: &#x27;</span>, b)</span><br><span class="line">    c = eval(<span class="string">&#x27;x + y&#x27;</span>, &#123;<span class="string">&#x27;x&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;y&#x27;</span>: <span class="number">2</span>&#125;, &#123;<span class="string">&#x27;y&#x27;</span>: <span class="number">3</span>, <span class="string">&#x27;z&#x27;</span>: <span class="number">4</span>&#125;)</span><br><span class="line">    print(<span class="string">&#x27;c: &#x27;</span>, c)</span><br><span class="line">    d = eval(<span class="string">&#x27;print(x, y)&#x27;</span>)</span><br><span class="line">    print(<span class="string">&#x27;d: &#x27;</span>, d)</span><br><span class="line"></span><br><span class="line">func()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line">a:  <span class="number">30</span> <span class="comment"># eval 函数的 globals 和 locals 参数都被忽略了，因此变量 x 和变量 y 都取得的是 eval 函数被调用环境下的作用域中的变量值，即：x = 10, y = 20，a = x + y = 30</span></span><br><span class="line">b:  <span class="number">3</span> <span class="comment"># eval 函数只提供了 globals 参数而忽略了 locals 参数，因此 locals 会取 globals 参数的值，即：x = 1, y = 2，b = x + y = 3</span></span><br><span class="line">c:  <span class="number">4</span> <span class="comment"># eval 函数的 globals 参数和 locals 都被提供了，那么 eval 函数会先从全部作用域 globals 中找到变量 x, 从局部作用域 locals 中找到变量 y，即：x = 1, y = 3, c = x + y = 4</span></span><br><span class="line"><span class="number">10</span> <span class="number">20</span></span><br><span class="line">d:  <span class="literal">None</span> <span class="comment"># 因为 print() 函数不是一个计算表达式，没有计算结果，因此返回值为 None</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="exec-函数">exec 函数</h2>
+<ol>
+<li>
+<p>函数的作用：</p>
+<p>动态执行Python代码。也就是说exec可以执行复杂的Python代码，而不像eval函数那么样只能计算一个表达式的值。</p>
+</li>
+<li>
+<p>函数定义：</p>
+<p>exec(object[, globals[, locals]])</p>
+</li>
+<li>
+<p>参数说明：</p>
+<ul>
+<li>object：必选参数，表示需要被指定的 Python 代码。它必须是字符串或 code 对象。如果 object 是一个字符串，该字符串会先被解析为一组 Python 语句，然后在执行（除非发生语法错误）。如果object 是一个 code 对象，那么它只是被简单的执行。</li>
+<li>globals：可选参数，同 eval 函数</li>
+<li>locals：可选参数，同 eval 函数</li>
+</ul>
+</li>
+<li>
+<p>返回值：</p>
+<ul>
+<li>exec 函数的返回值永远为 None.</li>
+</ul>
+</li>
+<li>
+<p>注意：</p>
+<p>需要说明的是在 Python2 中 exec 不是函数，而是一个内置语句(statement)，但是 Python2 中有一个 execfile() 函数。可以理解为 Python3 把 exec 这个 statement 和 execfile() 函数的功能够整合到一个新的 exec() 函数中去了：</p>
+</li>
+</ol>
+<h2 id="eval-函数与-exec-函数的区别">eval() 函数与 exec() 函数的区别</h2>
+<ol>
+<li>
+<p>eval() 函数只能计算单个表达式的值，而 exec() 函数可以动态运行代码段。</p>
+</li>
+<li>
+<p>eval() 函数可以有返回值，而 exec() 函数返回值永远为 None。</p>
+</li>
+<li>
+<p>实例1</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    y = <span class="number">20</span></span><br><span class="line">    a = exec(<span class="string">&#x27;x + y&#x27;</span>)</span><br><span class="line">    print(<span class="string">&#x27;a: &#x27;</span>, a)</span><br><span class="line">    b = exec(<span class="string">&#x27;x + y&#x27;</span>, &#123;<span class="string">&#x27;x&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;y&#x27;</span>: <span class="number">2</span>&#125;)</span><br><span class="line">    print(<span class="string">&#x27;b: &#x27;</span>, b)</span><br><span class="line">    c = exec(<span class="string">&#x27;x + y&#x27;</span>, &#123;<span class="string">&#x27;x&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;y&#x27;</span>: <span class="number">2</span>&#125;, &#123;<span class="string">&#x27;y&#x27;</span>: <span class="number">3</span>, <span class="string">&#x27;z&#x27;</span>: <span class="number">4</span>&#125;)</span><br><span class="line">    print(<span class="string">&#x27;c: &#x27;</span>, c)</span><br><span class="line">    d = exec(<span class="string">&#x27;print(x, y)&#x27;</span>)</span><br><span class="line">    print(<span class="string">&#x27;d: &#x27;</span>, d)</span><br><span class="line"></span><br><span class="line">func()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line">a:  <span class="literal">None</span></span><br><span class="line">b:  <span class="literal">None</span></span><br><span class="line">c:  <span class="literal">None</span></span><br><span class="line"><span class="number">10</span> <span class="number">20</span></span><br><span class="line">d:  <span class="literal">None</span></span><br><span class="line"><span class="comment"># 因为exec 函数的返回值永远为 None。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>实例2</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">10</span></span><br><span class="line">expr = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">z = 30</span></span><br><span class="line"><span class="string">sum = x + y + z</span></span><br><span class="line"><span class="string">print(sum)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    y = <span class="number">20</span></span><br><span class="line">    exec(expr)</span><br><span class="line">    exec(expr, &#123;<span class="string">&#x27;x&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;y&#x27;</span>: <span class="number">2</span>&#125;)</span><br><span class="line">    exec(expr, &#123;<span class="string">&#x27;x&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;y&#x27;</span>: <span class="number">2</span>&#125;, &#123;<span class="string">&#x27;y&#x27;</span>: <span class="number">3</span>, <span class="string">&#x27;z&#x27;</span>: <span class="number">4</span>&#125;)</span><br><span class="line">    </span><br><span class="line">func()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line"><span class="number">60</span></span><br><span class="line"><span class="number">33</span></span><br><span class="line"><span class="number">34</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="globals-与-locals-函数">globals() 与 locals() 函数</h2>
+<ol>
+<li>
+<p>globals()</p>
+<p>Return a dictionary representing the current global symbol table. This is always the dictionary of the current module (inside a function or method, this is the module where it is defined, not the module from which it is called).</p>
+<p>翻译：返回一个表示当前全局标识符表的字典。这永远是当前模块的字典（在一个函数或方法内部，这是指定义该函数或方法的模块，而不是调用该函数或方法的模块）</p>
+</li>
+<li>
+<p>locals()</p>
+<p>Update and return a dictionary representing the current local symbol table. Free variables are returned by locals() when it is called in function blocks, but not in class blocks.</p>
+<p>Note The contents of this dictionary should not be modified; changes may not affect the values of local and free variables used by the interpreter.</p>
+<p>翻译：更新并返回一个表示当前局部标识符表的字典。自由变量在函数内部被调用时，会被 locals() 函数返回；自由变量在类累不被调用时，不会被 locals() 函数返回。</p>
+<p>注意：locals() 返回的字典的内容不应该被改变；如果一定要改变，不应该影响被解释器使用的局部变量和自由变量。</p>
+</li>
+<li>
+<p>总结：</p>
+<ul>
+<li>globals() 函数以字典的形式返回的定义该函数的模块内的全局作用域下的所有标识符（变量、常量等）</li>
+<li>locals() 函数以字典的形式返回当前函数内的局域作用域下的所有标识符</li>
+<li>如果直接在模块中调用 globals() 和 locals() 函数，它们的返回值是相同的</li>
+</ul>
+</li>
+<li>
+<p>实例1</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">x, y</span>):</span></span><br><span class="line">    sum = x + y</span><br><span class="line">    _G = globals()</span><br><span class="line">    _L = locals()</span><br><span class="line">    print(id(_G), type(_G),  _G)</span><br><span class="line">    print(id(_L), type(_L), _L)</span><br><span class="line"></span><br><span class="line">func(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line">2131520814344 &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;__builtins__&#x27;: &lt;module &#x27;builtins&#x27; (built-in)&gt;, &#x27;func&#x27;: &lt;function func at 0x000001F048C5E048&gt;, &#x27;__doc__&#x27;: None, &#x27;__file__&#x27;: &#x27;C:/Users/wader/PycharmProjects/LearnPython/day04/func5.py&#x27;, &#x27;__loader__&#x27;: &lt;_frozen_importlib_external.SourceFileLoader object at 0x000001F048BF4C50&gt;, &#x27;__spec__&#x27;: None, &#x27;age&#x27;: 18, &#x27;__name__&#x27;: &#x27;__main__&#x27;, &#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;__package__&#x27;: None, &#x27;__cached__&#x27;: None&#125;</span><br><span class="line">2131524302408 &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;y&#x27;: 20, &#x27;x&#x27;: 10, &#x27;_G&#x27;: &#123;&#x27;__builtins__&#x27;: &lt;module &#x27;builtins&#x27; (built-in)&gt;, &#x27;func&#x27;: &lt;function func at 0x000001F048C5E048&gt;, &#x27;__doc__&#x27;: None, &#x27;__file__&#x27;: &#x27;C:/Users/wader/PycharmProjects/LearnPython/day04/func5.py&#x27;, &#x27;__loader__&#x27;: &lt;_frozen_importlib_external.SourceFileLoader object at 0x000001F048BF4C50&gt;, &#x27;__spec__&#x27;: None, &#x27;age&#x27;: 18, &#x27;__name__&#x27;: &#x27;__main__&#x27;, &#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;__package__&#x27;: None, &#x27;__cached__&#x27;: None&#125;, &#x27;sum&#x27;: 30&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>实例2</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">G = globals()</span><br><span class="line">L = locals()</span><br><span class="line">print(id(G), type(G), G)</span><br><span class="line">print(id(L), type(L), L)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line">2494347312392 &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;__file__&#x27;: &#x27;C:/Users/wader/PycharmProjects/LearnPython/day04/func5.py&#x27;, &#x27;__loader__&#x27;: &lt;_frozen_importlib_external.SourceFileLoader object at 0x00000244C2E44C50&gt;, &#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;__spec__&#x27;: None, &#x27;__builtins__&#x27;: &lt;module &#x27;builtins&#x27; (built-in)&gt;, &#x27;__cached__&#x27;: None, &#x27;L&#x27;: &#123;...&#125;, &#x27;__package__&#x27;: None, &#x27;__name__&#x27;: &#x27;__main__&#x27;, &#x27;G&#x27;: &#123;...&#125;, &#x27;__doc__&#x27;: None, &#x27;age&#x27;: 18&#125;</span><br><span class="line">2494347312392 &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;__file__&#x27;: &#x27;C:/Users/wader/PycharmProjects/LearnPython/day04/func5.py&#x27;, &#x27;__loader__&#x27;: &lt;_frozen_importlib_external.SourceFileLoader object at 0x00000244C2E44C50&gt;, &#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;__spec__&#x27;: None, &#x27;__builtins__&#x27;: &lt;module &#x27;builtins&#x27; (built-in)&gt;, &#x27;__cached__&#x27;: None, &#x27;L&#x27;: &#123;...&#125;, &#x27;__package__&#x27;: None, &#x27;__name__&#x27;: &#x27;__main__&#x27;, &#x27;G&#x27;: &#123;...&#125;, &#x27;__doc__&#x27;: None, &#x27;age&#x27;: 18&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上面打印出的G和L的内存地址是一样的，说明在模块级别 locals() 的返回值和 globals() 的返回值是相同的。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="compile函数">compile函数</h2>
+<ol>
+<li>
+<p>函数的作用：</p>
+<p>将 source 编译为 code 对象或 AST 对象。code 对象能够通过 exec() 函数来执行或者通过 eval() 函数进行计算求值。</p>
+</li>
+<li>
+<p>函数定义：</p>
+<p>compile(source, filename, mode[, flags[, dont_inherit]])</p>
+</li>
+<li>
+<p>参数说明：</p>
+<ul>
+<li>source：字符串或 AST（Abstract Syntax Trees）对象，表示需要进行编译的 Python 代码</li>
+<li>filename：指定需要编译的代码文件名称，如果不是从文件读取代码则传递一些可辨认的值（通常是用 ‘<string>’）</li>
+<li>mode：用于标识必须当做那类代码来编译；如果 source 是由一个代码语句序列组成，则指定 mode=‘exec’；如果 source 是由单个表达式组成，则指定 mode=‘eval’；如果 source 是由一个单独的交互式语句组成，则指定 mode=‘single’。</li>
+<li>后续参数与编译相关</li>
+</ul>
+</li>
+<li>
+<p>实例：</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">for x in range(10):</span></span><br><span class="line"><span class="string">    print(x, end=&#x27;&#x27;)</span></span><br><span class="line"><span class="string">print()</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">code_exec = compile(s, <span class="string">&#x27;&lt;string&gt;&#x27;</span>, <span class="string">&#x27;exec&#x27;</span>)</span><br><span class="line">code_eval = compile(<span class="string">&#x27;10 + 20&#x27;</span>, <span class="string">&#x27;&lt;string&gt;&#x27;</span>, <span class="string">&#x27;eval&#x27;</span>)</span><br><span class="line">code_single = compile(<span class="string">&#x27;name = input(&quot;Input Your Name: &quot;)&#x27;</span>, <span class="string">&#x27;&lt;string&gt;&#x27;</span>, <span class="string">&#x27;single&#x27;</span>)</span><br><span class="line"></span><br><span class="line">a = exec(code_exec)</span><br><span class="line">b = eval(code_eval)</span><br><span class="line"></span><br><span class="line">c = exec(code_single)</span><br><span class="line">d = eval(code_single)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;a: &#x27;</span>, a)</span><br><span class="line">print(<span class="string">&#x27;b: &#x27;</span>, b)</span><br><span class="line">print(<span class="string">&#x27;c: &#x27;</span>, c)</span><br><span class="line">print(<span class="string">&#x27;name: &#x27;</span>, name)</span><br><span class="line">print(<span class="string">&#x27;d: &#x27;</span>, d)</span><br><span class="line">print(<span class="string">&#x27;name; &#x27;</span>, name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line"><span class="number">0123456789</span></span><br><span class="line">Input Your Name: Tom</span><br><span class="line">Input Your Name: Jerry</span><br><span class="line">a:  <span class="literal">None</span></span><br><span class="line">b:  <span class="number">30</span></span><br><span class="line">c:  <span class="literal">None</span></span><br><span class="line">name:  Jerry</span><br><span class="line">d:  <span class="literal">None</span></span><br><span class="line">name;  Jerry</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="这几个函数的关系">这几个函数的关系</h2>
+<ol>
+<li>comiple() 函数、globals() 函数、locals() 函数的返回结果可以当作 eval() 函数与 exec() 函数的参数使用。</li>
+<li>可以通过判断 globals() 函数的返回值中是否包含某个 key 来判断，某个全局变量是否已经存在（被定义）。</li>
+</ol>
+<blockquote>
+<p>be slow to promise and quick to perform.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/20200413-m17/" style="float: left;">
+        ← 为啥 ping 不通谷歌
+    </a>
+    
+    
+    <a class="pull-right" href="/20191223-m15/">
+        python 克隆 list 的方法 →
+    </a>
+    
+</nav>
+
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2017<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By LingXing. All Rights Reserved.
+                </p>
+                <p>Theme is TKL.</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+</footer>
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.lx'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

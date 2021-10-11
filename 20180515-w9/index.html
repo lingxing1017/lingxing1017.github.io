@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>注册表入门 | X</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="X">
+    <meta name="author" content="LingXing">
+    <meta name="description" content="the self-cultivation of the programmer" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="X" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/googlecode.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">HOME</a></li>
+            <li><a href="/archives" class="animsition-link" title="Archives">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">CATEGORIES<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/debian/" class="animsition-link">debian<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(41)</small></a></li>
+				    
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/win10/" class="animsition-link">win10<small>(63)</small></a></li>
+				    
+				</ul>
+        	</li>
+	
+            
+            <li>
+                <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-软件/" class="animsition-link">Debian 软件<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-问题/" class="animsition-link">Debian 问题<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-个性化/" class="animsition-link">Win10 个性化<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-软件/" class="animsition-link">Win10 软件<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/file/" class="animsition-link">file<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/git/" class="animsition-link">git<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/gnome/" class="animsition-link">gnome<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/grub/" class="animsition-link">grub<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/macOS-个性化/" class="animsition-link">macOS 个性化<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
+                    
+                    <li><a href="/tags/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/python/" class="animsition-link">python<small>(18)</small></a></li>
+                    
+                    <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    
+                    <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/修复-Win10/" class="animsition-link">修复 Win10<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/安装-Win10/" class="animsition-link">安装 Win10<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/认识-Win10/" class="animsition-link">认识 Win10<small>(1)</small></a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">LINKS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://lingxing1017.party/" class="animsition-link">L</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search">SEARCH</a></li>
+            
+            <li><a href="mailto:lingxing1017@gmail.com" title="Email" class="animsition-link">EMAIL</a></li>
+            <li><a href="/about.html" class="animsition-link" title="About">ABOUT</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link" title="Home">X</a></li>
+                            <li class="nolink"><span>Always Creative</span></li>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="mailto:lingxing1017@gmail.com" title="Email" target="_blank">📧</a></li>
+                            
+                            
+                            <li><a href="javascript:;" class="popup-trigger" title="Search">🔍</a></li>
+                            
+                            <li class="nolink">Welcome</li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>得之我幸  失之我命</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>when someone abandons you，it is him that gets loss because he lost someone who truly loves him but you just lost one who doesn’t love you.</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2018-05-15T08:39:05.000Z" itemprop="datePublished">
+          2018-05-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/reg/'>reg</a>
+    
+    
+</span>
+                <h1>注册表入门</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p><strong>a.注册表</strong><br>
+即计算机用于管理各个硬件和软件的巨大数据库，通常说的注册表包含两部分，注册表数据库和注册表编辑器。注册表数据库包括SYSTEM.DAT和USER.DAT。<span id="more"></span></p>
+<p>用注册表管理计算机软硬件较用ini文件（都是局部，分散的）配置管理软硬件有以下好处：注册表配置包括（硬件，操作系统参数，应用程序，设备驱动程序）等配置，修改不需重启电脑即可生效；安装新硬件，系统会检查注册表，可以确定哪些资源被占用，避免资源冲突；用注册表还可以使管理人员通过网络检查系统配置与设置，是远程管理得以实现。</p>
+<p>打开注册表编辑器：单击“开始”按钮，并在搜索文本框中输入“regedit”，完成后按enter按钮即可；或者打开命令提示符，输入“regedt32”也可打开注册表编辑器。（注：  在 Windows XP及以后操作系统 中，Regedt32.exe 只是一个用来运行 Regedit.exe 的小程序。）</p>
+<p>“标准用户”的注册表修改权限：windows7用户账户分为“标准用户”和“系统管理员”账户，只有系统管理员账户具有完整的注册表修改权限，如果是标准用户账户，只能修改HKEY_CURRENT_USER下的键值，如果在标准用户账户下临时想要修改注册表，可以右键点击“以管理员身份运行”以系统管理员身份打开注册表。</p>
+<p><strong>b.注册表修改</strong><br>
+一般要手动删除软件：运行regedt32 ，运行注册表编辑器，找到应用程序注册表项，备份（文件-导出-保存）（用于错误删除时恢复，恢复很简单，双击备份的注册表文件，即会提示导入，确认即可，通常要删那个节点，就备份那个，当然也可以整个注册表备份），删除，用资源管理器（按win+E），删除相应应用程序文件夹即可，相当方便，重启都不用。</p>
+<p><strong>c.注册表查找</strong><br>
+必须知道应用程序一般节点所在，HKEYLOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall下的节点（键-值对）一般是基于 InstallShield 安装的应用程序，大部分程序都可以在这里找到相应节点，而对与部分特殊的软件如编程软件，基于 Windows Installer 安装的应用程序，像office,一般保存在HKEY_CLASSES_ROOT\Installer\Products 和 HKEY_CURRENT_USER\Software\Microsoft\Installer\Products节点下，缩短查询范围，然后用注册表编辑器工具，ctrl+F，F3查找判断就准确得多了。</p>
+<p>在注册表编辑器左半侧的根键窗格中，可以看到如同文件夹一样的图标，这些都称之为“键”（key），单击每个键前面的符号，就可以展开该键，得到一系列子键，再次单击该符号就可以叠回该键下的子键。当然直接双击项名也同样可以起到展开和折叠的效果。</p>
+<p>键值英文是value，系统会将设置值保存在注册表文件中，其实就是保存的就是键值。借助无数的键值，系统才可以在每次启动时，让windows的配置符合用户的要求。每个键值都具有名称、类型和数据等3个字段。</p>
+<p>在注册表中，键、键值名的大小写，都只是为了方便用户阅读、识别，实际上并不区分大小写，系统都视为相同字母。</p>
+<p>注册表采用键-值对管理，而键key包括两类：1.系统默认预置，2.应用程序自定义</p>
+<p><strong>d.通常系统默认预定义的有以下五个键</strong></p>
+<ol>
+<li>
+<p>HKEY_CLASSES_ROOT （缩写HKCR）：<br>
+其内容包含了所有的文件类型、文件关联、图标以及扩展名等信息，甚至每种文件类型以哪个软件打开，也都在此处设置</p>
+</li>
+<li>
+<p>HKEY_CURRENT_USER（缩写HKCU）：<br>
+系统当前用户的配置信息，其实就是HKEY_USERS的子分支，主要保存了当前登陆windows的用户数据，以及个性化的设置，例如桌面外观、软件设置、开始菜单等内容，而键的内容也会随着登陆的用户不同有所改变，而在此根键下，Control Panel与Software两个子键最为重要：</p>
+<ul>
+<li>Control Panel：记录了用户的操作设置，例如桌面背景、窗口外观等，几乎所有控制面板中的设置都保存在此。</li>
+<li>Software：记录了用户当前环境中安装的软件设置，甚至连windows本身内置的功能，也都在此处进行调校</li>
+</ul>
+</li>
+<li>
+<p>HKEY_LOCAL_MACHINE（缩写HKLM）：<br>
+保存了绝大部分的系统信息，包括硬件配置、外围设置、网络设置以及所安装的软件等，是注册表数据库中最重要、最庞大的根键。在HKLM之下，另外有5个子键十分重要：</p>
+<ul>
+<li>HARDWARE：此键记录了计算机硬件相关的各项信息，以及驱动程序的设置等，当使用设备管理器更改硬件设置时，这个键中的数据也会跟着改变</li>
+<li>SAM与SECURITY：记录本台计算机上有哪些用户和组账户，与相关的系统安全设置、权限分配等。在一般情况下，用户无法访问此键的内容，因此在这两个键下，不会看到任何键值</li>
+<li>SOFTWARE：包含已安装的各项软件信息，与HKEY_CURRENT_USER\Software键不同的是，此键的影响范围比较大，对系统下的所有用户都有效</li>
+<li>SYSTEM：包含有关系统启动、驱动程序加载等与操作系统本身相关的各项设置信息</li>
+</ul>
+</li>
+<li>
+<p>HKEY_USERS（缩写HKU）：<br>
+主要记录系统用户配置信息，多用户系统会有多个子分支，每个子分支都会映射到HKEY_CURRENT_USER下，其中.DEFAULT这个子键记录了windows用户默认的个人设置，与HKEY_CURRENT_USER是相同内容，通常包括一些用户桌面，背景，显示字体，应用程序快捷键等等较为个性化的配置信息，其中还可以看到多个名称类似S-1-15-28、S-1-15-18_Classes的子键，都是与系统内置程序或服务相关的键值，一般来说，动到它们的几率不高<br>
+5.HKEY_CURRENT_CONFIG（缩写HKCC）：<br>
+是HKEY_LOCAL_MACHINE在中当前硬件配置信息的映射。，至于其他硬件配置文件保存在HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\HardwareProfiles下</p>
+</li>
+</ol>
+<p><strong>e键值数据类型</strong><br>
+键值就名称、类型、数据等字段，其中数据字段就是键值实际的内容，依据数据内容的类型指定键值的类型。</p>
+<p>注册表的键值类型共有15种之多，不过实际可能用到的只有6种类型，也就是在注册表编辑器右侧窗格空白处单击鼠标右键并执行“新建”命令后，可以增加的6种键值：</p>
+<ul>
+<li>字符串值(S)：在类型字段显示的名称为REG_SZ，表示键值内容为文字类型</li>
+<li>二进制值(B)：在类型字段显示的名称为REG_BINARY，表示键值的内容为二进制数值，不过输入时必须转换成16进制，例如键值内容为二进制的0000 1010，输入必须改为“0A”</li>
+<li>DWORD(32-位)值/QWORD(64-位)值：在类型字段显示REG_DWORD（或REG_QWORD）是经常遇到的键值类型。此类型的内容通常是数字，可以选择以10进制或16进制输入，有时也可能用来表示布尔值</li>
+<li>多字符串值(M)：在类型字段显示的名称为REG_MULTI_SZ，其键值为一长串的文字，可以允许输入比字符串值更长的内容。</li>
+<li>可扩充字符串(E)：在类型字段显示的名称为REG_EXPAND_SZ，其内容初看和字符串值相同，此键值格式通常仅仅用来指定数据保存的路径，内容会随着系统设置而自行改变，使用的机会不多</li>
+</ul>
+<blockquote>
+<p>be yourself, everyone else is already taken.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/20180517-d12/" style="float: left;">
+        ← Unknown media type in type */*
+    </a>
+    
+    
+    <a class="pull-right" href="/20180511-d11/">
+        修复 st3 无法输入中文 →
+    </a>
+    
+</nav>
+
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2017<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By LingXing. All Rights Reserved.
+                </p>
+                <p>Theme is TKL.</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+</footer>
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.lx'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

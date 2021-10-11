@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>bat 常用符号详解 | X</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="X">
+    <meta name="author" content="LingXing">
+    <meta name="description" content="the self-cultivation of the programmer" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="X" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/googlecode.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">HOME</a></li>
+            <li><a href="/archives" class="animsition-link" title="Archives">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">CATEGORIES<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/debian/" class="animsition-link">debian<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(41)</small></a></li>
+				    
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/win10/" class="animsition-link">win10<small>(63)</small></a></li>
+				    
+				</ul>
+        	</li>
+	
+            
+            <li>
+                <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-软件/" class="animsition-link">Debian 软件<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-问题/" class="animsition-link">Debian 问题<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-个性化/" class="animsition-link">Win10 个性化<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-软件/" class="animsition-link">Win10 软件<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/file/" class="animsition-link">file<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/git/" class="animsition-link">git<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/gnome/" class="animsition-link">gnome<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/grub/" class="animsition-link">grub<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/macOS-个性化/" class="animsition-link">macOS 个性化<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
+                    
+                    <li><a href="/tags/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/python/" class="animsition-link">python<small>(18)</small></a></li>
+                    
+                    <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    
+                    <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/修复-Win10/" class="animsition-link">修复 Win10<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/安装-Win10/" class="animsition-link">安装 Win10<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/认识-Win10/" class="animsition-link">认识 Win10<small>(1)</small></a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">LINKS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://lingxing1017.party/" class="animsition-link">L</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search">SEARCH</a></li>
+            
+            <li><a href="mailto:lingxing1017@gmail.com" title="Email" class="animsition-link">EMAIL</a></li>
+            <li><a href="/about.html" class="animsition-link" title="About">ABOUT</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link" title="Home">X</a></li>
+                            <li class="nolink"><span>Always Creative</span></li>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="mailto:lingxing1017@gmail.com" title="Email" target="_blank">📧</a></li>
+                            
+                            
+                            <li><a href="javascript:;" class="popup-trigger" title="Search">🔍</a></li>
+                            
+                            <li class="nolink">Welcome</li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>得之我幸  失之我命</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>when someone abandons you，it is him that gets loss because he lost someone who truly loves him but you just lost one who doesn’t love you.</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2018-05-30T10:55:24.000Z" itemprop="datePublished">
+          2018-05-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/bat/'>bat</a>
+    
+    
+</span>
+                <h1>bat 常用符号详解</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p><strong>1.@</strong><br>
+一般在它之后紧跟一条命令或一条语句，则此命令或语句本身在执行的时候不会显示在屏幕上.</p>
+<p>请把下面的代码保存为test.cmd文件，然后运行，比较一下两条echo语句在屏幕上的输出差异：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> a</span><br><span class="line">@<span class="built_in">pause</span></span><br><span class="line">@<span class="built_in">echo</span> b</span><br><span class="line">@<span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>执行结果如下：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\&gt;<span class="title">echo</span> <span class="title">a</span></span></span><br><span class="line"><span class="function"><span class="title">a</span></span></span><br><span class="line"><span class="function">请按任意键继续...</span></span><br><span class="line"><span class="function"><span class="title">b</span></span></span><br><span class="line"><span class="function">请按任意键继续...</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.%、%%</strong><br>
+百分号用在不同的场合，有不同的含义：<br>
+a.当百分号成对出现，并且其间包含非特殊字符时，一般做变量引用处理，比如：%var%、%str%.</p>
+<p>把以下代码保存为批处理文件，运行后观察屏幕显示结果：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> str=abc</span><br><span class="line"><span class="built_in">echo</span> 变量str的值是：<span class="variable">%str%</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p>在屏幕上将显示这样的结果：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量str的值是：abc</span><br><span class="line">按任意键继续...</span><br></pre></td></tr></table></figure>
+<p>另外，百分号作为变量引用还有一种特殊形式，那就是对形式参数的引用，此时，单个百分号后面紧跟0～9这10个数字，如%0、%1.</p>
+<p>请看演示代码：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">defined</span> str <span class="keyword">goto</span> next</span><br><span class="line"><span class="built_in">set</span> str=</span><br><span class="line"><span class="built_in">set</span> /p str=请把文件拉到本窗口后回车：</span><br><span class="line"><span class="keyword">call</span> &quot;%~<span class="number">0</span>&quot; <span class="variable">%str%</span></span><br><span class="line"><span class="built_in">pause</span></span><br><span class="line"><span class="keyword">exit</span></span><br><span class="line"></span><br><span class="line">:next</span><br><span class="line"><span class="built_in">cls</span></span><br><span class="line"><span class="built_in">echo</span> 本批处理文件完整路径为：&quot;%~<span class="number">0</span>&quot;</span><br><span class="line"><span class="built_in">echo</span> 拖到本窗口的文件完整路径为：&quot;%~<span class="number">1</span>&quot;</span><br><span class="line"><span class="function">goto:<span class="title">eof</span></span></span><br></pre></td></tr></table></figure>
+<p>b.出现在 set /a 语句中时，表示两数相除取余数，也就是所谓的模运算，它在命令行窗口和批处理文件中的写法略有差异：在命令行窗口中，只需要单个的%，在批处理文件中，需要连续两个百分号，写成%%.</p>
+<p>例如：在命令行窗口中，运行 set /a num=4%2 ，则结果将显示0，因为4除以2的余数为0；如果保存为批处理文件，则此语句将略有改变：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> /a num=<span class="number">4</span><span class="variable">%%2</span></span><br><span class="line"><span class="built_in">echo</span> <span class="number">4</span>除以<span class="number">2</span>的余数为<span class="variable">%num%</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p>c.转义符号：如果要显示%本身时，需要在前面用%来转义.</p>
+<p>例如：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@echooff</span><br><span class="line"><span class="built_in">echo</span>一个百分号：%%</span><br><span class="line"><span class="built_in">echo</span>两个百分号：<span class="variable">%%%</span>%</span><br><span class="line"><span class="built_in">echo</span>三个百分号：<span class="variable">%%%</span><span class="variable">%%%</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p><strong>3.:、::</strong><br>
+a.以:打头的单个的:表示该行是一个标签，它之后的内容是一个标签段，如:test，则表示:test之下的内容是标签段，而test是这个标签段的名，可以用 goto test 、goto :test 跳转到该标签段或用 call :test 调用该子过程；而连续两个冒号打头表示该行内容为注释内容，实际上，:: 是个无效的标签名，:加上空格同样可以起到注释的作用，此时，::的功能和注释命令rem相同；但是，rem 注释语句中的某些命令符号如重定向符号和管道符号还是会执行，而如果用::来注释的时候，与::同处一行的所有命令或符号直接被命令解释器忽略掉，无形中提高了注释的兼容性和整个程序的执行效率，并且在众多的命令语句中更显得醒目，所以，注释语句推荐使用::的格式.</p>
+<p>b.在 set 语句中：和~同时使用时，: 起到截取字符串的功能.假设 set str=abcde，那么，set var=%str:~0,1% 表示截取字符串abcde的第一个字符；和=同时使用时，起到替换字符串的功能.假设：set str=abc:de，那么，set var=%str:a=1% 则表示把字符串abc:de中的a替换为1，set var=%str::=2% 则表示把字符串abc:de中的:替换为2；</p>
+<p><strong>4.~</strong><br>
+a.用在 set 语句中，和:同时使用时，起到截取字符串的功能，请参考上一条的解释；</p>
+<p>b.用在 set /a 语句中时，它是一元运算符号，表示将操作数字按位取反，例如，set /a num=~1的执行结果是-2，set /a num=~0的结果是-1</p>
+<p>c.用在for语句中，表示增强for的功能，能够提取到更多的信息.例如：在批处理文件的for语句中：%%~i表示去掉第一对外侧引号，%%~zi表示获取文件的大小(以字节为单位)，%%~ni表示获取文件名，%%~xi表示获取扩展名(带点号)……它们可以组合使用，如%%~nxi表示获取文件名和后缀名.</p>
+<p><strong>5.&gt;、&gt;&gt;</strong><br>
+一般而言，&gt;表示用新内容覆盖原文件内容，&gt;&gt;表示向原文件追加内容，此时，它们以重定向符号的身份出现；如果用在 set /a 语句中，则&gt;表示分组，&gt;&gt;表示逻辑移位；</p>
+<p><strong>6.|</strong><br>
+一般而言，它以管道符号的身份出现，表示把在它之前的命令或语句的执行结果作为在它之后的命令或语句的处理对象，简而言之，就是把它之前的输出作为它之后的输入，例如：echo abcd|findstr “b”，表示把echo abcd的执行结果，作为findstr “b” 的执行对象，也就是在字符串abcd中查找b字符；如果test.txt中有abcd字符串，则该语句与 findstr “b” test.txt 具有同样的效果；</p>
+<p><strong>7.^</strong><br>
+一般而言，^以转义字符的身份出现.因为在cmd环境中，有些字符具备特殊功能，如&gt;、&gt;&gt;表示重定向，|表示管道，&amp;、&amp;&amp;、||表示语句连接……它们都有特定的功能，如果需要把它们作为字符输出的话，echo &gt;、echo | ……之类的写法就会出错——cmd解释器会把它们作为具有特殊功能的字符对待，而不会作为普通字符处理，这个时候，就需要对这些特殊字符做转义处理：在每个特殊字符前加上转义字符^，因此，要输出这些特殊字符，就需要用 echo ^&gt;、echo ^|、echo ^|^|、echo ^^……之类的格式来处理；</p>
+<p><strong>8.&amp;</strong><br>
+一般而言，&amp;表示两条命令或语句同时执行的意思.如 echo a&amp;echo b，将在屏幕上同时显示a和b字符.当几条语句含义近似或作用相同且没有先后的顺序之别时，启用&amp;符号连接这些语句将会增加程序的可读性；</p>
+<p><strong>9.&amp;&amp;、||</strong><br>
+这是一对含义截然相反的命令符，&amp;&amp;表示如果它之前的语句成功执行，将执行它之后的语句，而||则表示如果它之前的语句执行失败，将执行它之后的语句；在某些场合，它们能替代 if……else…… 语句；</p>
+<p>例如：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">md</span> test &amp;&amp; <span class="built_in">echo</span> 成功创建文件夹test || <span class="built_in">echo</span>创建文件夹test 失败</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p>效果等同于如下代码：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">md</span> test</span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%errorlevel%</span>&quot;==&quot;<span class="number">0</span>&quot; (<span class="built_in">echo</span> 成功创建文件夹test) <span class="keyword">else</span> <span class="built_in">echo</span> 创建文件夹test 失败</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p><strong>10.()</strong><br>
+小括号对经常出现在for语句和if语句中，还有一些特定场合；在for和if语句中属于语句格式的要求.</p>
+<p>a.for %%i in (语句1) do (语句2)：在这条语句中，语句1必须用括号对包围，而语句2的括号对则可视情况予以抛弃或保留：如果语句2是单条语句或用&amp;、&amp;&amp;、||等连接符号连接的多条语句，括号对可以抛弃，如果语句2是有逻辑先后关系的多条语句集合，则必须保留括号对，并且，多条语句必须断行书写；</p>
+<p>例如：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">for</span> <span class="variable">%%i</span> <span class="keyword">in</span> (abc) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span> &amp; <span class="built_in">echo</span>--------</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p>也可以改写为：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">for</span> <span class="variable">%%i</span> <span class="keyword">in</span> (abc) <span class="keyword">do</span>(</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line">    &amp; <span class="built_in">echo</span>--------</span><br><span class="line">)</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p>b.if 条件 (语句1) else (语句2)：如果没有else部分，则语句1的括号对可有可无；如果有else部分，则语句1中的括号对必须保留，此时，语句2中的括号对保留与否，和上一点类似.</p>
+<p>例如：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> test.txt <span class="built_in">echo</span> 当前目录下有test.txt</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> test.txt (<span class="built_in">echo</span> 当前目录下有test.txt) <span class="keyword">else</span> <span class="built_in">echo</span> 当前目录下没有test.txt</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> test.txt (<span class="built_in">echo</span>当前目录下有test.txt) <span class="keyword">else</span> (</span><br><span class="line">    <span class="built_in">echo</span> 当前目录下没有test.txt</span><br><span class="line"><span class="built_in">pause</span></span><br><span class="line"><span class="built_in">cls</span></span><br><span class="line"><span class="built_in">echo</span> 即将创建test.txt文件</span><br><span class="line"><span class="built_in">cd</span>.&gt;test.txt &amp;&amp; <span class="built_in">echo</span> 成功创建test.txt</span><br><span class="line">)</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p>c.特定场合下使用括号对，不但可以使代码逻辑清晰，增强可读性，还可能会减少代码量.比如用echo语句构造多行文本内容的时候：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">(</span><br><span class="line"><span class="built_in">echo</span> 第一行</span><br><span class="line"><span class="built_in">echo</span> 第二行</span><br><span class="line"><span class="built_in">echo</span> 第三行</span><br><span class="line">)&gt;test.txt</span><br><span class="line"><span class="built_in">start</span> test.txt</span><br></pre></td></tr></table></figure>
+<p>如果不使用括号对的话，则需要使用如下代码：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 第一行&gt;test.txt</span><br><span class="line"><span class="built_in">echo</span> 第二行&gt;&gt;test.txt</span><br><span class="line"><span class="built_in">echo</span> 第三行&gt;&gt;test.txt</span><br><span class="line"><span class="built_in">start</span> test.txt</span><br></pre></td></tr></table></figure>
+<p><strong>11.+、-、*、/</strong><br>
+在 set /a 语句中，这些符号的含义分别为：加、减、乘、除.例如：set /a num=1+2-3*4/5.需要注意的是，这些运算符号遵循数学运算中的优先级顺序：先乘除后加减，有括号的先算括号，并且，直接忽略小数点，因此，刚才那个算式的结果是1而不是0或0.6.</p>
+<p>另外，有可能会在代码中看到这样的写法：set /a num+=1、set /a num-=1、set /a num*=1 和 set /a num/=1，这些表示累加、累减、累乘、累除，步长都是1，展开后的完整写法为：set /a num=num+1、set /a num=num-1、set /a num=num*1 和 set /a num=num/1(set /a 语句中，变量引用可以忽略百分号对或感叹号对，set /a num=%num%+1 与 set /a num=num+1 等同)</p>
+<p><strong>12.equ、neq、lss、leq、gtr、geq</strong><br>
+这几个命令符是if语句中常用到的数值比较符号，取自英文的关键字母，具体的含义为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符号</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:right">英文解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">EQU</td>
+<td style="text-align:center">等于</td>
+<td style="text-align:right">equal</td>
+</tr>
+<tr>
+<td style="text-align:left">NEQ</td>
+<td style="text-align:center">不等于</td>
+<td style="text-align:right">not equal</td>
+</tr>
+<tr>
+<td style="text-align:left">LSS</td>
+<td style="text-align:center">少于</td>
+<td style="text-align:right">less than</td>
+</tr>
+<tr>
+<td style="text-align:left">LEQ</td>
+<td style="text-align:center">少于或等于</td>
+<td style="text-align:right">less than or equal</td>
+</tr>
+<tr>
+<td style="text-align:left">GTR</td>
+<td style="text-align:center">大于</td>
+<td style="text-align:right">greater than</td>
+</tr>
+<tr>
+<td style="text-align:left">GEQ</td>
+<td style="text-align:center">大于或等于</td>
+<td style="text-align:right">greater than or equal</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>be yourself, everyone else is already taken.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/20180604-d13/" style="float: left;">
+        ← vim 插件之 NERDTree
+    </a>
+    
+    
+    <a class="pull-right" href="/20180530-w14/">
+        接近 Windows 目录内的文件夹 →
+    </a>
+    
+</nav>
+
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2017<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By LingXing. All Rights Reserved.
+                </p>
+                <p>Theme is TKL.</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+</footer>
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.lx'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

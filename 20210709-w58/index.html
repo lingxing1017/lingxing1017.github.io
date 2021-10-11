@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Python 深拷贝 | X</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="X">
+    <meta name="author" content="LingXing">
+    <meta name="description" content="the self-cultivation of the programmer" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="X" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/googlecode.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">HOME</a></li>
+            <li><a href="/archives" class="animsition-link" title="Archives">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">CATEGORIES<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/debian/" class="animsition-link">debian<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(41)</small></a></li>
+				    
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/win10/" class="animsition-link">win10<small>(63)</small></a></li>
+				    
+				</ul>
+        	</li>
+	
+            
+            <li>
+                <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-软件/" class="animsition-link">Debian 软件<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-问题/" class="animsition-link">Debian 问题<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-个性化/" class="animsition-link">Win10 个性化<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-软件/" class="animsition-link">Win10 软件<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/file/" class="animsition-link">file<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/git/" class="animsition-link">git<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/gnome/" class="animsition-link">gnome<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/grub/" class="animsition-link">grub<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/macOS-个性化/" class="animsition-link">macOS 个性化<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
+                    
+                    <li><a href="/tags/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/python/" class="animsition-link">python<small>(18)</small></a></li>
+                    
+                    <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    
+                    <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/修复-Win10/" class="animsition-link">修复 Win10<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/安装-Win10/" class="animsition-link">安装 Win10<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/认识-Win10/" class="animsition-link">认识 Win10<small>(1)</small></a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">LINKS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://lingxing1017.party/" class="animsition-link">L</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search">SEARCH</a></li>
+            
+            <li><a href="mailto:lingxing1017@gmail.com" title="Email" class="animsition-link">EMAIL</a></li>
+            <li><a href="/about.html" class="animsition-link" title="About">ABOUT</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link" title="Home">X</a></li>
+                            <li class="nolink"><span>Always Creative</span></li>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="mailto:lingxing1017@gmail.com" title="Email" target="_blank">📧</a></li>
+                            
+                            
+                            <li><a href="javascript:;" class="popup-trigger" title="Search">🔍</a></li>
+                            
+                            <li class="nolink">Welcome</li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>得之我幸  失之我命</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>when someone abandons you，it is him that gets loss because he lost someone who truly loves him but you just lost one who doesn’t love you.</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-07-09T07:41:03.000Z" itemprop="datePublished">
+          2021-07-09
+      </time>
+    
+    
+    | 
+    <a href='/tags/python/'>python</a>
+    
+    
+</span>
+                <h1>Python 深拷贝</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>写 python 的过程中，拷贝总是少不了的，遥记得 C++ 里有个东西叫深拷贝（总之涉及到指针就变得啥都不好理解了），同为面向对象，但是 python 不是没有指针吗？</p>
+<p>这还得从 python 的变量开始说起</p>
+<span id="more"></span>
+<h3 id="变量和对象">变量和对象</h3>
+<p>在 Python 中，一个变量可以说是内存中的一个对象的 “标签” 或 “引用”，它指向内存中的对象，<code>当一个对象没有任何标签或引用指向它时，它就会被自动释放</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>  <span class="comment"># 现在变量 a 指向内存中的一个 int 型的对象（a 相当于 1 的名字）</span></span><br><span class="line">a = <span class="number">2</span>  <span class="comment"># 给 a 重新赋值，此时 a 依旧指向内存中的一个 int 型的对象（a 现在是 2 的名字）。原来的值为 1 的 int 型对象仍然存在，只是不能再通过 a 去访问它</span></span><br><span class="line">b = a  <span class="comment"># 把变量 a 赋给 b，相当于给当前内存中对象（此处的 2）增加一个名字</span></span><br></pre></td></tr></table></figure>
+<p>综上，变量不需要类型，类型是属于对象的，这也是 Python 中的变量可以被任何类型赋值的原因</p>
+<h3 id="Everything-is-Object-in-Python">Everything is Object in Python</h3>
+<p>Python 使用<code>对象模型</code>来储存数据，<code>任何类型的值都是一个对象</code>。所有的 python 对象都有 <code>3</code> 个特征：<code>身份</code>、<code>类型</code>、<code>值</code></p>
+<ol>
+<li>
+<p>身份：每一个对象都有自己的唯一的标识，可以使用内建函数 id() 来得到它。这个值可以被认为是该对象的内存地址</p>
+</li>
+<li>
+<p>类型：对象的类型决定了该对象可以保存的什么类型的值，可以进行什么操作，以及遵循什么样的规则。type()函数来查看 python 对象的类型</p>
+</li>
+<li>
+<p>值：对象表示的数据项</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="number">140720048772880</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="number">140720048772912</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = a</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(c)</span><br><span class="line"><span class="number">140720048772880</span></span><br><span class="line"><span class="comment"># 运算符 is、is not 就是通过 id() 的返回值（即身份）来判定的，也就是看它们是不是同一个对象的 “标签”</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c <span class="keyword">is</span> a</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> <span class="keyword">not</span> b</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<h3 id="可变对象与不可变对象">可变对象与不可变对象</h3>
+<p>Python 3 中有 <code>6</code> 种标准的数据类型：Numbers、Strings、List、Tuple、Sets、Dictionaries，其中 Numbers、Strings 和 Tuple 是不可更改的对象，而 List、Dictionaries 是可以修改的对象，那么可变与不可变有什么区别呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不可变对象</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">a</span>):</span></span><br><span class="line">   a = <span class="number">5</span></span><br><span class="line">   print(a)</span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line">foo(x)</span><br><span class="line"><span class="number">5</span></span><br><span class="line">print(x)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="comment"># 这段代码把 x 作为参数传递给函数，这时 x 和 a 都指向内存中值为 1 的对象。然后在函数中 a = 5 时，因为 int 对象不可改变，于是创建一个新的 int 对象（值为 5）并且令 a 指向它。而 x 仍然指向原来的值为 1 的 int 对象，所以函数没有改变 x 变量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">a</span>):</span></span><br><span class="line">   b = <span class="number">5</span></span><br><span class="line">   a = b</span><br><span class="line">   print(a)</span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line">foo(x)</span><br><span class="line"><span class="number">5</span></span><br><span class="line">print(x)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="comment"># 这段代码把 x 作为参数传递给函数，这时 x 和 a 都指向内存中值为 1 的对象。然后在函数中 b = 5 时，创建一个新的 int 对象（值为 5）并且令 b 指向它，a = b 时，a 也指向了 5 这个对象。而 x 仍然指向原来的值为 1 的 int 对象，所以函数没有改变 x 变量</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可变对象</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">a</span>):</span></span><br><span class="line">   a.append(<span class="number">7</span>)</span><br><span class="line">   print(a)</span><br><span class="line"></span><br><span class="line">x = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">foo(x)</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">7</span>]</span><br><span class="line">print(x)</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">7</span>]</span><br><span class="line"><span class="comment"># 这段代码同样把 x 传递给函数 foo，那么 x 和 a 都会指向同一个 list 类型的对象。因为 list 对象是可以改变的，函数中使用 append 在其末尾添加了一个元素，list 对象的内容发生了改变，但是 x 和 a 仍然是指向同一个 list 对象，所以变量 x 的内容发生了改变</span></span><br></pre></td></tr></table></figure>
+<h3 id="深、浅拷贝">深、浅拷贝</h3>
+<p>在深拷贝之前，得先知道什么是浅拷贝</p>
+<p>浅拷贝是指创建一个新的对象，其内容是原对象中元素的引用（拷贝组合对象，不拷贝子对象）</p>
+<p>常见的浅拷贝有：切片操作、工厂函数、对象的 copy() 方法、copy 模块中的 copy 函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = list(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="number">1997304139008</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="number">1997304191296</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line"><span class="meta">... </span>    print(id(a[i]), id(b[i]))</span><br><span class="line">...</span><br><span class="line"><span class="number">140720048772880</span> <span class="number">140720048772880</span></span><br><span class="line"><span class="number">140720048772912</span> <span class="number">140720048772912</span></span><br><span class="line"><span class="number">140720048772944</span> <span class="number">140720048772944</span></span><br><span class="line"><span class="comment"># a 浅拷贝得到 b，a 和 b 指向内存中不同的 list 对象，但它们的元素却指向相同的 int 对象</span></span><br></pre></td></tr></table></figure>
+<p>深拷贝是指创建一个新的对象，然后递归的拷贝原对象所包含的子对象。深拷贝出来的对象与原对象没有任何关联</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> copy</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = copy.deepcopy(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="number">1997304139008</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(c)</span><br><span class="line"><span class="number">1997304138880</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line"><span class="meta">... </span>    print(id(a[i]), id(c[i]))</span><br><span class="line">...</span><br><span class="line"><span class="number">140720048772880</span> <span class="number">140720048772880</span></span><br><span class="line"><span class="number">140720048772912</span> <span class="number">140720048772912</span></span><br><span class="line"><span class="number">140720048772944</span> <span class="number">140720048772944</span>  <span class="comment"># 怎么还是一样的？</span></span><br></pre></td></tr></table></figure>
+<p><strong>为什么使用了深拷贝，a 和 c 中元素的 id 还是一样呢？</strong></p>
+<p>因为对于不可变对象，当需要一个新的对象时，python 可能会返回已经存在的某个类型和值都一致的对象的引用。而且这种机制并不会影响 a 和 c 的相互独立性，因为当两个元素指向同一个不可变对象时，对其中一个赋值不会影响另外一个</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> copy</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [[<span class="number">1</span>, <span class="number">2</span>],[<span class="number">5</span>, <span class="number">6</span>], [<span class="number">8</span>, <span class="number">9</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = copy.copy(a)  <span class="comment"># a 浅拷贝得到 b</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = copy.deepcopy(a)  <span class="comment"># a 深拷贝得到 c</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(id(a), id(b))</span><br><span class="line"><span class="number">1997304191360</span> <span class="number">1997304139008</span>  <span class="comment"># a 和 b 不同</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line"><span class="meta">... </span>    print(id(a[i]), id(b[i]))</span><br><span class="line">...</span><br><span class="line"><span class="number">1997304138816</span> <span class="number">1997304138816</span>  <span class="comment"># a 和 b 的子对象相同</span></span><br><span class="line"><span class="number">1997304193344</span> <span class="number">1997304193344</span></span><br><span class="line"><span class="number">1997304191936</span> <span class="number">1997304191936</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(id(a), id(c))</span><br><span class="line"><span class="number">139832578518984</span> <span class="number">139832578622456</span>  <span class="comment"># a 和 c 不同</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line"><span class="meta">... </span>    print(id(a[i]), id(c[i]))</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="number">1997304138816</span> <span class="number">1997304270464</span></span><br><span class="line"><span class="number">1997304193344</span> <span class="number">1997304269568</span></span><br><span class="line"><span class="number">1997304191936</span> <span class="number">1997304270272</span>  <span class="comment"># a 和 c 的子对象不同</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">7</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">[[<span class="number">7</span>, <span class="number">2</span>], [<span class="number">5</span>, <span class="number">6</span>], [<span class="number">8</span>, <span class="number">9</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[[<span class="number">7</span>, <span class="number">2</span>], [<span class="number">5</span>, <span class="number">6</span>], [<span class="number">8</span>, <span class="number">9</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line">[[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">5</span>, <span class="number">6</span>], [<span class="number">8</span>, <span class="number">9</span>]]</span><br></pre></td></tr></table></figure>
+<p>此时，对于可变对象而言，浅拷贝带来的潜在隐患就一目了然了</p>
+<blockquote>
+<p>be yourself, everyone else is already taken.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/20210728-w59/" style="float: left;">
+        ← 网络的鸡蛋
+    </a>
+    
+    
+    <a class="pull-right" href="/20210707-w57/">
+        shell 那个 eval →
+    </a>
+    
+</nav>
+
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2017<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By LingXing. All Rights Reserved.
+                </p>
+                <p>Theme is TKL.</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+</footer>
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.lx'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

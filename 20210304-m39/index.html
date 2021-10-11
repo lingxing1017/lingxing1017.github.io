@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>bashrc 里修改环境变量要加 export 吗 | X</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="X">
+    <meta name="author" content="LingXing">
+    <meta name="description" content="the self-cultivation of the programmer" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="X" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/googlecode.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">HOME</a></li>
+            <li><a href="/archives" class="animsition-link" title="Archives">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">CATEGORIES<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/debian/" class="animsition-link">debian<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(41)</small></a></li>
+				    
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/win10/" class="animsition-link">win10<small>(63)</small></a></li>
+				    
+				</ul>
+        	</li>
+	
+            
+            <li>
+                <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-软件/" class="animsition-link">Debian 软件<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/Debian-问题/" class="animsition-link">Debian 问题<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-个性化/" class="animsition-link">Win10 个性化<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/Win10-软件/" class="animsition-link">Win10 软件<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/file/" class="animsition-link">file<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/git/" class="animsition-link">git<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/gnome/" class="animsition-link">gnome<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/grub/" class="animsition-link">grub<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/macOS-个性化/" class="animsition-link">macOS 个性化<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
+                    
+                    <li><a href="/tags/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/python/" class="animsition-link">python<small>(18)</small></a></li>
+                    
+                    <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    
+                    <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/修复-Win10/" class="animsition-link">修复 Win10<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/安装-Win10/" class="animsition-link">安装 Win10<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/认识-Win10/" class="animsition-link">认识 Win10<small>(1)</small></a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">LINKS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://lingxing1017.party/" class="animsition-link">L</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search">SEARCH</a></li>
+            
+            <li><a href="mailto:lingxing1017@gmail.com" title="Email" class="animsition-link">EMAIL</a></li>
+            <li><a href="/about.html" class="animsition-link" title="About">ABOUT</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link" title="Home">X</a></li>
+                            <li class="nolink"><span>Always Creative</span></li>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="mailto:lingxing1017@gmail.com" title="Email" target="_blank">📧</a></li>
+                            
+                            
+                            <li><a href="javascript:;" class="popup-trigger" title="Search">🔍</a></li>
+                            
+                            <li class="nolink">Welcome</li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>得之我幸  失之我命</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>when someone abandons you，it is him that gets loss because he lost someone who truly loves him but you just lost one who doesn’t love you.</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-03-04T06:51:44.000Z" itemprop="datePublished">
+          2021-03-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                <h1>bashrc 里修改环境变量要加 export 吗</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>老问题重提，很早之前就遗留下了这个问题，在 .bashrc 中修改环境变量的时候需要 export 吗？当我设置一个变量在脚本中，直接将它 source 以后，可以发现这个变量就可以直接可以用了，当一个 bash 启动的时候，是会加载 .bashrc 的（这里的说法可能不那么严谨，但在 GUI 打开一个终端窗口时且默认的 shell 是 bash 时，那么它是会加载 .bashrc 的），那么在这个文件中的变量包括环境变量其实是直接可以生效的，问题来了，为什么在这个文件里定义环境变量的时候还需要加 export</p>
+<span id="more"></span>
+<p>从对问题的描述中可以拆解成好几个小问题，一是 shell 变量和环境变量的区别，二是子进程和子 shell 的区别，三是 bash 启动的时候是如何选择性的加载文件，最后一点值得单独谈一谈，所以先说前两个点</p>
+<h2 id="shell-变量和环境变量的区别">shell 变量和环境变量的区别</h2>
+<p>这其实是变量作用域的区别，也就是变量的有效可以使用的范围，换言之，这儿的区别在于这个变量的作用范围不同</p>
+<ol>
+<li>
+<p>作用范围哪儿不同</p>
+<p>shell 变量是当前 shell 私有的，不会被它的子进程所访问到，即 shell 变量的作用范围是当前 shell</p>
+<p>环境变量是可以被当前 shell 的子进程访问的，即环境变量的作用范围是当前 shell 和它的子进程</p>
+</li>
+<li>
+<p>为什么需要 export</p>
+<p>Bourne shell 系列并不真正区分 shell 变量和环境变量，当 shell 启动时，它读取环境变量表中的信息，使用相同的名称（按照惯例也是大写）为每个变量定义自己的 shell 变量，并复制值，从那时起，shell 只引用它的 shell 变量，如果对 shell 变量进行了更改，则必须将其显式的 export 到相应的环境变量，以便任何派生的子进程都能看到更改</p>
+</li>
+</ol>
+<p>这儿就引发了一个小问题：子 shell 和子进程是不是一回事？</p>
+<h2 id="子进程和子-shell-的区别">子进程和子 shell 的区别</h2>
+<p>先说结论，是也不是，子进程包含了子 shell，用于区别是否为子 shell 的一个点在于创建子进程以后是否调用了 exec</p>
+<ol>
+<li>
+<p>当前 shell 进程因命令行中使用了某些特殊语法而产生的子 shell</p>
+<ul>
+<li>小括号，也叫组命令 (cmd1;cmd2)</li>
+<li>管道 cmd1|cmd2</li>
+<li>命令替换 $(cmd)</li>
+</ul>
+<p>上述进入子 shell 的方式，在 fork 产生子 bash 进程后不会执行 exec</p>
+<p>fork 本质是复制进程，复制当前进程做为一个副本，而后将这些资源交给子进程，因此子进程会继承父进程的一些资源，如环境变量、变量等</p>
+<ul>
+<li><s>进程替换 &lt;(cmd),&gt;(cmd)</s></li>
+</ul>
+<p>注意，“进程替换”看起来好像产生了一个子 shell，其实只是一个障眼法而已，进程替换只是借助文件在 () 内部和外部的命令之间传递数据，但是它并没有创建子 shell，换言之，() 内部和外部的命令是在一个进程（也就是当前进程）中执行的</p>
+</li>
+<li>
+<p>显式调用 bash 程序产生的子进程</p>
+<ul>
+<li>bash -c ‘cmd’</li>
+<li>bash 命令</li>
+<li>shell 脚本</li>
+</ul>
+<p>上述进入子进程的方式，在刚 fork 产生子 bash 进程时也会继承父 shell 资源，但随后的 exec 调用 bash 程序会替换覆盖掉子 bash 进程，所以这种方式只会保留环境变量</p>
+<p>exec 的本质是加载另外一个程序来代替当前运行的进程，即在不创建新进程的情况下去加载一个新程序，需要注意的是，在进程执行完成后即使存在未执行的内容也会直接退出 exec 所在的 shell 环境</p>
+</li>
+<li>
+<p>为了更好的判断子 shell 和子进程，Bash 提供了两个环境变量 —— SHLVL 和 BASH_SUBSHELL</p>
+<p>SHLVL 是记录多个 Bash 进程实例嵌套深度的累加器，每次进入一层普通的子进程，SHLVL 的值就加 1；而 BASH_SUBSHELL 是记录一个 Bash 进程实例中多个子 Shell（sub shell）嵌套深度的累加器，每次进入一层子 Shell，BASH_SUBSHELL 的值就加 1</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一个 test.sh</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>  <span class="comment"># 直接在 bash 中输出</span></span><br><span class="line">2  0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行 bash 命令开启一个新的 shell 会话</span></span><br><span class="line">$ bash</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>  <span class="comment"># 直接在 bash 中输出</span></span><br><span class="line">3  0</span><br><span class="line">$ bash ./test.sh  <span class="comment"># 通过 bash 命令运行脚本</span></span><br><span class="line">4  0</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>  <span class="comment"># 脚本结束后直接在 bash 中输出</span></span><br><span class="line">3  0</span><br><span class="line">$ ./test.sh  <span class="comment"># 直接运行脚本</span></span><br><span class="line">4  0</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>  <span class="comment"># 脚本结束后直接在 bash 中输出</span></span><br><span class="line">3  0</span><br><span class="line">$ <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 回到外层 bash</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>  <span class="comment"># 直接在 bash 中输出</span></span><br><span class="line">2  0</span><br><span class="line">$ bash -c <span class="string">&quot;echo &#x27;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&#x27;&quot;</span>  <span class="comment"># bash -c 输出</span></span><br><span class="line">2  0</span><br><span class="line"></span><br><span class="line">$ (<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>)  <span class="comment"># 组命令</span></span><br><span class="line">2  1</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;hello&quot;</span> | &#123; <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>; &#125;  <span class="comment"># 管道</span></span><br><span class="line">2  1</span><br><span class="line">$ var=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>)  <span class="comment"># 命令替换</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$var</span></span><br><span class="line">2  1</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;hello&quot;</span> &gt; &gt;(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>)  <span class="comment"># 进程替换</span></span><br><span class="line">2  0</span><br><span class="line">$ <span class="built_in">read</span> &lt; &lt;(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SHLVL</span>  <span class="variable">$BASH_SUBSHELL</span>&quot;</span>)  <span class="comment"># 进程替换</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$REPLY</span></span><br><span class="line">2  0</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>至此，定义环境变量的时候为什么需要加 export 结</p>
+<blockquote>
+<p>be slow to promise and quick to perform.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/20210304-m40/" style="float: left;">
+        ← bash 启动加载了谁
+    </a>
+    
+    
+    <a class="pull-right" href="/20210220-m38/">
+        git 刪除 untracked →
+    </a>
+    
+</nav>
+
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2017<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By LingXing. All Rights Reserved.
+                </p>
+                <p>Theme is TKL.</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+</footer>
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.lx'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>
