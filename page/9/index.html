@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(42)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(43)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -159,7 +159,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
                     
@@ -289,6 +289,42 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200531-d24/">NetworkManager 随机生成 MAC 地址</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-05-31T15:03:16.000Z" itemprop="datePublished">
+          2020-05-31
+      </time>
+    
+    
+    | 
+    <a href='/tags/Debian-个性化/'>Debian 个性化</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>当下只要有个 Wi-Fi，你就有了全世界。但现在的 Wi-Fi 尤其是公共 Wi-Fi，大多不会是靠着善心发射的，基本都是各怀鬼胎，每张网卡都对应唯一的 MAC 地址，通过它，Wi-Fi 背后的 “阴谋家们” 可以追踪你的设备顺便也追踪了你</p>
+<p>下面就来看一下避免被追踪的一个思路，因为固定的 MAC 地址能被轻易地追踪到，所以应该定时进行更换，随机的 MAC 地址是一个好的方法，由于 MAC 地址一般只在局域网内使用，因此随机的 MAC 地址也不大会产生冲突。至于实现，在 debian 上可以直接用 NetworkManager 自带的功能实现</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200531-d24/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -502,41 +538,6 @@ B-Builtin(Python)；Python内置模块的名字空间
                     
                     <p class="pull-right readMore">
                         <a href="/20200513-m20/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200512-m19/">git 中忽略不了已 add 文件</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-05-12T05:58:45.000Z" itemprop="datePublished">
-          2020-05-12
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在用 git 的时候，突然想忽略已经被提交的文件，就在 .gitignore 中写入了文件夹的名字，然后删除了部分作为尝试，果然不行</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200512-m19/">Read More...</a>
                     </p>
                     
                 </div>

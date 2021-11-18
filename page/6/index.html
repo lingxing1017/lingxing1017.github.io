@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(42)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(43)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -159,7 +159,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
                     
@@ -289,6 +289,43 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200923-m31/">shell 脚本传参</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-23T13:01:28.000Z" itemprop="datePublished">
+          2020-09-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="传参家族">$ 传参家族</h2>
+<p>创建一个脚本 <a target="_blank" rel="noopener" href="http://test.sh">test.sh</a>，内容如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$0</span>  <span class="comment"># 当前脚本的文件名（间接运行时还包括绝对路径）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$3</span>  <span class="comment"># $n，传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是 $1</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$#</span>  <span class="comment"># 传递给脚本或函数的参数个数，不包括 $0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># $* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号 (&quot;&quot;) 包含时，都以&quot;$1&quot;&quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数；但是当它们被双引号 (&quot;&quot;) 包含时，&quot;$*&quot; 会将所有的参数作为一个整体，以 &quot;$1 $2 … $n&quot; 的形式输出所有参数，&quot;$@&quot; 会将各个参数分开，以 &quot;$1&quot;&quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数</span></span><br><span class="line"><span class="built_in">echo</span> $*  <span class="comment"># 传递给脚本或函数的所有参数，不包括 $0</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$@</span>  <span class="comment"># 传递给脚本或函数的所有参数，不包括 $0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $?  <span class="comment"># 上个命令的退出状态，或函数的返回值</span></span><br><span class="line"><span class="built_in">echo</span> $$  <span class="comment"># 当前 Shell 进程 ID，对于 Shell 脚本，就是这些脚本所在的进程 ID</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$_</span>  <span class="comment"># 上一个命令的最后一个参数</span></span><br><span class="line"><span class="built_in">echo</span> $!  <span class="comment"># 后台运行的最后一个进程的 ID 号</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200923-m31/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -508,42 +545,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200908-w34/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200830-m29/">python2 和 3 的编码问题</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-30T06:54:13.000Z" itemprop="datePublished">
-          2020-08-30
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>无论是 py2 还是 py3 都可以理解成是 Unicode 编码，但是在电脑硬盘上存储是按照不同的映射关系的</p>
-<p>首先需要清楚的是 python 的 encode 和 decode，在搞清楚这个问题之前，还得知道 Unicode 将所有的字符都对应了相应的码点，而 UTF-8 或者 ASCII 码是对应从 Unicode 到字节的映射方式，既然有映射方式，就有映射方向，从 Unicode 到字节码(byte string)叫 encode，把从字节码(byte string)到 Unicode 码叫 decode。感觉还是不清晰，再普及几个 “字” 字辈的兄弟</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200830-m29/">Read More...</a>
                     </p>
                     
                 </div>
