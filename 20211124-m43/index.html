@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: sh | X</title>
+  <title>ssh 与公私钥(众说纷纭) | X</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -74,7 +74,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(43)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(46)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -159,9 +159,11 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(35)</small></a></li>
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
                     
                     <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
                     
@@ -286,59 +288,68 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20180825-d17/">wpa_supplicant 连接 wifi</a></h4>
-                            
-                            <p><time datetime="2018-08-25T06:45:40.000Z"><a href="/20180825-d17/">2018-08-25</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20180511-d10/">修改 ls 显示配色</a></h4>
-                            
-                            <p><time datetime="2018-05-11T06:25:51.000Z"><a href="/20180511-d10/">2018-05-11</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20170917-d0/">杀死进程的几种方法</a></h4>
-                            
-                            <p><time datetime="2017-09-17T10:34:51.000Z"><a href="/20170917-d0/">2017-09-17</a></time></p>
-                        </div>
-                    
-                </div>
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-11-24T10:04:43.000Z" itemprop="datePublished">
+          2021-11-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                <h1>ssh 与公私钥(众说纷纭)</h1>
             </div>
         </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>自从换了工作以来，就离不开与 ssh 打交道，为了登陆方便，公私钥更加是避免不了，总有一天得好奇 ssh 通过公私钥认证登陆的原理，择日不如撞日，趁机把这部分内容找了点资料看了下，记录一下</p>
+<ol>
+<li>Client 将自己的公钥手动追加在 Server 的 authorized_keys 中<span id="more"></span></li>
+<li>Server 端接收到 Client 的连接请求后，会在 authorized_keys 中匹配到 Client 的公钥 pubKey，并生成随机数 R，用 Client 的公钥对该随机数进行加密得到 pubKey®，然后将加密后信息发送给 Client</li>
+<li>Client 端通过私钥进行解密得到随机数 R，然后对随机数 R 和本次会话的 SessionKey 利用 MD5 生成摘要 Digest1，发送给 Server 端</li>
+<li>Server 端会也会对 R 和 SessionKey 利用同样摘要算法生成 Digest2</li>
+<li>Server 端会最后比较 Digest1 和 Digest2 是否相同，完成认证过程</li>
+</ol>
+<p><strong>几个小问题：</strong></p>
+<ul>
+<li>
+<p>Server 端如何在 authorized_keys 中找到对应的公钥？</p>
+<p>Client 在认证的开始会发送一个公钥的指纹（具有唯一性，但不是公钥）给 Server，Server 就是通过该指纹在 authorized_keys 进行查找对应的 PublicKey</p>
+</li>
+<li>
+<p>known_hosts 中存的是什么？</p>
+<p>known_hosts 中存的是已认证的远程主机 host key，每个 Server 都有一个 secret, unique ID, called a host key</p>
+</li>
+</ul>
+<blockquote>
+<p>be slow to promise and quick to perform.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
         <nav class="pagination" role="pagination">
-            <a class="pull-left" href="/tags/sh/page/5/">← Prev Page</a>
-            
-        </nav>
+    
+    <a class="pull-left" href="/20211125-m44/" style="float: left;">
+        ← auth.log 不存在
+    </a>
+    
+    
+    <a class="pull-right" href="/20211115-m42/">
+        ssh 配置 ControlMaster →
+    </a>
+    
+</nav>
+
     </div>
 </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>the only present love demands is love</p>
-        </div>
-    </div>
-</section>
+
       
 <!-- ============================ Footer =========================== -->
 

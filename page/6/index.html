@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(43)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(46)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -159,9 +159,11 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(35)</small></a></li>
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
                     
                     <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
                     
@@ -289,6 +291,120 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201020-w41/">sed 分隔符之谜</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-20T02:05:55.000Z" itemprop="datePublished">
+          2020-10-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>昨天在用 sed 替换某行 python 代码的时候，遇到了下面这个错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sed -i <span class="string">&#x27;s/&quot;http&quot;: None/&quot;http&quot;: &quot;http://1.1.1.1:8080&quot;/g&#x27;</span> ~/demo.py</span><br><span class="line">sed: -e expression <span class="comment">#1, char 36: unknown option to `s&#x27;</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201020-w41/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201015-w40/">cpp 令人迷惑的概念</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-15T05:27:57.000Z" itemprop="datePublished">
+          2020-10-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/c/'>c++</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在 C++ 中有好几个术语，它们有两个词组成，交换顺序后意思就变了，而在使用过程中，常常可能因为对它们的混淆导致误人子弟</p>
+<p>这几组术语分别是：</p>
+<ol>
+<li>函数指针 vs 指针函数</li>
+<li>数组指针 vs 指针数组</li>
+<li>类模板 vs 模板类</li>
+<li>函数模板 vs 模板函数</li>
+</ol>
+<p>可以明确的是，上述几个术语中，重心在后面，前面的词是作为形容词使用的</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201015-w40/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200924-w39/">shell 对变量的不同状态进行赋值</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-24T05:16:17.000Z" itemprop="datePublished">
+          2020-09-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>一个变量有三种可能的状态：未设定，空值，非空值，针对这三种情况，shell 可以进行不同的操作</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200924-w39/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -438,113 +554,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200919-w37/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200915-w36/">Shell 字符串截取和替换</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-15T06:27:31.000Z" itemprop="datePublished">
-          2020-09-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>字符串操作是个永远绕不过的题，截取和替换都是必不可少的</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shell 中截取字符串的方法很多</span></span><br><span class="line"><span class="variable">$&#123;var#*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var##*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># shell 字符串变量值的替换</span></span><br><span class="line"><span class="variable">$&#123;var/sct/dst&#125;</span></span><br><span class="line"><span class="variable">$&#123;var//sct/dst&#125;</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200915-w36/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200911-w35/">shell 中检查某个命令是否存在</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-11T06:01:26.000Z" itemprop="datePublished">
-          2020-09-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>Linux 环境多了，配置也就多，写脚本的时候遇到的问题也多，尤其是当你需要在脚本中用到一个命令的时候，除了内置命令，在用到新命令的时候还是需要先检查一下这个命令是否存在，推荐的方式有三个：command -v，type，hash，因为它们都是 <code>shell builtin</code></p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200911-w35/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200908-w34/">shell 中命令替换的写法</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-08T07:07:39.000Z" itemprop="datePublished">
-          2020-09-08
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>写脚本的时候，另外一条命令的返回值作为一个变量在接下来的命令中被使用，是一个比较常见的作法，那么问题来了，怎么得到这个命令的返回值呢？</p>
-<p>这时，就要用到一个 <a target="_blank" rel="noopener" href="http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Command-Substitution">command substitution</a> 的东西了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200908-w34/">Read More...</a>
                     </p>
                     
                 </div>

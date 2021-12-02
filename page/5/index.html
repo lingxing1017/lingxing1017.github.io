@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(43)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(46)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -159,9 +159,11 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(35)</small></a></li>
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
                     
                     <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
                     
@@ -289,6 +291,115 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201120-w47/">stash 部分文件</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-11-20T02:07:15.000Z" itemprop="datePublished">
+          2020-11-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在执行 sct 的时候，往往需要做一些修改提高 case 的运行速度，一段时间以后，当代码库需要更新的时候，直接 git pull --rebase 显然是不行的，因为本地代码库不干净了，这个时候问题又来了，我明明只改动了一部分文件用于本地执行提速，为什么代码库多了这么多不相干的文件改动？想要 git checkout . 又会把提速的改动给还原，怎么办，直接 git stash 显然也是不行的</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201120-w47/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201113-w46/">在 git 中撤销改动</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-11-13T08:26:38.000Z" itemprop="datePublished">
+          2020-11-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>能进就能退，能加就能减，在 git 中熟悉撤销改动的方法必不可缺，在这个全组 git 的现状下，多掌握一项技能，就多了一个装 13 的高光时刻</p>
+<p>撤销改动，必须知道的两个工具：reset 和 revert</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201113-w46/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201113-w45/">git 误删 commit 的后悔药</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-11-13T07:35:42.000Z" itemprop="datePublished">
+          2020-11-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>一个失误导致不应该提交的代码被 commit，赶紧通过 rebase 把 commit drop 掉，可是，这个操作会将本地的改动也一并删除</p>
+<p>怎么办，写了一个下午的 shell 脚本就这样一朝回到解放前，oh no，不应该是这样的</p>
+<p>重写？太多了吧</p>
+<p>我用的是 git，赶紧搜一下，一定有能够恢复 commit 的方法，commit 就 commit 吧，丢了就真的是得不偿失了</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201113-w45/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -436,120 +547,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201025-m32/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201020-w41/">sed 分隔符之谜</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-10-20T02:05:55.000Z" itemprop="datePublished">
-          2020-10-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>昨天在用 sed 替换某行 python 代码的时候，遇到了下面这个错</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sed -i <span class="string">&#x27;s/&quot;http&quot;: None/&quot;http&quot;: &quot;http://1.1.1.1:8080&quot;/g&#x27;</span> ~/demo.py</span><br><span class="line">sed: -e expression <span class="comment">#1, char 36: unknown option to `s&#x27;</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201020-w41/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201015-w40/">cpp 令人迷惑的概念</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-10-15T05:27:57.000Z" itemprop="datePublished">
-          2020-10-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/c/'>c++</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在 C++ 中有好几个术语，它们有两个词组成，交换顺序后意思就变了，而在使用过程中，常常可能因为对它们的混淆导致误人子弟</p>
-<p>这几组术语分别是：</p>
-<ol>
-<li>函数指针 vs 指针函数</li>
-<li>数组指针 vs 指针数组</li>
-<li>类模板 vs 模板类</li>
-<li>函数模板 vs 模板函数</li>
-</ol>
-<p>可以明确的是，上述几个术语中，重心在后面，前面的词是作为形容词使用的</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201015-w40/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200924-w39/">shell 对变量的不同状态进行赋值</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-24T05:16:17.000Z" itemprop="datePublished">
-          2020-09-24
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>一个变量有三种可能的状态：未设定，空值，非空值，针对这三种情况，shell 可以进行不同的操作</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200924-w39/">Read More...</a>
                     </p>
                     
                 </div>

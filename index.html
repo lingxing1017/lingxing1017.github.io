@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(43)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(46)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -159,9 +159,11 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(35)</small></a></li>
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
                     
                     <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
                     
@@ -293,6 +295,118 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/20211126-m45/">ssh 配了公钥却还要密码</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-11-26T03:35:28.000Z" itemprop="datePublished">
+          2021-11-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="前因">前因</h2>
+<p>这是一次问题定位的记录，虽然最后问题解决了，却没有定位到最根本的原因，记录它只是为了可以为后续发现同类问题的时候提供能多的思路</p>
+<p>问题表现：服务器上配置了 ssh authorized_keys，但是登录时却还是被要求输入密码</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20211126-m45/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20211125-m44/">auth.log 不存在</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-11-25T10:39:56.000Z" itemprop="datePublished">
+          2021-11-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="事出突然">事出突然</h2>
+<p>牵一发而动全身，在查 ssh 为啥无法公私钥认证登陆的图中，找到了开启 sshd_config DEBUG 模式，将认证过程的 log 记录在 auth.log 中</p>
+<p>为了方便，我直接删除了 auth.log，想着它应该是会被重新生成的，结果意料之中的意料之外，它没有自己生成</p>
+<p>那我就想着自己创建一个总行了吧，结果还是没有收集到任何的 debug 信息</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20211125-m44/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20211124-m43/">ssh 与公私钥(众说纷纭)</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-11-24T10:04:43.000Z" itemprop="datePublished">
+          2021-11-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>自从换了工作以来，就离不开与 ssh 打交道，为了登陆方便，公私钥更加是避免不了，总有一天得好奇 ssh 通过公私钥认证登陆的原理，择日不如撞日，趁机把这部分内容找了点资料看了下，记录一下</p>
+<ol>
+<li>Client 将自己的公钥手动追加在 Server 的 authorized_keys 中
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20211124-m43/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/20211115-m42/">ssh 配置 ControlMaster</a></h3>
                     <span>
                         <span class="post-meta">
@@ -302,7 +416,7 @@
     
     
     | 
-    <a href='/tags/sh/'>sh</a>
+    <a href='/tags/ssh/'>ssh</a>
     
     
 </span>
@@ -435,115 +549,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20210923-w61/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210830-w60/">检查远程 linux 某个端口是否开启</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-08-30T03:12:02.000Z" itemprop="datePublished">
-          2021-08-30
-      </time>
-    
-    
-    | 
-    <a href='/tags/net/'>net</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>远程端口这个话题可大可小，应用也比较广泛，常见的比如配置服务器的时候会需要打开固定的某几个端口，这时候就可以用下面的方面做一下检测</p>
-<p>本文记录了三种检查方法</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210830-w60/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210728-w59/">网络的鸡蛋</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-28T07:04:14.000Z" itemprop="datePublished">
-          2021-07-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/net/'>net</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>《格列夫游记》 第一卷第4章 蒋剑锋（译）</p>
-<pre><code>我下面要告诉你的是，Lilliput 和 Blefuscu 这两大强国在过去 36 个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了。因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破鸡蛋较小的一端，违令者重罚。老百姓们对这项命令极其反感。历史告诉我们，由此曾经发生过 6 次叛乱，其中一个皇帝送了命，另一个丢了王位。这些叛乱大多都是由 Blefuscu 的国王大臣们煽动起来的。叛乱平息后，流亡的人总是逃到那个帝国去寻求避难。据估计，先后几次有 11000 人情愿受死也不肯去打破鸡蛋较小的一端。关于这一争端，曾出版过几百本大部著作，不过大端派的书一直是受禁的，法律也规定该派任何人不得做官。
-</code></pre>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210728-w59/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210709-w58/">Python 深拷贝</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-09T07:41:03.000Z" itemprop="datePublished">
-          2021-07-09
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>写 python 的过程中，拷贝总是少不了的，遥记得 C++ 里有个东西叫深拷贝（总之涉及到指针就变得啥都不好理解了），同为面向对象，但是 python 不是没有指针吗？</p>
-<p>这还得从 python 的变量开始说起</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210709-w58/">Read More...</a>
                     </p>
                     
                 </div>

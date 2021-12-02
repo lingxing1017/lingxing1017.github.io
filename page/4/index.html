@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(43)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(46)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -159,9 +159,11 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(35)</small></a></li>
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
                     
                     <li><a href="/tags/sublime-text/" class="animsition-link">sublime_text<small>(2)</small></a></li>
                     
@@ -289,6 +291,112 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210104-w52/">系统开机时间和重启记录</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-01-04T05:22:12.000Z" itemprop="datePublished">
+          2021-01-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在 linux 系统上查看系统开机时间和重启记录，在排除 case 中连接 ssh 挂掉的原因中，这也是一个方向，这里记录 7 种方法</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210104-w52/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210103-m33/">命令行设置关盖不休眠</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-01-03T12:12:23.000Z" itemprop="datePublished">
+          2021-01-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>这事儿是这么个由来，我拿大学的一个笔记本当成自己的局域网服务器，所以自然就有了盖上盖子不能休眠的需求，然后问题就来了，我设置过一次，也查过一次文章，但今天我更新的时候把某个配置文件更新了，于是保存的设置又丢失了，不知情的我还以为是开机不能自动联网了，结果当我打开盖子又可以连上 ssh 了，所以问题就很明显了，我刚刚更新配置文件的时候把我的配置用更新的软件包中的配置文件覆盖了，更可气的是这个配置我曾经搜索过，但是由于篇幅比较短，没有记录，现在又要重新搜索了，于是乎还是做下笔记吧</p>
+<p>配置文件：/etc/systemd/logind.conf
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210103-m33/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201228-m33/">tar 从 basename 打包</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-12-28T08:42:11.000Z" itemprop="datePublished">
+          2020-12-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在用 tar 打包一个文件夹的时候，发现了一个问题，因为这个文件夹的层级比较深，直接 tar -czvf ./test.tar.gz /path/to/dir 以后，在用 tar xzvf ./test.tar.gz 解压的时候就发现了问题，它居然在当前目录下生成了 ./path/to/dir 文件夹来保存解压后的文件</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201228-m33/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -434,115 +542,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201120-w48/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201120-w47/">stash 部分文件</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-20T02:07:15.000Z" itemprop="datePublished">
-          2020-11-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在执行 sct 的时候，往往需要做一些修改提高 case 的运行速度，一段时间以后，当代码库需要更新的时候，直接 git pull --rebase 显然是不行的，因为本地代码库不干净了，这个时候问题又来了，我明明只改动了一部分文件用于本地执行提速，为什么代码库多了这么多不相干的文件改动？想要 git checkout . 又会把提速的改动给还原，怎么办，直接 git stash 显然也是不行的</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201120-w47/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201113-w46/">在 git 中撤销改动</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-13T08:26:38.000Z" itemprop="datePublished">
-          2020-11-13
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>能进就能退，能加就能减，在 git 中熟悉撤销改动的方法必不可缺，在这个全组 git 的现状下，多掌握一项技能，就多了一个装 13 的高光时刻</p>
-<p>撤销改动，必须知道的两个工具：reset 和 revert</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201113-w46/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201113-w45/">git 误删 commit 的后悔药</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-13T07:35:42.000Z" itemprop="datePublished">
-          2020-11-13
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>一个失误导致不应该提交的代码被 commit，赶紧通过 rebase 把 commit drop 掉，可是，这个操作会将本地的改动也一并删除</p>
-<p>怎么办，写了一个下午的 shell 脚本就这样一朝回到解放前，oh no，不应该是这样的</p>
-<p>重写？太多了吧</p>
-<p>我用的是 git，赶紧搜一下，一定有能够恢复 commit 的方法，commit 就 commit 吧，丢了就真的是得不偿失了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201113-w45/">Read More...</a>
                     </p>
                     
                 </div>
