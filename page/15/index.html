@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(46)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(48)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -125,7 +125,7 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(1)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(2)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
@@ -153,7 +153,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(36)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -285,6 +285,83 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20190219-d21/">设置 sudo 密码校验间隔时间</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-02-19T13:35:04.000Z" itemprop="datePublished">
+          2019-02-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>每次 sudo 都要输入密码，好麻烦有木有，所以我要把它的密码记住时间修改一下，变得长一点。
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20190219-d21/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20181129-d20/">update-initramfs 报 no matching swap device</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-11-29T08:47:18.000Z" itemprop="datePublished">
+          2018-11-29
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p><strong>问题描述：</strong></p>
+<pre><code>update-initramfs: Generating /boot/initrd.img
+W: initramfs-tools configuration sets RESUME=UUID=
+W: but no matching swap device is available.
+I: The initramfs will attempt to resume from /dev/sda3
+I: (UUID=6ec96574-ac9f-406e-a62c-2b514aa1a0e4)
+I: Set the RESUME variable to override this.
+</code></pre>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20181129-d20/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -464,76 +541,6 @@ Remote: display server is not supported (e.g. Wayland)
                     
                     <p class="pull-right readMore">
                         <a href="/20180825-d17/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20180824-d16/">bash 自动补全忽略大小写</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-08-24T11:32:36.000Z" itemprop="datePublished">
-          2018-08-24
-      </time>
-    
-    
-    | 
-    <a href='/tags/Debian-个性化/'>Debian 个性化</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>当目录名以大写字母开头时，通过 cd 命令进入该目录就不太方便，需要输入大写字母才能自动补全对应的目录，如果可以忽略大小写的话，就好了。</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20180824-d16/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20180821-d15/">Gnome3 启用全局黑色主题</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-08-21T04:22:24.000Z" itemprop="datePublished">
-          2018-08-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/gnome/'>gnome</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>之前在 gnome 上用的是全局黑色主题，在今天开会的时候手欠开了高对比度以后，再关掉，黑色主题就丢了。</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20180821-d15/">Read More...</a>
                     </p>
                     
                 </div>

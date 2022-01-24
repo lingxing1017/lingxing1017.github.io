@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(46)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(48)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -125,7 +125,7 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(1)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(2)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
@@ -153,7 +153,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(36)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -285,6 +285,77 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201027-w42/">复制 commit 到当前分支</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-27T09:09:08.000Z" itemprop="datePublished">
+          2020-10-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>当你创建了一个分支之后，你在分支上做了很多 debug 的操作，但是当你合并到 master 的时候，你又只需要几个非 debug 的 commit，这时候应该怎么办呢？不得不说，git 设计的很完善，你需要的它正好有</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201027-w42/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201025-m32/">bash -c 的必要性</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-25T05:10:42.000Z" itemprop="datePublished">
+          2020-10-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在看别人写的脚本的时候，会发现类似下面一个写法，然后就会好奇这个写法的必要性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash -c <span class="string">&quot;echo test &gt;&gt; test.txt&quot;</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201025-m32/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -465,89 +536,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200920-m30/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200920-w38/">一部分输出重定向</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-20T10:26:30.000Z" itemprop="datePublished">
-          2020-09-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>本次讨论的是下面几个输出重定向（bash）：</p>
-<ul>
-<li>2&gt;&amp;-</li>
-<li>2&gt;/dev/null</li>
-<li>|&amp;</li>
-<li>&amp;&gt;/dev/null</li>
-<li>&gt;/dev/null 2&gt;&amp;1</li>
-</ul>
-<p>首先要清楚：</p>
-<ul>
-<li>1 是 standard out (stdout)</li>
-<li>2 是 standard error (stderr)</li>
-<li>如果没有给出明确的数字，bash 会假定给的是 1</li>
-</ul>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200920-w38/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200919-w37/">让 Jenkins 忽略 sh 的执行失败</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-19T01:06:39.000Z" itemprop="datePublished">
-          2020-09-19
-      </time>
-    
-    
-    | 
-    <a href='/tags/ci/'>ci</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>19 年开始接触 Jenkins，但是并没有跟 jf 有过多的交道，今年又碰到了它，并且和 jf 有了初步的接触，于是问题也是接踵而来，比如今天讨论的这个问题：在 jf 中执行 shell 脚本，当 shell 脚本遇到错误的时候，Jenkins 会忽略后续所有的步骤，为啥？咋办？</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200919-w37/">Read More...</a>
                     </p>
                     
                 </div>
