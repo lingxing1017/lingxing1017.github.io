@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(50)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(51)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -121,7 +121,7 @@
                     
                     <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/Win10-个性化/" class="animsition-link">Win10 个性化<small>(9)</small></a></li>
+                    <li><a href="/tags/Win10/" class="animsition-link">Win10<small>(15)</small></a></li>
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
@@ -164,10 +164,6 @@
                     <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
                     
                     <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
-                    
-                    <li><a href="/tags/修复-Win10/" class="animsition-link">修复 Win10<small>(4)</small></a></li>
-                    
-                    <li><a href="/tags/安装-Win10/" class="animsition-link">安装 Win10<small>(1)</small></a></li>
                     
                     <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
                     
@@ -285,6 +281,41 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201228-m33/">tar 从 basename 打包</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-12-28T08:42:11.000Z" itemprop="datePublished">
+          2020-12-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在用 tar 打包一个文件夹的时候，发现了一个问题，因为这个文件夹的层级比较深，直接 tar -czvf ./test.tar.gz /path/to/dir 以后，在用 tar xzvf ./test.tar.gz 解压的时候就发现了问题，它居然在当前目录下生成了 ./path/to/dir 文件夹来保存解压后的文件</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201228-m33/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -501,44 +532,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201113-w46/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201113-w45/">git 误删 commit 的后悔药</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-13T07:35:42.000Z" itemprop="datePublished">
-          2020-11-13
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>一个失误导致不应该提交的代码被 commit，赶紧通过 rebase 把 commit drop 掉，可是，这个操作会将本地的改动也一并删除</p>
-<p>怎么办，写了一个下午的 shell 脚本就这样一朝回到解放前，oh no，不应该是这样的</p>
-<p>重写？太多了吧</p>
-<p>我用的是 git，赶紧搜一下，一定有能够恢复 commit 的方法，commit 就 commit 吧，丢了就真的是得不偿失了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201113-w45/">Read More...</a>
                     </p>
                     
                 </div>
