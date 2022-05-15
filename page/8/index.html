@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(52)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(53)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -114,6 +114,8 @@
             <li>
                 <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/Android/" class="animsition-link">Android<small>(1)</small></a></li>
                     
                     <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
                     
@@ -279,6 +281,42 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200915-w36/">Shell 字符串截取和替换</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-15T06:27:31.000Z" itemprop="datePublished">
+          2020-09-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>字符串操作是个永远绕不过的题，截取和替换都是必不可少的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shell 中截取字符串的方法很多</span></span><br><span class="line"><span class="variable">$&#123;var#*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var##*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># shell 字符串变量值的替换</span></span><br><span class="line"><span class="variable">$&#123;var/sct/dst&#125;</span></span><br><span class="line"><span class="variable">$&#123;var//sct/dst&#125;</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200915-w36/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -486,44 +524,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200820-w33/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200817-m26/">自定义终端标题</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-17T15:12:49.000Z" itemprop="datePublished">
-          2020-08-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <h2 id="起因">起因</h2>
-<p>在定制 Win10 terminal 中的 git bash 的时候，想要在 title 中显示当前操作的目录来区分各个终端，然后是开始各种搜索，网上大多给出的解决方法都是如下方案</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> -ne <span class="string">&quot;\033]0;title\007&quot;</span>  <span class="comment"># -e 使转义字符生效；-n 内容输出后不换行</span></span><br></pre></td></tr></table></figure>
-<p>这时候，终端的 title 就会变成 title 了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200817-m26/">Read More...</a>
                     </p>
                     
                 </div>

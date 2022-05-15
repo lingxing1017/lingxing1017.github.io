@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(52)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(53)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -114,6 +114,8 @@
             <li>
                 <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/Android/" class="animsition-link">Android<small>(1)</small></a></li>
                     
                     <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
                     
@@ -279,6 +281,41 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201120-w47/">stash 部分文件</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-11-20T02:07:15.000Z" itemprop="datePublished">
+          2020-11-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在执行 sct 的时候，往往需要做一些修改提高 case 的运行速度，一段时间以后，当代码库需要更新的时候，直接 git pull --rebase 显然是不行的，因为本地代码库不干净了，这个时候问题又来了，我明明只改动了一部分文件用于本地执行提速，为什么代码库多了这么多不相干的文件改动？想要 git checkout . 又会把提速的改动给还原，怎么办，直接 git stash 显然也是不行的</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201120-w47/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -500,42 +537,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201025-m32/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201020-w41/">sed 分隔符之谜</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-10-20T02:05:55.000Z" itemprop="datePublished">
-          2020-10-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>昨天在用 sed 替换某行 python 代码的时候，遇到了下面这个错</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sed -i <span class="string">&#x27;s/&quot;http&quot;: None/&quot;http&quot;: &quot;http://1.1.1.1:8080&quot;/g&#x27;</span> ~/demo.py</span><br><span class="line">sed: -e expression <span class="comment">#1, char 36: unknown option to `s&#x27;</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201020-w41/">Read More...</a>
                     </p>
                     
                 </div>
