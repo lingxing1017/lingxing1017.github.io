@@ -322,7 +322,7 @@
 </li>
 </ol>
 <p>事实上，现在的动态端口分配常见从 1024 开始，只要运行的程序向系统提出访问网络的申请，系统就从这些端口号中分配一个供该程序使用</p>
-<p>本地 TCP/UDP 的端口范围可以在 <code>/proc/sys/net/ipv4/ip_local_port_range</code> 和 <code>/etc/sysctl.conf</code> 的 ·net.ipv4.ip_local_port_range` 进行定义</p>
+<p>本地 TCP/UDP 的端口范围可以在 <code>/proc/sys/net/ipv4/ip_local_port_range</code> 和 <code>/etc/sysctl.conf</code> 的 <code>net.ipv4.ip_local_port_range</code> 进行定义</p>
 <h2 id="端口与服务">端口与服务</h2>
 <p>一台拥有 IP 地址的主机可以提供许多服务，比如 FTP 服务、SMTP 服务等，这些服务可以通过 1 个 IP 地址实现，所以 IP 地址与网络服务的关系是一对多的关系，那么主机要怎么区分不同的网络服务？正是通过 <code>IP 地址 + 端口号</code>来区分不同的服务</p>
 <p>端口号与相应服务的对应关系存放在 <code>/etc/services</code> 文件中，这个文件中可以找到大部分端口</p>
