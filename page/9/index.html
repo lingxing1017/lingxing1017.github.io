@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(53)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(54)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -155,7 +155,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -281,6 +281,41 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200820-w33/">git 之 HEAD 寻亲记</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-08-20T06:26:34.000Z" itemprop="datePublished">
+          2020-08-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>入乡随俗，git 来到了一个父系社会的国度，也免不了有自己的家族史，HEAD 作为这一代的 “头头”，自然也是要知道自己从哪儿来，祖宗十八代都得安排上，这时候就有个问题，如果只是单纯的画图，等找到太爷爷那一代图就已经变得画不下了，肯定得找个文字记录的方法，这时候，<code>^</code> 和 <code>~</code> 标记就出现了</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200820-w33/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -503,47 +538,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200626-d28/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200626-d27/">断开 ssh 继续运行命令</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-06-26T13:00:31.000Z" itemprop="datePublished">
-          2020-06-26
-      </time>
-    
-    
-    | 
-    <a href='/tags/ssh/'>ssh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>为什么 ssh 断开后运行的命令会退出呢？</p>
-<p><strong>明确元凶：</strong></p>
-<pre><code>SIGHUP 信号
-</code></pre>
-<p><strong>简单的来说：</strong></p>
-<pre><code>因为所有进程都得有个父进程。当 ssh 到一个服务器上时，打开的 shell 就是所有执行命令的父进程，当断开 ssh 连接后，在 ssh 中运行命令的父进程就没了。如果处理不当，这些进程就会收到 SIGTERM 信号，全被干掉了
-</code></pre>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200626-d27/">Read More...</a>
                     </p>
                     
                 </div>

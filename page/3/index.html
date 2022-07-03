@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(53)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(54)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -155,7 +155,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(37)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -281,6 +281,43 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210923-w61/">set 了 uexo</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-09-23T05:25:48.000Z" itemprop="datePublished">
+          2021-09-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>bash 写多了，就不得不调试，然鹅又不像 python 一样有精彩的第三方库可以提供丰富的调试信息</p>
+<p>多看点 bash 脚本，都应该见过下面这句话，那它是什么意思呢？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> -uexo pipefail</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line"><span class="built_in">set</span> -u</span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"><span class="built_in">set</span> -x</span><br><span class="line"><span class="built_in">set</span> -o pipefail</span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210923-w61/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -493,41 +530,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20210517-w55/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210511-w54/">Python 全局变量不全局</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-05-11T08:44:46.000Z" itemprop="datePublished">
-          2021-05-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>最近写一个 pcap 分析工具，需要用到全局变量，然后就想到 global，但是定义在 py 所有函数之外的变量，不就是全局作用域吗，那这个 global 的作用是什么？</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210511-w54/">Read More...</a>
                     </p>
                     
                 </div>
