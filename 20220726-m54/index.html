@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: reg | X</title>
+  <title>nmcli 配置静态 IP | X</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -74,7 +74,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -278,59 +278,55 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20180523-w12/">注册表右键菜单二之 CLSID</a></h4>
-                            
-                            <p><time datetime="2018-05-23T08:23:59.000Z"><a href="/20180523-w12/">2018-05-23</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20180522-w11/">注册表右键菜单一</a></h4>
-                            
-                            <p><time datetime="2018-05-22T05:19:43.000Z"><a href="/20180522-w11/">2018-05-22</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20180515-w9/">注册表入门</a></h4>
-                            
-                            <p><time datetime="2018-05-15T08:39:05.000Z"><a href="/20180515-w9/">2018-05-15</a></time></p>
-                        </div>
-                    
-                </div>
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-07-26T14:35:46.000Z" itemprop="datePublished">
+          2022-07-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                <h1>nmcli 配置静态 IP</h1>
             </div>
         </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>不知道什么时候开始 network-manager 成了 debian 默认管理网络连接的工具，可能是因为我装了桌面环境吧</p>
+<p>起初，连接 wifi 是用的 wpa_supplicant，后来 nm 出来以后，连同着命令行也要换了，成了 nmcli</p>
+<p>最近，希望把 debian 的 ip 固定下来，方便每次连接 wifi 的时候自动分配到同一个 ip，以做家里的小服务器 ip</p>
+<span id="more"></span>
+<p>在搜索教程的时候，部分教程说 nmcli con 对设备（网卡）进行修改，其实是不对的，应该是对 connection（连接）对设置，而连接是属于某个特定设备的</p>
+<blockquote>
+<p>NetworkManager stores all network configuration as “connections”, which are collections of data (Layer2 details, IP addressing, etc.) that describe how to create or connect to a network. A connection is “active” when a device uses that connection’s configuration to create or connect to a network. There may be multiple connections that apply to a device, but only one of them can be active on that device at any given time. The additional connections can be used to allow quick switching between different networks and configurations.</p>
+</blockquote>
+<p>从上述官方手册的说明中也不难看出，nmcli connection 的命令是针对网络配置的，而不是针对设备去做配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ nmcli c  <span class="comment"># 显示所有网络连接，当前设备保存的网络连接有两个，且都属于无线网卡 enp0s3 的</span></span><br><span class="line">NAME    UUID                                  TYPE      DEVICE</span><br><span class="line"><span class="built_in">test</span>    7c1b8444-cb65-440d-9bf6-ea0ad5e60bae  wifi      enp0s3</span><br><span class="line">tes1    3020c41f-6b21-4d80-a1a6-7c1bd5867e6c  wifi      enp0s3</span><br><span class="line"></span><br><span class="line"><span class="comment"># nmcli con/nmcli connection/nmcli c show 与上述命令等效</span></span><br><span class="line"></span><br><span class="line">$ nmcli con mod <span class="built_in">test</span> ipv4.addresses 192.168.1.4/24  <span class="comment"># 设置静态 ip</span></span><br><span class="line"></span><br><span class="line">$ nmcli con mod <span class="built_in">test</span> ipv4.gateway 192.168.1.1  <span class="comment"># 设置网关</span></span><br><span class="line"></span><br><span class="line">$ nmcli con mod <span class="built_in">test</span> ipv4.method manual  <span class="comment"># 设置手动配置（从 dhcp 到 static）</span></span><br><span class="line"></span><br><span class="line">$ nmcli con mod <span class="built_in">test</span> ipv4.dns 8.8.8.8  <span class="comment"># 设置 DNS</span></span><br><span class="line"></span><br><span class="line">$ nmcli con up <span class="built_in">test</span>  <span class="comment"># 保存上述更改并重新加载</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>be slow to promise and quick to perform.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
         <nav class="pagination" role="pagination">
-            
-            
-        </nav>
+    
+    
+    <a class="pull-right" href="/20220703-m53/">
+        字符串的模糊比较 →
+    </a>
+    
+</nav>
+
     </div>
 </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>the only present love demands is love</p>
-        </div>
-    </div>
-</section>
+
       
 <!-- ============================ Footer =========================== -->
 

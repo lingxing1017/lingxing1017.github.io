@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(54)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(55)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
 				    
@@ -155,7 +155,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(38)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(39)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -281,6 +281,49 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201127-w49/">shell 中的整数运算</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-11-27T03:55:58.000Z" itemprop="datePublished">
+          2020-11-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>话在前头，为什么本文是整数运算，因为 bash 本身不支持浮点型的运算，换言之，bash 本身能做的也就整数类型的运算</p>
+<p>谈一谈在 shell 中进行整数运算的几种方案</p>
+<ol>
+<li>r=$((1+2*3))</li>
+<li>r=`expr 1 \+ 2 \* 3`</li>
+<li>r=$[1+2] |</li>
+<li>declare -i r=1+2*3 |</li>
+<li>let r=1+2 |</li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201127-w49/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -503,41 +546,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201102-w43/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201027-w42/">复制 commit 到当前分支</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-10-27T09:09:08.000Z" itemprop="datePublished">
-          2020-10-27
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>当你创建了一个分支之后，你在分支上做了很多 debug 的操作，但是当你合并到 master 的时候，你又只需要几个非 debug 的 commit，这时候应该怎么办呢？不得不说，git 设计的很完善，你需要的它正好有</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201027-w42/">Read More...</a>
                     </p>
                     
                 </div>
