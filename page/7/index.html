@@ -101,9 +101,9 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(56)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(58)</small></a></li>
 				    
-				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/win10/" class="animsition-link">win10<small>(63)</small></a></li>
 				    
@@ -155,7 +155,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(39)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(41)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -164,6 +164,8 @@
                     <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
                     
                     <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
                     <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
                     
@@ -281,6 +283,127 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201113-w46/">在 git 中撤销改动</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-11-13T08:26:38.000Z" itemprop="datePublished">
+          2020-11-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>能进就能退，能加就能减，在 git 中熟悉撤销改动的方法必不可缺，在这个全组 git 的现状下，多掌握一项技能，就多了一个装 13 的高光时刻</p>
+<p>撤销改动，必须知道的两个工具：reset 和 revert</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201113-w46/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201113-w45/">git 误删 commit 的后悔药</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-11-13T07:35:42.000Z" itemprop="datePublished">
+          2020-11-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>一个失误导致不应该提交的代码被 commit，赶紧通过 rebase 把 commit drop 掉，可是，这个操作会将本地的改动也一并删除</p>
+<p>怎么办，写了一个下午的 shell 脚本就这样一朝回到解放前，oh no，不应该是这样的</p>
+<p>重写？太多了吧</p>
+<p>我用的是 git，赶紧搜一下，一定有能够恢复 commit 的方法，commit 就 commit 吧，丢了就真的是得不偿失了</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201113-w45/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201102-w44/">shell 中各种括号的功能</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-11-02T05:19:05.000Z" itemprop="datePublished">
+          2020-11-02
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>shell 中能遇到的括号很多，本次涉及的括号有 ()、(())、[]、[[]]、{}，后续遇到更多的括号再补充</p>
+<p>在入正题之前，先说说 $ 后的一些括号</p>
+<ol>
+<li>
+<p>${variable} 变量 variable 的值, 在不引起歧义的情况下可以省略大括号</p>
+</li>
+<li>
+<p>$(command) 命令替换，和 `command` 效果相同，结果为 shell 命令 command 的输出，但是某些版本的 shell 不支持 $() 形式的命令替换, 如 tcsh</p>
+</li>
+<li>
+<p>$((expression))、$[expression] 和 `expr expression` 效果相同，计算数学表达式 exp 的数值，其中 exp 只要符合 C 语言的运算规则即可，三目运算符和逻辑表达式都可以计算</p>
+</li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201102-w44/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -417,121 +540,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201020-w41/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201015-w40/">cpp 令人迷惑的概念</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-10-15T05:27:57.000Z" itemprop="datePublished">
-          2020-10-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/c/'>c++</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在 C++ 中有好几个术语，它们有两个词组成，交换顺序后意思就变了，而在使用过程中，常常可能因为对它们的混淆导致误人子弟</p>
-<p>这几组术语分别是：</p>
-<ol>
-<li>函数指针 vs 指针函数</li>
-<li>数组指针 vs 指针数组</li>
-<li>类模板 vs 模板类</li>
-<li>函数模板 vs 模板函数</li>
-</ol>
-<p>可以明确的是，上述几个术语中，重心在后面，前面的词是作为形容词使用的</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201015-w40/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200924-w39/">shell 对变量的不同状态进行赋值</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-24T05:16:17.000Z" itemprop="datePublished">
-          2020-09-24
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>一个变量有三种可能的状态：未设定，空值，非空值，针对这三种情况，shell 可以进行不同的操作</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200924-w39/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200923-m31/">shell 脚本传参</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-23T13:01:28.000Z" itemprop="datePublished">
-          2020-09-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <h2 id="传参家族">$ 传参家族</h2>
-<p>创建一个脚本 <a target="_blank" rel="noopener" href="http://test.sh">test.sh</a>，内容如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$0</span>  <span class="comment"># 当前脚本的文件名（间接运行时还包括绝对路径）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$3</span>  <span class="comment"># $n，传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是 $1</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$#</span>  <span class="comment"># 传递给脚本或函数的参数个数，不包括 $0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># $* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号 (&quot;&quot;) 包含时，都以&quot;$1&quot;&quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数；但是当它们被双引号 (&quot;&quot;) 包含时，&quot;$*&quot; 会将所有的参数作为一个整体，以 &quot;$1 $2 … $n&quot; 的形式输出所有参数，&quot;$@&quot; 会将各个参数分开，以 &quot;$1&quot;&quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数</span></span><br><span class="line"><span class="built_in">echo</span> $*  <span class="comment"># 传递给脚本或函数的所有参数，不包括 $0</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$@</span>  <span class="comment"># 传递给脚本或函数的所有参数，不包括 $0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $?  <span class="comment"># 上个命令的退出状态，或函数的返回值</span></span><br><span class="line"><span class="built_in">echo</span> $$  <span class="comment"># 当前 Shell 进程 ID，对于 Shell 脚本，就是这些脚本所在的进程 ID</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$_</span>  <span class="comment"># 上一个命令的最后一个参数</span></span><br><span class="line"><span class="built_in">echo</span> $!  <span class="comment"># 后台运行的最后一个进程的 ID 号</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200923-m31/">Read More...</a>
                     </p>
                     
                 </div>

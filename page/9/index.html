@@ -101,9 +101,9 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(56)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(58)</small></a></li>
 				    
-				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/win10/" class="animsition-link">win10<small>(63)</small></a></li>
 				    
@@ -155,7 +155,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(39)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(41)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -164,6 +164,8 @@
                     <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
                     
                     <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    
+                    <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
                     <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
                     
@@ -281,6 +283,113 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200911-w35/">shell 中检查某个命令是否存在</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-11T06:01:26.000Z" itemprop="datePublished">
+          2020-09-11
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>Linux 环境多了，配置也就多，写脚本的时候遇到的问题也多，尤其是当你需要在脚本中用到一个命令的时候，除了内置命令，在用到新命令的时候还是需要先检查一下这个命令是否存在，推荐的方式有三个：command -v，type，hash，因为它们都是 <code>shell builtin</code></p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200911-w35/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200908-w34/">shell 中命令替换的写法</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-08T07:07:39.000Z" itemprop="datePublished">
+          2020-09-08
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>写脚本的时候，另外一条命令的返回值作为一个变量在接下来的命令中被使用，是一个比较常见的作法，那么问题来了，怎么得到这个命令的返回值呢？</p>
+<p>这时，就要用到一个 <a target="_blank" rel="noopener" href="http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Command-Substitution">command substitution</a> 的东西了</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200908-w34/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200830-m29/">python2 和 3 的编码问题</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-08-30T06:54:13.000Z" itemprop="datePublished">
+          2020-08-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/python/'>python</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>无论是 py2 还是 py3 都可以理解成是 Unicode 编码，但是在电脑硬盘上存储是按照不同的映射关系的</p>
+<p>首先需要清楚的是 python 的 encode 和 decode，在搞清楚这个问题之前，还得知道 Unicode 将所有的字符都对应了相应的码点，而 UTF-8 或者 ASCII 码是对应从 Unicode 到字节的映射方式，既然有映射方式，就有映射方向，从 Unicode 到字节码(byte string)叫 encode，把从字节码(byte string)到 Unicode 码叫 decode。感觉还是不清晰，再普及几个 “字” 字辈的兄弟</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200830-m29/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -419,117 +528,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200817-m26/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200814-w32/">修改 PS1 美化终端提示符</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-14T10:00:41.000Z" itemprop="datePublished">
-          2020-08-14
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>偷懒大法好，直接上<a target="_blank" rel="noopener" href="http://bashrcgenerator.com/">这</a>，获取定制 PS1 的变量值吧</p>
-<p>拿某个 PS1 变量举例吧</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PS1</span></span><br><span class="line">\[\033[1;35m\]\T\[\033[0m\]User:\[\033[1;33m\]\u\[\033[0m\]Dir:\[\033[1;32m\]\w\[\033[0m\]\n\$</span><br><span class="line"><span class="comment"># &#x27;\[\033[1;35m\]\T\[\033[0m\]&#x27;：高亮品红当前时间(12小时) HH: MM: SS</span></span><br><span class="line"><span class="comment"># &#x27;User:&#x27;：User:</span></span><br><span class="line"><span class="comment"># &#x27;\[\033[1;33m\]\u\[\033[0m\]&#x27;：高亮黄色当前用户名称</span></span><br><span class="line"><span class="comment"># &#x27;Dir:&#x27;：Dir:</span></span><br><span class="line"><span class="comment"># &#x27;\[\033[1;32m\]\w\[\033[0m\]&#x27;：高亮绿色当前工作目录</span></span><br><span class="line"><span class="comment"># &#x27;\n&#x27;：换行</span></span><br><span class="line"><span class="comment"># &#x27;\$&#x27;：根用户为 #，其它用户为 $</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200814-w32/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200814-w31/">ssh 免密登录的关键</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-14T06:26:26.000Z" itemprop="datePublished">
-          2020-08-14
-      </time>
-    
-    
-    | 
-    <a href='/tags/ssh/'>ssh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>明明配置了 ssh 公钥，却还是不能在登录服务器的时候免去输入密码的过程，这是为啥？大概率是因为你忽略了一个叫 authorized_keys 的东西</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200814-w31/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200814-w30/">bash 中单引号和双引号</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-14T04:55:25.000Z" itemprop="datePublished">
-          2020-08-14
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>踩坑，bash 的单引号和双引号的坑，首先给出结论，两者差距还是蛮大的</p>
-<p><code>'</code> 跟 <code>&quot;</code> 的不同，主要是对于某些 meta 的关闭与否，以 $ 來作说明：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ A=B\ C</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$A</span>&quot;</span></span><br><span class="line">B C</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;$A&#x27;</span></span><br><span class="line"><span class="variable">$A</span></span><br></pre></td></tr></table></figure>
-<p>在第一个 echo 命令行中，$ 被置于 soft quote 中，將不被关闭，继续处理变量替换，因此 echo 將 A 的变量值输出到屏幕，也就得到  “B C” 的结果</p>
-<p>在第二个 echo 命令行中，$ 被置于 hard quote 中，则被关闭，因此 $ 只是一个 $ 符号，并不会用來作变量替换处理，因此结果是 $ 符号后面接一个 A 字母：$A
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200814-w30/">Read More...</a>
                     </p>
                     
                 </div>
