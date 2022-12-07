@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(58)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(59)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -145,7 +145,7 @@
                     
                     <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
                     
-                    <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(3)</small></a></li>
+                    <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(4)</small></a></li>
                     
                     <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
                     
@@ -283,6 +283,44 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200817-m26/">自定义终端标题</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-08-17T15:12:49.000Z" itemprop="datePublished">
+          2020-08-17
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="起因">起因</h2>
+<p>在定制 Win10 terminal 中的 git bash 的时候，想要在 title 中显示当前操作的目录来区分各个终端，然后是开始各种搜索，网上大多给出的解决方法都是如下方案</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> -ne <span class="string">&quot;\033]0;title\007&quot;</span>  <span class="comment"># -e 使转义字符生效；-n 内容输出后不换行</span></span><br></pre></td></tr></table></figure>
+<p>这时候，终端的 title 就会变成 title 了</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200817-m26/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -508,41 +546,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200626-d27/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200603-d26/">debian10 安装 docker</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-06-03T08:46:14.000Z" itemprop="datePublished">
-          2020-06-03
-      </time>
-    
-    
-    | 
-    <a href='/tags/docker/'>docker</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>起初不知 docker 滋味，一尝才知其好滋味，在 python 项目上来说，其实跟 pipenv 也是差不了太多。最初使用 docker 的目的其实是用 flask run 的方式部署 flask 项目，不过在 flask 的官方文档中发现了部署一章节，其实也不用这么麻烦了，不过在多个项目同时隔离运行上感觉还是有点用处的</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200603-d26/">Read More...</a>
                     </p>
                     
                 </div>
