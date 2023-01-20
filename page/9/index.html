@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(59)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(61)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -161,7 +161,7 @@
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
+                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(8)</small></a></li>
                     
                     <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
                     
@@ -283,6 +283,89 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200920-w38/">一部分输出重定向</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-20T10:26:30.000Z" itemprop="datePublished">
+          2020-09-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>本次讨论的是下面几个输出重定向（bash）：</p>
+<ul>
+<li>2&gt;&amp;-</li>
+<li>2&gt;/dev/null</li>
+<li>|&amp;</li>
+<li>&amp;&gt;/dev/null</li>
+<li>&gt;/dev/null 2&gt;&amp;1</li>
+</ul>
+<p>首先要清楚：</p>
+<ul>
+<li>1 是 standard out (stdout)</li>
+<li>2 是 standard error (stderr)</li>
+<li>如果没有给出明确的数字，bash 会假定给的是 1</li>
+</ul>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200920-w38/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200919-w37/">让 Jenkins 忽略 sh 的执行失败</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-19T01:06:39.000Z" itemprop="datePublished">
+          2020-09-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/ci/'>ci</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>19 年开始接触 Jenkins，但是并没有跟 jf 有过多的交道，今年又碰到了它，并且和 jf 有了初步的接触，于是问题也是接踵而来，比如今天讨论的这个问题：在 jf 中执行 shell 脚本，当 shell 脚本遇到错误的时候，Jenkins 会忽略后续所有的步骤，为啥？咋办？</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200919-w37/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -455,77 +538,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200823-m28/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200822-m27/">探索 Bash 中的 Prompt</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-22T08:13:36.000Z" itemprop="datePublished">
-          2020-08-22
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在开始探索之前，还是得再次夸一夸 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/">Arch 的 wiki</a>，虽然自己日常用的是 macOS 和 debian，但是好几次终端有关的问题，却都是通过 Arch 的 wiki 找到了我想要的答案，这次，兜兜转转，也还是让<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Bash/Prompt_customization">它</a>又出了一份力</p>
-<p>本文围绕的东西有：PS1、PS2、PS3、PS4、PROMOTE_COMMAND、ANSI escape code</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200822-m27/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200820-w33/">git 之 HEAD 寻亲记</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-20T06:26:34.000Z" itemprop="datePublished">
-          2020-08-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>入乡随俗，git 来到了一个父系社会的国度，也免不了有自己的家族史，HEAD 作为这一代的 “头头”，自然也是要知道自己从哪儿来，祖宗十八代都得安排上，这时候就有个问题，如果只是单纯的画图，等找到太爷爷那一代图就已经变得画不下了，肯定得找个文字记录的方法，这时候，<code>^</code> 和 <code>~</code> 标记就出现了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200820-w33/">Read More...</a>
                     </p>
                     
                 </div>

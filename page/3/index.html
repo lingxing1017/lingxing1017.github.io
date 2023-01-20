@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(59)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(61)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -161,7 +161,7 @@
                     
                     <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(6)</small></a></li>
+                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(8)</small></a></li>
                     
                     <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
                     
@@ -283,6 +283,78 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20220121-m47/">cpp11 的大括号初始化</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-01-21T05:18:49.000Z" itemprop="datePublished">
+          2022-01-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/c/'>c++</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>这是第二个 FB 了，从测试到 cpp 开发的过程，虽然依然 “兼职” 着测试方面的事，但是也开始了自己写 cpp 的路，这不，在写的过程中，发现了一个问题，或者说，发现了类用 {} 初始化参数跟之前的学到的不太一样</p>
+<p>搜索一番，原来这是 C++11 的特性</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220121-m47/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20220109-m46/">为 ls 的输出配色</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-01-09T05:07:09.000Z" itemprop="datePublished">
+          2022-01-09
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>年纪大了，对于颜色的追求就偏暗了（至少我是有点这样），以前的老电脑上，为 ls 的输出配置了亮色，现在明显不那么欢喜了，看久了反而觉得眼睛累得慌，毫无美感</p>
+<p>这里就涉及到几个问题，一个是，以前是通过什么方式给 ls 输出配色的？再一个是，chmod 777 以后的文件或者文件夹的配色怎么修改才能变暗？</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220109-m46/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -463,84 +535,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20211014-m41/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210927-w62/">sed 与替换</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-09-27T06:08:22.000Z" itemprop="datePublished">
-          2021-09-27
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>只是介绍一下 sed 用作文本替换时的常见做法</p>
-<p>sed(stream editor) 的基本工作方式：</p>
-<ol>
-<li>将文件以<code>行</code>为单位读取到内存(模式空间)</li>
-<li>使用 sed 的<code>每个脚本</code>对该行进行操作</li>
-<li>处理完成后输出该行</li>
-</ol>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210927-w62/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210923-w61/">set 了 uexo</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-09-23T05:25:48.000Z" itemprop="datePublished">
-          2021-09-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>bash 写多了，就不得不调试，然鹅又不像 python 一样有精彩的第三方库可以提供丰富的调试信息</p>
-<p>多看点 bash 脚本，都应该见过下面这句话，那它是什么意思呢？</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> -uexo pipefail</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line"><span class="built_in">set</span> -u</span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"><span class="built_in">set</span> -x</span><br><span class="line"><span class="built_in">set</span> -o pipefail</span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210923-w61/">Read More...</a>
                     </p>
                     
                 </div>
