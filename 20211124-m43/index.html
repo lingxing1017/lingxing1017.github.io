@@ -299,19 +299,36 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>自从换了工作以来，就离不开与 ssh 打交道，为了登陆方便，公私钥更加是避免不了，总有一天得好奇 ssh 通过公私钥认证登陆的原理，择日不如撞日，趁机把这部分内容找了点资料看了下，记录一下</p>
+      		<p>公钥登陆的两个步骤更新于 2023.01.25</p>
+<p>自从换了工作以来，就离不开与 ssh 打交道，为了登陆方便，公私钥更加是避免不了，总有一天得好奇 ssh 通过公私钥认证登陆的原理，择日不如撞日，趁机把这部分内容找了点资料看了下，记录一下</p>
+<p>准备工作：Client 端将自己的公钥手动追加在 Server 端的 authorized_keys 中<span id="more"></span></p>
+<p><strong>公钥登陆的两个步骤：</strong></p>
 <ol>
-<li>Client 将自己的公钥手动追加在 Server 的 authorized_keys 中<span id="more"></span></li>
-<li>Server 端接收到 Client 的连接请求后，会在 authorized_keys 中匹配到 Client 的公钥 pubKey，并生成随机数 R，用 Client 的公钥对该随机数进行加密得到 pubKey®，然后将加密后信息发送给 Client</li>
-<li>Client 端通过私钥进行解密得到随机数 R，然后对随机数 R 和本次会话的 SessionKey 利用 MD5 生成摘要 Digest1，发送给 Server 端</li>
+<li>会话密钥 (session key) 生成
+<ul>
+<li>Client 端和 Server 端互相发送 ssh 协议版本以及 openssh 版本，并约定协议版本</li>
+<li>Client 端和 Server 端互相发送支持的加密算法并约定使用的算法类型</li>
+<li>Server 端生成非对称密钥，并将公钥以及公钥指纹发送到 Client 端</li>
+<li>Client 端和 Server 端分别使用DH算法计算出获取会话密钥，后续所有流程都会使用会话密钥加密传输</li>
+</ul>
+</li>
+<li>认证
+<ul>
+<li>Client 端将公钥指纹信息 使用上述的 q (会话密钥) 加密发送到 Server 端</li>
+<li>Server 端接收到 Client 端的连接请求后解密，并去 authorized_keys 中匹配对应的公钥</li>
+<li>Server 端生成随机数 R，用 Client 端的公钥对该随机数进行加密得到 pubKey®，然后将加密后信息发送给 Client 端</li>
+<li>Client 端通过私钥进行解密得到随机数 R</li>
+<li>Client 端对随机数 R 和本次会话的 SessionKey 利用 MD5 生成摘要 Digest1，发送给 Server 端</li>
 <li>Server 端会也会对 R 和 SessionKey 利用同样摘要算法生成 Digest2</li>
 <li>Server 端会最后比较 Digest1 和 Digest2 是否相同，完成认证过程</li>
+</ul>
+</li>
 </ol>
 <p><strong>几个小问题：</strong></p>
 <ul>
 <li>
 <p>Server 端如何在 authorized_keys 中找到对应的公钥？</p>
-<p>Client 在认证的开始会发送一个公钥的指纹（具有唯一性，但不是公钥）给 Server，Server 就是通过该指纹在 authorized_keys 进行查找对应的 PublicKey</p>
+<p>Client 在认证的开始会发送一个公钥的指纹信息（具有唯一性，但不是公钥）给 Server，Server 就是通过该指纹信息在 authorized_keys 进行查找对应的 PublicKey</p>
 </li>
 <li>
 <p>known_hosts 中存的是什么？</p>
