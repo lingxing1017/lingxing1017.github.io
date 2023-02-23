@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(62)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(67)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,13 +127,15 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(2)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(5)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/gdb/" class="animsition-link">gdb<small>(1)</small></a></li>
                     
                     <li><a href="/tags/git/" class="animsition-link">git<small>(13)</small></a></li>
                     
@@ -155,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(42)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(43)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -287,6 +289,191 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/20230223-m66/">gdb 打印变量类型和所在文件</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-02-23T06:47:10.000Z" itemprop="datePublished">
+          2023-02-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/gdb/'>gdb</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">child</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she</span> = &#123;</span> <span class="string">&quot;Jerry&quot;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she1</span> = &#123;</span> <span class="string">&quot;Jerry1&quot;</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she2</span> = &#123;</span> <span class="string">&quot;Jerry2&quot;</span> &#125;;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230223-m66/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230221-m65/">cpp17 的 variant</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-02-21T14:35:15.000Z" itemprop="datePublished">
+          2023-02-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/c/'>c++</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="std-variant">std::variant</h2>
+<p>std::variant 是 C++17 中一个新加入标准函式库的 template 容器，使用时需要 #include <variant></p>
+<p>它的概念基本上是和 union 一样，是一个可以用来储存多种型别资料的容器；和 union 不同的是，std::variant 是 type-safe 的，再加上有许多函数可以搭配使用，所以在使用上应该算是相对安全</p>
+<p>由于它是标准函式库的 template class，在使用时不需要另外去宣告一个新的类型</p>
+<p>std::variant 在储存数据的时候，内部会有一个索引值来记录目前存储的是哪一个类型的数据</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230221-m65/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230221-m64/">软硬快捷方式</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-02-21T13:08:55.000Z" itemprop="datePublished">
+          2023-02-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>ln 命令用于给文件创建链接，链接的方式分为以下 2 种：</p>
+<ol>
+<li>软链接：类似于 Windows 系统中给文件创建快捷方式，即产生一个特殊的文件，该文件用来指向另一个文件，此链接方式同样适用于目录</li>
+<li>硬链接：文件的基本信息都存储在 inode 中，而硬链接指的就是给一个文件的 inode 分配多个文件名，通过任何一个文件名，都可以找到此文件的 inode，从而读取该文件的数据信息</li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230221-m64/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230220-m63/">extern "c" 是什么</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-02-20T14:49:18.000Z" itemprop="datePublished">
+          2023-02-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/c/'>c++</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>今天在看编译报错的时候发现一个神奇的 extern “C”</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>这是什么？我涉及的明明是 c++ 的工程，而且这个 extern 好像也不是单纯声明用的</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230220-m63/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230220-m62/">cpp 的 CRTP 简介</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-02-20T07:19:57.000Z" itemprop="datePublished">
+          2023-02-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/c/'>c++</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>CRTP（Curiously Recurring Template Pattern）是 c++ 使用范型实现静态多态的方法，这种方法和虚拟函数比起来优点就是可以节省内存，不需要额外的空间存储 virtual table，并且提高运行速度，运行时不需要动态查找对应的函数</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230220-m62/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/20230216-m61/">shell 认错进制</a></h3>
                     <span>
                         <span class="post-meta">
@@ -349,190 +536,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20221214-m60/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20221214-m59/">更换 ssh 公钥算法</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-12-14T01:40:55.000Z" itemprop="datePublished">
-          2022-12-14
-      </time>
-    
-    
-    | 
-    <a href='/tags/ssh/'>ssh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>事出有因必作妖，大概是 macOS 更新的时候自动更新了 ssh 版本，直接破天荒的来到了 9.0，于是我电脑连接几个公司服务器的私钥都报了认证失败</p>
-<p>虽然 OpenSSH 团队在 8.8 版本便已经宣布了将默认禁用 ssh-rsa 的签名方案，但是在真遇到问题之前谁又会以为然呢</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20221214-m59/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20221207-m58/">强制删除描述文件</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-12-07T12:47:04.000Z" itemprop="datePublished">
-          2022-12-07
-      </time>
-    
-    
-    | 
-    <a href='/tags/macOS/'>macOS</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>MDM（移动设备管理）是一种软件应用程序，用于管理企业中的终端，如笔记本电脑、智能手机、平板电脑等</p>
-<p>自从安装公司门户，在 MacBook 上安装了不少描述文件，但是当我在公司门户上删除了设备的时候，公司门户却没有完全把描述文件给删除干净，但是这些描述文件却是管理员账户也无法删除的</p>
-<p>这时候只能找找看有没有暴力重置所有已安装描述文件（profile）的方法</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20221207-m58/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20221128-m57/">新 case 分支</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-11-28T14:57:08.000Z" itemprop="datePublished">
-          2022-11-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>bash 的多选复合命令称为 case，它的语法规则如下所示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> word <span class="keyword">in</span></span><br><span class="line">    [pattern [| pattern]...) commands ;;]...</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20221128-m57/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20221128-m56/">shell 实现随机数</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-11-28T14:21:52.000Z" itemprop="datePublished">
-          2022-11-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>需要在脚本里实现整一个随机数作为 ut 乱序执行 case 的种子</p>
-<p>以下是 linux 中四种常见获得随机整数的方法，除了第一个，后三个，产生随机数的伪数据来源，都与 /dev/random 设备有关</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20221128-m56/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20221128-t1/">gtest 的事件</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-11-28T13:20:19.000Z" itemprop="datePublished">
-          2022-11-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/ut/'>ut</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>gtest 的事件机制有两类基本的意义：</p>
-<ol>
-<li>在指定条件和场景前后处理相关数据</li>
-<li>提供指定条件和场景前后的结果通知</li>
-</ol>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20221128-t1/">Read More...</a>
                     </p>
                     
                 </div>

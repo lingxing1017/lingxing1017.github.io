@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(62)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(67)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,13 +127,15 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(2)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(5)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/gdb/" class="animsition-link">gdb<small>(1)</small></a></li>
                     
                     <li><a href="/tags/git/" class="animsition-link">git<small>(13)</small></a></li>
                     
@@ -155,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(42)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(43)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -287,6 +289,191 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/20220109-m46/">为 ls 的输出配色</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-01-09T05:07:09.000Z" itemprop="datePublished">
+          2022-01-09
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>年纪大了，对于颜色的追求就偏暗了（至少我是有点这样），以前的老电脑上，为 ls 的输出配置了亮色，现在明显不那么欢喜了，看久了反而觉得眼睛累得慌，毫无美感</p>
+<p>这里就涉及到几个问题，一个是，以前是通过什么方式给 ls 输出配色的？再一个是，chmod 777 以后的文件或者文件夹的配色怎么修改才能变暗？</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220109-m46/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20211126-m45/">ssh 配了公钥却还要密码</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-11-26T03:35:28.000Z" itemprop="datePublished">
+          2021-11-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="前因">前因</h2>
+<p>这是一次问题定位的记录，虽然最后问题解决了，却没有定位到最根本的原因，记录它只是为了可以为后续发现同类问题的时候提供能多的思路</p>
+<p>问题表现：服务器上配置了 ssh authorized_keys，但是登录时却还是被要求输入密码</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20211126-m45/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20211125-m44/">auth.log 不存在</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-11-25T10:39:56.000Z" itemprop="datePublished">
+          2021-11-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="事出突然">事出突然</h2>
+<p>牵一发而动全身，在查 ssh 为啥无法公私钥认证登陆的图中，找到了开启 sshd_config DEBUG 模式，将认证过程的 log 记录在 auth.log 中</p>
+<p>为了方便，我直接删除了 auth.log，想着它应该是会被重新生成的，结果意料之中的意料之外，它没有自己生成</p>
+<p>那我就想着自己创建一个总行了吧，结果还是没有收集到任何的 debug 信息</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20211125-m44/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20211124-m43/">ssh 与公私钥(众说纷纭)</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-11-24T10:04:43.000Z" itemprop="datePublished">
+          2021-11-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>公钥登陆的两个步骤更新于 2023.01.25</p>
+<p>自从换了工作以来，就离不开与 ssh 打交道，为了登陆方便，公私钥更加是避免不了，总有一天得好奇 ssh 通过公私钥认证登陆的原理，择日不如撞日，趁机把这部分内容找了点资料看了下，记录一下</p>
+<p>准备工作：Client 端将自己的公钥手动追加在 Server 端的 authorized_keys 中
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20211124-m43/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20211115-m42/">ssh 配置 ControlMaster</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-11-15T05:10:34.000Z" itemprop="datePublished">
+          2021-11-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>multiplexing 和独立会话的区别是，在服务器和客户端，都只看到一个进程（即使多次连接会话）</p>
+<p>在服务器和客户机上，可以看到只打开了一个 TCP 连接，OpenSSH 使用现有的 TCP 连接实现多个 SSH 会话，降低新建 TCP 连接的负载</p>
+<p>那么如何做到让 SSH 复用连接呢</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20211115-m42/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/20211014-m41/">在任意路径 git 指定库</a></h3>
                     <span>
                         <span class="post-meta">
@@ -355,188 +542,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20210927-w62/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210923-w61/">set 了 uexo</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-09-23T05:25:48.000Z" itemprop="datePublished">
-          2021-09-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>bash 写多了，就不得不调试，然鹅又不像 python 一样有精彩的第三方库可以提供丰富的调试信息</p>
-<p>多看点 bash 脚本，都应该见过下面这句话，那它是什么意思呢？</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> -uexo pipefail</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line"><span class="built_in">set</span> -u</span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"><span class="built_in">set</span> -x</span><br><span class="line"><span class="built_in">set</span> -o pipefail</span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210923-w61/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210830-w60/">检查远程 linux 某个端口是否开启</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-08-30T03:12:02.000Z" itemprop="datePublished">
-          2021-08-30
-      </time>
-    
-    
-    | 
-    <a href='/tags/net/'>net</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>远程端口这个话题可大可小，应用也比较广泛，常见的比如配置服务器的时候会需要打开固定的某几个端口，这时候就可以用下面的方面做一下检测</p>
-<p>本文记录了三种检查方法</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210830-w60/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210728-w59/">网络的鸡蛋</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-28T07:04:14.000Z" itemprop="datePublished">
-          2021-07-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/net/'>net</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>《格列夫游记》 第一卷第4章 蒋剑锋（译）</p>
-<pre><code>我下面要告诉你的是，Lilliput 和 Blefuscu 这两大强国在过去 36 个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了。因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破鸡蛋较小的一端，违令者重罚。老百姓们对这项命令极其反感。历史告诉我们，由此曾经发生过 6 次叛乱，其中一个皇帝送了命，另一个丢了王位。这些叛乱大多都是由 Blefuscu 的国王大臣们煽动起来的。叛乱平息后，流亡的人总是逃到那个帝国去寻求避难。据估计，先后几次有 11000 人情愿受死也不肯去打破鸡蛋较小的一端。关于这一争端，曾出版过几百本大部著作，不过大端派的书一直是受禁的，法律也规定该派任何人不得做官。
-</code></pre>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210728-w59/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210709-w58/">Python 深拷贝</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-09T07:41:03.000Z" itemprop="datePublished">
-          2021-07-09
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>写 python 的过程中，拷贝总是少不了的，遥记得 C++ 里有个东西叫深拷贝（总之涉及到指针就变得啥都不好理解了），同为面向对象，但是 python 不是没有指针吗？</p>
-<p>这还得从 python 的变量开始说起</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210709-w58/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210707-w57/">shell 那个 eval</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-07T09:34:44.000Z" itemprop="datePublished">
-          2021-07-07
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>有个东西叫复杂变量，一次搞不定，需要两次才能搞定的变量就很复杂，所以就叫它复杂变量</p>
-<p>那复杂变量要怎么被使用呢？看下文的例子</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210707-w57/">Read More...</a>
                     </p>
                     
                 </div>

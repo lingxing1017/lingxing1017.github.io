@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(62)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(67)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,13 +127,15 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(2)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(5)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/gdb/" class="animsition-link">gdb<small>(1)</small></a></li>
                     
                     <li><a href="/tags/git/" class="animsition-link">git<small>(13)</small></a></li>
                     
@@ -155,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(42)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(43)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -287,6 +289,198 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/20220703-m53/">字符串的模糊比较</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-07-03T06:58:32.000Z" itemprop="datePublished">
+          2022-07-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在多数版本的 bash 中，增加了 [[ 命令，其中有一个 =~ 操作符，可以用来判断某个字符串是否包含特定模式</p>
+<p>使用 =~ 操作符时，其右边的字符串被认为是一个扩展正则表达式，如果右边的整个字符串用引号括起来，那么表示匹配这个字符串自身的内容，不再解析成正则表达式</p>
+<p><code>注意无论右边是否加引号，两遍都是包含关系，不是完整匹配</code>，即，判断右边的模式是否为左边字符串的子字符串，而不是判断右边的模式是否完全等于左边字符串</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220703-m53/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20220513-m52/">用 adb 卸载小米预装软件</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-05-13T13:06:05.000Z" itemprop="datePublished">
+          2022-05-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/Android/'>Android</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>有些预装只有 adb 能治它，有些预装 adb 都没辙。。。</p>
+<p>注意：请勿禁用或卸载与系统服务关联密切的预装软件，以防系统运行出现异常，在做未有把握操作之前，最好先备份手机数据</p>
+<p>如果遇到卡米问题，极端情况下可能要在 Recovery 界面清除数据才能启动系统</p>
+<p>准备工作</p>
+<ol>
+<li>android-platform-tools（macOS）</li>
+<li>手机开启<code>开发者选项</code>和 <code>USB 调试</code></li>
+<li>手机用数据线连接到电脑</li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220513-m52/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20220504-m51/">禁止在 win10 上自动挂在移动硬盘</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-05-04T06:09:50.000Z" itemprop="datePublished">
+          2022-05-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/Win10/'>Win10</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>虽然实际情况是即使我禁用了自动挂载，只要硬盘还插在电脑 usb 插口上，就会导致启动卡在转圈圈上</p>
+<p>以上内容更新于 2022.05.13</p>
+<p>有一块移动硬盘挂在老电脑上，但是很奇怪，老电脑重启的时候只要挂着这硬盘，就会一直无法重启，所以我只能找办法，不让电脑自动挂载移动硬盘</p>
+<p>要阻止 Win10 自动挂载硬盘，其方法非常简单，这里记录三种方法，其中，前两种方法分别采用了 diskpart 命令和 mountvol 命令，第三种方法则采用了修改注册表的方式</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220504-m51/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20220419-m50/">win10 的 AppXSVC 占用高</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-04-19T07:39:46.000Z" itemprop="datePublished">
+          2022-04-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/Win10/'>Win10</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>激进的尝新派在为数不多的老 win 电脑上体验了一把 win11 后，终于不得不重新降级回到 win10，鉴于老电脑也懒得更新，所以选择了 win10 lstc 2021</p>
+<p>虽然不能说是丝般顺滑，但是明显比 win11 要来的舒服的多</p>
+<p>当然问题也是纷至沓来，比如有个名叫 wsappx 的进行在任务管理器中明显的霸榜，始终是对 cpu 高占用，点开可以看到是 AppX Deployment Service 系统服务，提供的是应用商店有关的服务，但是 lstc 中默认都没有带应用商店，这货的意义在哪儿
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220419-m50/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20220402-m49/">macOS 升级后循环进入 iCloud 密码验证</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-04-02T14:52:44.000Z" itemprop="datePublished">
+          2022-04-02
+      </time>
+    
+    
+    | 
+    <a href='/tags/macOS/'>macOS</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>算上今天这次，遇到这个问题是第二次了，必须做下记录了，不然下次遇到了还不知道怎么办</p>
+<h2 id="问题是这样婶的">问题是这样婶的</h2>
+<p>升级了 macOS 小版本更新后，重启完成后就弹出提示 ”此 mac 无法连接 iCloud，因为 <a href="mailto:email@address.com">email@address.com</a> 出现故障“，然后跳转到系统偏好设置以后就要求输入密码，输入完后，又一次弹出密码框，如此这般循环</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220402-m49/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/20220303-m48/">requests 和 ca 证书的故事</a></h3>
                     <span>
                         <span class="post-meta">
@@ -349,191 +543,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20220121-m47/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20220109-m46/">为 ls 的输出配色</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-01-09T05:07:09.000Z" itemprop="datePublished">
-          2022-01-09
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>年纪大了，对于颜色的追求就偏暗了（至少我是有点这样），以前的老电脑上，为 ls 的输出配置了亮色，现在明显不那么欢喜了，看久了反而觉得眼睛累得慌，毫无美感</p>
-<p>这里就涉及到几个问题，一个是，以前是通过什么方式给 ls 输出配色的？再一个是，chmod 777 以后的文件或者文件夹的配色怎么修改才能变暗？</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20220109-m46/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20211126-m45/">ssh 配了公钥却还要密码</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-11-26T03:35:28.000Z" itemprop="datePublished">
-          2021-11-26
-      </time>
-    
-    
-    | 
-    <a href='/tags/ssh/'>ssh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <h2 id="前因">前因</h2>
-<p>这是一次问题定位的记录，虽然最后问题解决了，却没有定位到最根本的原因，记录它只是为了可以为后续发现同类问题的时候提供能多的思路</p>
-<p>问题表现：服务器上配置了 ssh authorized_keys，但是登录时却还是被要求输入密码</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20211126-m45/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20211125-m44/">auth.log 不存在</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-11-25T10:39:56.000Z" itemprop="datePublished">
-          2021-11-25
-      </time>
-    
-    
-    | 
-    <a href='/tags/ssh/'>ssh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <h2 id="事出突然">事出突然</h2>
-<p>牵一发而动全身，在查 ssh 为啥无法公私钥认证登陆的图中，找到了开启 sshd_config DEBUG 模式，将认证过程的 log 记录在 auth.log 中</p>
-<p>为了方便，我直接删除了 auth.log，想着它应该是会被重新生成的，结果意料之中的意料之外，它没有自己生成</p>
-<p>那我就想着自己创建一个总行了吧，结果还是没有收集到任何的 debug 信息</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20211125-m44/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20211124-m43/">ssh 与公私钥(众说纷纭)</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-11-24T10:04:43.000Z" itemprop="datePublished">
-          2021-11-24
-      </time>
-    
-    
-    | 
-    <a href='/tags/ssh/'>ssh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>公钥登陆的两个步骤更新于 2023.01.25</p>
-<p>自从换了工作以来，就离不开与 ssh 打交道，为了登陆方便，公私钥更加是避免不了，总有一天得好奇 ssh 通过公私钥认证登陆的原理，择日不如撞日，趁机把这部分内容找了点资料看了下，记录一下</p>
-<p>准备工作：Client 端将自己的公钥手动追加在 Server 端的 authorized_keys 中
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20211124-m43/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20211115-m42/">ssh 配置 ControlMaster</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-11-15T05:10:34.000Z" itemprop="datePublished">
-          2021-11-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/ssh/'>ssh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>multiplexing 和独立会话的区别是，在服务器和客户端，都只看到一个进程（即使多次连接会话）</p>
-<p>在服务器和客户机上，可以看到只打开了一个 TCP 连接，OpenSSH 使用现有的 TCP 连接实现多个 SSH 会话，降低新建 TCP 连接的负载</p>
-<p>那么如何做到让 SSH 复用连接呢</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20211115-m42/">Read More...</a>
                     </p>
                     
                 </div>

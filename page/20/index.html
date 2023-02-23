@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(62)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(67)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,13 +127,15 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(2)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(5)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/gdb/" class="animsition-link">gdb<small>(1)</small></a></li>
                     
                     <li><a href="/tags/git/" class="animsition-link">git<small>(13)</small></a></li>
                     
@@ -155,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(42)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(43)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -287,6 +289,186 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/20180530-w15/">bat 常用符号详解</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-30T10:55:24.000Z" itemprop="datePublished">
+          2018-05-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/bat/'>bat</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p><strong>1.@</strong><br>
+一般在它之后紧跟一条命令或一条语句，则此命令或语句本身在执行的时候不会显示在屏幕上.</p>
+<p>请把下面的代码保存为test.cmd文件，然后运行，比较一下两条echo语句在屏幕上的输出差异：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> a</span><br><span class="line">@<span class="built_in">pause</span></span><br><span class="line">@<span class="built_in">echo</span> b</span><br><span class="line">@<span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20180530-w15/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20180530-w14/">接近 Windows 目录内的文件夹</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-30T08:49:03.000Z" itemprop="datePublished">
+          2018-05-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/Win10/'>Win10</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在整个Windows操作系统中，最重要的莫过于Windows目录了，对电脑进行任何操作几乎都有关.印象中的Windows目录就是大而乱，感觉里面的东西很多但又不知道它们具体的用途是什么.</p>
+<p>鉴于Windows目录中的文件夹比较多，只简单介绍其中比较重要的一些.此外不得不提醒的是由于此文件夹的特殊性，不建议删除此目录下的任何文件，如有可以安全删除的文件夹，文中将会提到.
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20180530-w14/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20180530-w17/">bat 弹出 uac</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-30T06:51:30.000Z" itemprop="datePublished">
+          2018-05-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/bat/'>bat</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在修改注册表的时候会需要使用管理员权限，以下bat都是基于创建并调用vbs来弹出uac获取管理员权限
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20180530-w17/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20180525-w13/">setlocal enabledelayedexpansion</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-25T07:54:15.000Z" itemprop="datePublished">
+          2018-05-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/bat/'>bat</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p><code>setlocal enabledelayedexpansion</code>延迟变量全称<code>延迟环境变量扩展</code>,要理解这个东西,得先理解一下什么叫<code>扩展</code>.CMD在解释命令的时候,首先会读取命令行一条完整的命令,然后对其进行一些命令格式的匹配操作,判断所输入的命令格式是不是符合要求.如果要在命令中引用一些变量,那么如何让CMD在解释命令时,能识别出这个变量呢？
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20180525-w13/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20180523-w12/">注册表右键菜单二之 CLSID</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-23T08:23:59.000Z" itemprop="datePublished">
+          2018-05-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/reg/'>reg</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p><strong>关于CLSID：</strong><br>
+CLSID（Class Identifier）是指windows系统对于不同的应用程序，文件类型，OLE对象，特殊文件夹以及各种系统组件分配一个唯一表示它的ID代码，用于对其身份的标示和与其他对象进行区分。
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20180523-w12/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/20180522-w11/">注册表右键菜单一</a></h3>
                     <span>
                         <span class="post-meta">
@@ -349,186 +531,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20180521-w10/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20180517-d12/">Unknown media type in type */*</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-17T02:00:20.000Z" itemprop="datePublished">
-          2018-05-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/system/'>system</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p><strong>问题描述：</strong></p>
-<p>安装 deb 软件包的时候报 <code>Unkown media type in type */*</code>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20180517-d12/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20180515-w9/">注册表入门</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-15T08:39:05.000Z" itemprop="datePublished">
-          2018-05-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/reg/'>reg</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p><strong>a.注册表</strong><br>
-即计算机用于管理各个硬件和软件的巨大数据库，通常说的注册表包含两部分，注册表数据库和注册表编辑器。注册表数据库包括SYSTEM.DAT和USER.DAT。
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20180515-w9/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20180511-d11/">修复 st3 无法输入中文</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-11T07:12:04.000Z" itemprop="datePublished">
-          2018-05-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/software/'>software</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p><strong>问题描述：</strong></p>
-<p>sublime text 在 debian 上 Fcitx 输入中文
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20180511-d11/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20180511-d10/">修改 ls 显示配色</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-11T06:25:51.000Z" itemprop="datePublished">
-          2018-05-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p><strong>问题描述：</strong></p>
-<p>ls 默认显示的文件夹名称是蓝色的，在黑色背景上看起来是在是有些吃力
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20180511-d10/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20180427-w8/">恢复照片查看器为图片默认打开方式</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-04-27T02:05:07.000Z" itemprop="datePublished">
-          2018-04-27
-      </time>
-    
-    
-    | 
-    <a href='/tags/Win10/'>Win10</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p><strong>win10个性化：</strong><br>
-恢复照片查看器为图片默认打开方式
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20180427-w8/">Read More...</a>
                     </p>
                     
                 </div>

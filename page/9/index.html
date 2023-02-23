@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(62)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(67)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,13 +127,15 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(2)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(5)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/gdb/" class="animsition-link">gdb<small>(1)</small></a></li>
                     
                     <li><a href="/tags/git/" class="animsition-link">git<small>(13)</small></a></li>
                     
@@ -155,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(42)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(43)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -287,6 +289,193 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/20201025-m32/">bash -c 的必要性</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-25T05:10:42.000Z" itemprop="datePublished">
+          2020-10-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在看别人写的脚本的时候，会发现类似下面一个写法，然后就会好奇这个写法的必要性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash -c <span class="string">&quot;echo test &gt;&gt; test.txt&quot;</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201025-m32/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201020-w41/">sed 分隔符之谜</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-20T02:05:55.000Z" itemprop="datePublished">
+          2020-10-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>昨天在用 sed 替换某行 python 代码的时候，遇到了下面这个错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sed -i <span class="string">&#x27;s/&quot;http&quot;: None/&quot;http&quot;: &quot;http://1.1.1.1:8080&quot;/g&#x27;</span> ~/demo.py</span><br><span class="line">sed: -e expression <span class="comment">#1, char 36: unknown option to `s&#x27;</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201020-w41/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201015-w40/">cpp 令人迷惑的概念</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-15T05:27:57.000Z" itemprop="datePublished">
+          2020-10-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/c/'>c++</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在 C++ 中有好几个术语，它们有两个词组成，交换顺序后意思就变了，而在使用过程中，常常可能因为对它们的混淆导致误人子弟</p>
+<p>这几组术语分别是：</p>
+<ol>
+<li>函数指针 vs 指针函数</li>
+<li>数组指针 vs 指针数组</li>
+<li>类模板 vs 模板类</li>
+<li>函数模板 vs 模板函数</li>
+</ol>
+<p>可以明确的是，上述几个术语中，重心在后面，前面的词是作为形容词使用的</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201015-w40/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200924-w39/">shell 对变量的不同状态进行赋值</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-24T05:16:17.000Z" itemprop="datePublished">
+          2020-09-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>一个变量有三种可能的状态：未设定，空值，非空值，针对这三种情况，shell 可以进行不同的操作</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200924-w39/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200923-m31/">shell 脚本传参</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-23T13:01:28.000Z" itemprop="datePublished">
+          2020-09-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="传参家族">$ 传参家族</h2>
+<p>创建一个脚本 <a target="_blank" rel="noopener" href="http://test.sh">test.sh</a>，内容如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$0</span>  <span class="comment"># 当前脚本的文件名（间接运行时还包括绝对路径）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$3</span>  <span class="comment"># $n，传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是 $1</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$#</span>  <span class="comment"># 传递给脚本或函数的参数个数，不包括 $0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># $* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号 (&quot;&quot;) 包含时，都以&quot;$1&quot;&quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数；但是当它们被双引号 (&quot;&quot;) 包含时，&quot;$*&quot; 会将所有的参数作为一个整体，以 &quot;$1 $2 … $n&quot; 的形式输出所有参数，&quot;$@&quot; 会将各个参数分开，以 &quot;$1&quot;&quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数</span></span><br><span class="line"><span class="built_in">echo</span> $*  <span class="comment"># 传递给脚本或函数的所有参数，不包括 $0</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$@</span>  <span class="comment"># 传递给脚本或函数的所有参数，不包括 $0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $?  <span class="comment"># 上个命令的退出状态，或函数的返回值</span></span><br><span class="line"><span class="built_in">echo</span> $$  <span class="comment"># 当前 Shell 进程 ID，对于 Shell 脚本，就是这些脚本所在的进程 ID</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$_</span>  <span class="comment"># 上一个命令的最后一个参数</span></span><br><span class="line"><span class="built_in">echo</span> $!  <span class="comment"># 后台运行的最后一个进程的 ID 号</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200923-m31/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/20200920-m30/">debian 开机自动挂载移动硬盘</a></h3>
                     <span>
                         <span class="post-meta">
@@ -360,184 +549,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200920-w38/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200919-w37/">让 Jenkins 忽略 sh 的执行失败</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-19T01:06:39.000Z" itemprop="datePublished">
-          2020-09-19
-      </time>
-    
-    
-    | 
-    <a href='/tags/ci/'>ci</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>19 年开始接触 Jenkins，但是并没有跟 jf 有过多的交道，今年又碰到了它，并且和 jf 有了初步的接触，于是问题也是接踵而来，比如今天讨论的这个问题：在 jf 中执行 shell 脚本，当 shell 脚本遇到错误的时候，Jenkins 会忽略后续所有的步骤，为啥？咋办？</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200919-w37/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200915-w36/">Shell 字符串截取和替换</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-15T06:27:31.000Z" itemprop="datePublished">
-          2020-09-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>字符串操作是个永远绕不过的题，截取和替换都是必不可少的</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shell 中截取字符串的方法很多</span></span><br><span class="line"><span class="variable">$&#123;var#*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var##*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># shell 字符串变量值的替换</span></span><br><span class="line"><span class="variable">$&#123;var/sct/dst&#125;</span></span><br><span class="line"><span class="variable">$&#123;var//sct/dst&#125;</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200915-w36/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200911-w35/">shell 中检查某个命令是否存在</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-11T06:01:26.000Z" itemprop="datePublished">
-          2020-09-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>Linux 环境多了，配置也就多，写脚本的时候遇到的问题也多，尤其是当你需要在脚本中用到一个命令的时候，除了内置命令，在用到新命令的时候还是需要先检查一下这个命令是否存在，推荐的方式有三个：command -v，type，hash，因为它们都是 <code>shell builtin</code></p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200911-w35/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200908-w34/">shell 中命令替换的写法</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-08T07:07:39.000Z" itemprop="datePublished">
-          2020-09-08
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>写脚本的时候，另外一条命令的返回值作为一个变量在接下来的命令中被使用，是一个比较常见的作法，那么问题来了，怎么得到这个命令的返回值呢？</p>
-<p>这时，就要用到一个 <a target="_blank" rel="noopener" href="http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Command-Substitution">command substitution</a> 的东西了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200908-w34/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200830-m29/">python2 和 3 的编码问题</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-30T06:54:13.000Z" itemprop="datePublished">
-          2020-08-30
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>无论是 py2 还是 py3 都可以理解成是 Unicode 编码，但是在电脑硬盘上存储是按照不同的映射关系的</p>
-<p>首先需要清楚的是 python 的 encode 和 decode，在搞清楚这个问题之前，还得知道 Unicode 将所有的字符都对应了相应的码点，而 UTF-8 或者 ASCII 码是对应从 Unicode 到字节的映射方式，既然有映射方式，就有映射方向，从 Unicode 到字节码(byte string)叫 encode，把从字节码(byte string)到 Unicode 码叫 decode。感觉还是不清晰，再普及几个 “字” 字辈的兄弟</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200830-m29/">Read More...</a>
                     </p>
                     
                 </div>

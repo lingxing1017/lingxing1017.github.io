@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(62)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(67)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,13 +127,15 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(2)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(5)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/gdb/" class="animsition-link">gdb<small>(1)</small></a></li>
                     
                     <li><a href="/tags/git/" class="animsition-link">git<small>(13)</small></a></li>
                     
@@ -155,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(42)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(43)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -287,6 +289,184 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/20210109-m35/">apt 和 apt-get 的区别</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-01-09T04:53:20.000Z" itemprop="datePublished">
+          2021-01-09
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>很久很久之前，突然一个叫 apt 的东西就出现在 debian 上了，并且进入了我的目光，从 apt-get install package 就步入了 apt install package 的时代</p>
+<p>关于这篇文章其实应该是很早之前就要记录了，终究还是被自己的拖延症给耽误了</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210109-m35/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210104-w52/">系统开机时间和重启记录</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-01-04T05:22:12.000Z" itemprop="datePublished">
+          2021-01-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在 linux 系统上查看系统开机时间和重启记录，在排除 case 中连接 ssh 挂掉的原因中，这也是一个方向，这里记录 7 种方法</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210104-w52/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210103-m33/">命令行设置关盖不休眠</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-01-03T12:12:23.000Z" itemprop="datePublished">
+          2021-01-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>这事儿是这么个由来，我拿大学的一个笔记本当成自己的局域网服务器，所以自然就有了盖上盖子不能休眠的需求，然后问题就来了，我设置过一次，也查过一次文章，但今天我更新的时候把某个配置文件更新了，于是保存的设置又丢失了，不知情的我还以为是开机不能自动联网了，结果当我打开盖子又可以连上 ssh 了，所以问题就很明显了，我刚刚更新配置文件的时候把我的配置用更新的软件包中的配置文件覆盖了，更可气的是这个配置我曾经搜索过，但是由于篇幅比较短，没有记录，现在又要重新搜索了，于是乎还是做下笔记吧</p>
+<p>配置文件：/etc/systemd/logind.conf
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210103-m33/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201228-m33/">tar 从 basename 打包</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-12-28T08:42:11.000Z" itemprop="datePublished">
+          2020-12-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在用 tar 打包一个文件夹的时候，发现了一个问题，因为这个文件夹的层级比较深，直接 tar -czvf ./test.tar.gz /path/to/dir 以后，在用 tar xzvf ./test.tar.gz 解压的时候就发现了问题，它居然在当前目录下生成了 ./path/to/dir 文件夹来保存解压后的文件</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201228-m33/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201208-w51/">bash 中的数组和数组</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-12-08T09:28:33.000Z" itemprop="datePublished">
+          2020-12-08
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>定这个标题的时候还是过了一下脑子的，本来想叫它 “bash 中的数组和字典”，但是转念一想，在 bash 中，似乎并不是直接叫它们数组和字典，而是称之为 indexed arrays 和 associative arrays，所以就改成了 “bash 中的数组和数组” 了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用方法</span></span><br><span class="line">$ <span class="built_in">declare</span> -a array_name</span><br><span class="line">$ <span class="built_in">declare</span> -A array_name  <span class="comment"># 关联数组，bash4.0 版本之后开始支持</span></span><br><span class="line"><span class="comment"># 注意：普通数组不用事先声明就可以使用，但关联数组必须提前声明才能使用，且两者不可相互转换</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201208-w51/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/20201203-w50/">记一次差点删不掉</a></h3>
                     <span>
                         <span class="post-meta">
@@ -355,199 +535,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201127-w49/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201120-w48/">git 分支实战 2</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-20T07:05:27.000Z" itemprop="datePublished">
-          2020-11-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>突然就想不起来怎么把本地分支推送到远端了，后来才想起来，问题似乎出在往常远端分支名和本地分支名是一致的，而这次本地分支名取错了，远端分支名想拨乱反正，于是就产生了两个分支名不同的情况，而且是在公司的代码库，乱搞搞肯定是不行的了，那怎么办？</p>
-<p>假设我现在有个分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b local_branch</span><br><span class="line">$ git status  <span class="comment"># 星号(*)表示当前所在分支</span></span><br><span class="line">* local_branch</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201120-w48/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201120-w47/">stash 部分文件</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-20T02:07:15.000Z" itemprop="datePublished">
-          2020-11-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在执行 sct 的时候，往往需要做一些修改提高 case 的运行速度，一段时间以后，当代码库需要更新的时候，直接 git pull --rebase 显然是不行的，因为本地代码库不干净了，这个时候问题又来了，我明明只改动了一部分文件用于本地执行提速，为什么代码库多了这么多不相干的文件改动？想要 git checkout . 又会把提速的改动给还原，怎么办，直接 git stash 显然也是不行的</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201120-w47/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201113-w46/">在 git 中撤销改动</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-13T08:26:38.000Z" itemprop="datePublished">
-          2020-11-13
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>能进就能退，能加就能减，在 git 中熟悉撤销改动的方法必不可缺，在这个全组 git 的现状下，多掌握一项技能，就多了一个装 13 的高光时刻</p>
-<p>撤销改动，必须知道的两个工具：reset 和 revert</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201113-w46/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201113-w45/">git 误删 commit 的后悔药</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-13T07:35:42.000Z" itemprop="datePublished">
-          2020-11-13
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>一个失误导致不应该提交的代码被 commit，赶紧通过 rebase 把 commit drop 掉，可是，这个操作会将本地的改动也一并删除</p>
-<p>怎么办，写了一个下午的 shell 脚本就这样一朝回到解放前，oh no，不应该是这样的</p>
-<p>重写？太多了吧</p>
-<p>我用的是 git，赶紧搜一下，一定有能够恢复 commit 的方法，commit 就 commit 吧，丢了就真的是得不偿失了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201113-w45/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201102-w44/">shell 中各种括号的功能</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-02T05:19:05.000Z" itemprop="datePublished">
-          2020-11-02
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>shell 中能遇到的括号很多，本次涉及的括号有 ()、(())、[]、[[]]、{}，后续遇到更多的括号再补充</p>
-<p>在入正题之前，先说说 $ 后的一些括号</p>
-<ol>
-<li>
-<p>${variable} 变量 variable 的值, 在不引起歧义的情况下可以省略大括号</p>
-</li>
-<li>
-<p>$(command) 命令替换，和 `command` 效果相同，结果为 shell 命令 command 的输出，但是某些版本的 shell 不支持 $() 形式的命令替换, 如 tcsh</p>
-</li>
-<li>
-<p>$((expression))、$[expression] 和 `expr expression` 效果相同，计算数学表达式 exp 的数值，其中 exp 只要符合 C 语言的运算规则即可，三目运算符和逻辑表达式都可以计算</p>
-</li>
-</ol>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201102-w44/">Read More...</a>
                     </p>
                     
                 </div>
