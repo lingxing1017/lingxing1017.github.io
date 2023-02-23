@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives | X</title>
+  <title>修改远端 repo 的默认分支 | X</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -74,7 +74,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -282,98 +282,54 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190726-m4/">配置 macOS 的好用终端</a></h4>
-                            
-                            <p><time datetime="2019-07-26T03:10:20.000Z"><a href="/20190726-m4/">2019-07-26</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190724-w26/">git 分支实战</a></h4>
-                            
-                            <p><time datetime="2019-07-24T02:50:30.000Z"><a href="/20190724-w26/">2019-07-24</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190723-w25/">ftplib 遇到中文路径报错</a></h4>
-                            
-                            <p><time datetime="2019-07-23T05:39:34.000Z"><a href="/20190723-w25/">2019-07-23</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190722-w24/">开机免密登陆</a></h4>
-                            
-                            <p><time datetime="2019-07-22T08:21:40.000Z"><a href="/20190722-w24/">2019-07-22</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190717-w23/">py3.6 迁到 3.7 urllib.parse.quote 的坑</a></h4>
-                            
-                            <p><time datetime="2019-07-17T04:42:43.000Z"><a href="/20190717-w23/">2019-07-17</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190710-w22/">wd 提示一些区域被限制访问</a></h4>
-                            
-                            <p><time datetime="2019-07-10T05:16:00.000Z"><a href="/20190710-w22/">2019-07-10</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190706-w21/">wd 闪退修复</a></h4>
-                            
-                            <p><time datetime="2019-07-06T13:50:10.000Z"><a href="/20190706-w21/">2019-07-06</a></time></p>
-                        </div>
-                    
-                </div>
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2023-02-23T15:16:07.000Z" itemprop="datePublished">
+          2023-02-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                <h1>修改远端 repo 的默认分支</h1>
             </div>
         </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>搭建 Git 服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir test.git  <span class="comment"># 创建 Git 资源的存储目录 test.git</span></span><br><span class="line">$ git init --bare test.git  <span class="comment"># 在 test.git 目录中初始化 Git 的基本配置信息</span></span><br><span class="line"><span class="comment"># 添加系统用户和用户组，如 test_git:test_git_grp</span></span><br><span class="line">$ chown -R test_git:test_git_grp test.git  <span class="comment"># -R ：递归，表示递归 test.git 中的所有文件归属到指定用户 test_git 上</span></span><br><span class="line">$ git <span class="built_in">clone</span> test_git@7.7.7.7:/home/test_git/test.git <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>可是，这时候服务器 git 仓库中初始化的默认分支是 master，我想改成其他的要怎么操作？</p>
+<p>当我在本地直接尝试删除其他分支一样去删除 origin/master 分支时，会报错，即便是我本地切换到其他分支，依然会报下面的错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">remote: error: By default, deleting the current branch is denied, because the next</span><br><span class="line">remote: <span class="string">&#x27;git clone&#x27;</span> won<span class="string">&#x27;t result in any file checked out, causing confusion.</span></span><br><span class="line"><span class="string">remote:</span></span><br><span class="line"><span class="string">remote: You can set &#x27;</span>receive.denyDeleteCurrent<span class="string">&#x27; configuration variable to</span></span><br><span class="line"><span class="string">remote: &#x27;</span>warn<span class="string">&#x27; or &#x27;</span>ignore<span class="string">&#x27; in the remote repository to allow deleting the</span></span><br><span class="line"><span class="string">remote: current branch, with or without a warning message.</span></span><br><span class="line"><span class="string">remote:</span></span><br><span class="line"><span class="string">remote: To squelch this message, you can set it to &#x27;</span>refuse<span class="string">&#x27;.</span></span><br><span class="line"><span class="string">remote: error: refusing to delete the current branch: refs/heads/master</span></span><br><span class="line"><span class="string">To 7.7.7.7:/home/test_git/test.git</span></span><br><span class="line"><span class="string"> ! [remote rejected] master (deletion of the current branch prohibited)</span></span><br><span class="line"><span class="string">错误：无法推送一些引用到 &#x27;</span>7.7.7.7:/home/test_git/test.git<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>好在这是我自己的 git 服务器，我可以直接访问</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> test_git</span><br><span class="line">$ git symbolic-ref HEAD refs/heads/main  <span class="comment"># 可以看到 HEAD 文件中的内容变成了 ref: refs/heads/main</span></span><br></pre></td></tr></table></figure>
+<p>在这之后，就可以在本地像删除一个普通分支一样去删除服务器的 master 了</p>
+<blockquote>
+<p>be slow to promise and quick to perform.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
         <nav class="pagination" role="pagination">
-            <a class="pull-left" href="/archives/page/15/">← Prev Page</a>
-            <a class="pull-right" href="/archives/page/17/">Next Page →</a>
-        </nav>
+    
+    
+    <a class="pull-right" href="/20230223-m66/">
+        gdb 打印变量类型和所在文件 →
+    </a>
+    
+</nav>
+
     </div>
 </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>the only present love demands is love</p>
-        </div>
-    </div>
-</section>
+
       
 <!-- ============================ Footer =========================== -->
 
