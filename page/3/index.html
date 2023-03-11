@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(68)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(69)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,7 +127,7 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(5)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(6)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
@@ -285,6 +285,41 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20221019-m55/">给 socket 加代理</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-10-19T12:35:10.000Z" itemprop="datePublished">
+          2022-10-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/python/'>python</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">File <span class="string">&quot;test.py&quot;</span>, line <span class="number">106</span>, <span class="keyword">in</span> connect_to_host</span><br><span class="line">client_socket = socket.create_connection((self.id, self.port), <span class="number">3</span>)</span><br><span class="line">File <span class="string">&quot;/usr/lib/python3.8/socket.py&quot;</span>, line <span class="number">808</span>, <span class="keyword">in</span> create_connection</span><br><span class="line"><span class="keyword">raise</span> err</span><br><span class="line">File <span class="string">&quot;/usr/lib/python3.8/socket.py&quot;</span>, line <span class="number">796</span>, <span class="keyword">in</span> create_connection</span><br><span class="line">sock.connect(sa)</span><br><span class="line">File <span class="string">&quot;/home/username/.local/lib/python3.8/site-packages/socks.py&quot;</span>, line <span class="number">47</span>, <span class="keyword">in</span> wrapper</span><br><span class="line"><span class="keyword">return</span> function(*args, **kwargs)</span><br><span class="line">File <span class="string">&quot;/home/username/.local/lib/python3.8/site-packages/socks.py&quot;</span>, line <span class="number">814</span>, <span class="keyword">in</span> connect</span><br><span class="line"><span class="keyword">raise</span> GeneralProxyError(<span class="string">&quot;Socket error&quot;</span>, error)</span><br><span class="line">socks.GeneralProxyError: Socket error: timed out</span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20221019-m55/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -507,43 +542,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20220402-m49/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20220303-m48/">requests 和 ca 证书的故事</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-03-03T05:19:08.000Z" itemprop="datePublished">
-          2022-03-03
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>受制于人最大的坏处就是处处落后一步，凡事都只能见招拆招</p>
-<p>这不，实验室订阅系统更新了，更换了 url 不说，还改成了 https 协议，免不了增加证书，旧时 requests 访问直接不可用</p>
-<p>趁这个机会，也复习了一下 requests 关于 ca 证书的一个使用</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20220303-m48/">Read More...</a>
                     </p>
                     
                 </div>
