@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2019/8 | X</title>
+  <title>匿名 namespace | X</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -74,7 +74,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -282,68 +282,59 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190830-m9/">git 修改 commit 信息</a></h4>
-                            
-                            <p><time datetime="2019-08-30T06:09:47.000Z"><a href="/20190830-m9/">2019-08-30</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190827-m8/">Py 中 __name__ 的意义</a></h4>
-                            
-                            <p><time datetime="2019-08-27T08:33:11.000Z"><a href="/20190827-m8/">2019-08-27</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190820-w28/">bat 中新开 cmd 并运行命令</a></h4>
-                            
-                            <p><time datetime="2019-08-20T01:44:55.000Z"><a href="/20190820-w28/">2019-08-20</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190805-w27/">Python 输出缓冲区</a></h4>
-                            
-                            <p><time datetime="2019-08-05T08:41:53.000Z"><a href="/20190805-w27/">2019-08-05</a></time></p>
-                        </div>
-                    
-                </div>
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2023-03-20T03:17:17.000Z" itemprop="datePublished">
+          2023-03-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/c/'>c++</a>
+    
+    
+</span>
+                <h1>匿名 namespace</h1>
             </div>
         </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namespce</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是啥？命名空间的名字呢？这个 c 要怎么在其他地方调用？</p>
+<span id="more"></span>
+<p>当定义一个命名空间时，可以忽略这个命名空间的名称，成为一个匿名命名空间，并且编译器在内部会为这个命名空间生成一个唯一的名字，而且还会为这个匿名的命名空间生成一条 using 指令</p>
+<p>所以上面的代码在效果上等同于：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> __UNIQUE_NAME_</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __UNIQUE_NAME_;</span><br></pre></td></tr></table></figure>
+<p>在匿名命名空间中声明的名称也将被编译器转换，与编译器为这个匿名命名空间生成的唯一内部名称（即这里的 _<em>UNIQUE_NAME</em>）绑定在一起</p>
+<p>还有一点很重要，<strong><code>在匿名命名空间中声明的名称具有 internal 链接属性，这和声明为 static 的全局名称的链接属性是相同的，即名称的作用域被限制在当前文件中，无法通过在另外的文件中使用 extern 声明来进行链接</code></strong></p>
+<p>注意：<code>命名空间都是具有 external 连接属性的，只是匿名的命名空间产生的 __UNIQUE_NAME_ 在别的文件中无法得到，因为这个唯一的名字是不可见的</code></p>
+<p>C++ 新的标准中提倡使用匿名命名空间，而不推荐使用 static，因为 static 用在不同的地方涵义不同，容易造成混淆；另外，static 不能修饰 class</p>
+<p>一个问题：In the Google C++ Style Guide, the Namespaces section states that “Use of unnamed namespaces in header files can easily cause violations of the C++ One Definition Rule (ODR).”</p>
+<blockquote>
+<p>Including that header file in any source file will case ODR violation, since is defined twice. This occurs because an unnamed namespace is given a unique identifer by the compiler, and all occurrences of an unnamed namespace in a translation unit are given the same identifier. To paraphrase: every TU has at most one unnamed namespace.c</p>
+</blockquote>
+<blockquote>
+<p>be slow to promise and quick to perform.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
         <nav class="pagination" role="pagination">
-            
-            
-        </nav>
+    
+    
+    <a class="pull-right" href="/20230302-m68/">
+        cpp11 auto →
+    </a>
+    
+</nav>
+
     </div>
 </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>the only present love demands is love</p>
-        </div>
-    </div>
-</section>
+
       
 <!-- ============================ Footer =========================== -->
 
