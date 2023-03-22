@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(70)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(71)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,7 +127,7 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(7)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(8)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
@@ -344,7 +344,7 @@
 <p><strong>注意</strong>：在 ssh_config 关于 <a target="_blank" rel="noopener" href="https://man.openbsd.org/ssh_config#ControlMaster">ControlMaster</a> 的描述中，有一段令人迷惑的说辞</p>
 <pre><code>Additional sessions can connect to this socket using the same ControlPath with ControlMaster set to no (the default). These sessions will try to reuse the master instance's network connection rather than initiating new ones, but will fall back to connecting normally if the control socket does not exist, or is not listening.
 </code></pre>
-<p>“即使 ControlMaster 的值是 no，其他会话可以使用相同的 ControlPath 连接到此套接字”，这是为什么？</p>
+<p>❓“即使 ControlMaster 的值是 no，其他会话可以使用相同的 ControlPath 连接到此套接字”，这是为什么？</p>
 <p><strong>可能是因为</strong> ControlMaster controls whether an ssh instance will be a control master, not whether it uses the control feature at all. If you want to disable the control feature for an ssh instance, set ControlPath to “none”.</p>
 <blockquote>
 <p>be slow to promise and quick to perform.</p>

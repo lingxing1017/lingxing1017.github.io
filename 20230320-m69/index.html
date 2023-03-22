@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(70)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(71)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -127,7 +127,7 @@
                     
                     <li><a href="/tags/bat/" class="animsition-link">bat<small>(4)</small></a></li>
                     
-                    <li><a href="/tags/c/" class="animsition-link">c++<small>(7)</small></a></li>
+                    <li><a href="/tags/c/" class="animsition-link">c++<small>(8)</small></a></li>
                     
                     <li><a href="/tags/case/" class="animsition-link">case<small>(1)</small></a></li>
                     
@@ -312,9 +312,8 @@
 <p>注意：<code>命名空间都是具有 external 连接属性的，只是匿名的命名空间产生的 __UNIQUE_NAME_ 在别的文件中无法得到，因为这个唯一的名字是不可见的</code></p>
 <p>C++ 新的标准中提倡使用匿名命名空间，而不推荐使用 static，因为 static 用在不同的地方涵义不同，容易造成混淆；另外，static 不能修饰 class</p>
 <p>一个问题：In the Google C++ Style Guide, the Namespaces section states that “Use of unnamed namespaces in header files can easily cause violations of the C++ One Definition Rule (ODR).”</p>
-<blockquote>
-<p>Including that header file in any source file will case ODR violation, since is defined twice. This occurs because an unnamed namespace is given a unique identifer by the compiler, and all occurrences of an unnamed namespace in a translation unit are given the same identifier. To paraphrase: every TU has at most one unnamed namespace.c</p>
-</blockquote>
+<pre><code>Including that header file in any source file will case ODR violation, since is defined twice. This occurs because an unnamed namespace is given a unique identifer by the compiler, and all occurrences of an unnamed namespace in a translation unit are given the same identifier. To paraphrase: every TU has at most one unnamed namespace.c
+</code></pre>
 <blockquote>
 <p>be slow to promise and quick to perform.</p>
 </blockquote>
@@ -323,6 +322,10 @@
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/20230321-m70/" style="float: left;">
+        ← 类内的 static
+    </a>
     
     
     <a class="pull-right" href="/20230302-m68/">
