@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(72)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -167,11 +167,11 @@
                     
                     <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(8)</small></a></li>
                     
-                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(13)</small></a></li>
                     
                     <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(2)</small></a></li>
                     
                     <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
                     
@@ -287,6 +287,78 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201025-m32/">bash -c 的必要性</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-25T05:10:42.000Z" itemprop="datePublished">
+          2020-10-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在看别人写的脚本的时候，会发现类似下面一个写法，然后就会好奇这个写法的必要性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash -c <span class="string">&quot;echo test &gt;&gt; test.txt&quot;</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201025-m32/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201020-w41/">sed 分隔符之谜</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-10-20T02:05:55.000Z" itemprop="datePublished">
+          2020-10-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>昨天在用 sed 替换某行 python 代码的时候，遇到了下面这个错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sed -i <span class="string">&#x27;s/&quot;http&quot;: None/&quot;http&quot;: &quot;http://1.1.1.1:8080&quot;/g&#x27;</span> ~/demo.py</span><br><span class="line">sed: -e expression <span class="comment">#1, char 36: unknown option to `s&#x27;</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201020-w41/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -479,77 +551,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200920-w38/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200919-w37/">让 Jenkins 忽略 sh 的执行失败</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-19T01:06:39.000Z" itemprop="datePublished">
-          2020-09-19
-      </time>
-    
-    
-    | 
-    <a href='/tags/ci/'>ci</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>19 年开始接触 Jenkins，但是并没有跟 jf 有过多的交道，今年又碰到了它，并且和 jf 有了初步的接触，于是问题也是接踵而来，比如今天讨论的这个问题：在 jf 中执行 shell 脚本，当 shell 脚本遇到错误的时候，Jenkins 会忽略后续所有的步骤，为啥？咋办？</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200919-w37/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200915-w36/">Shell 字符串截取和替换</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-15T06:27:31.000Z" itemprop="datePublished">
-          2020-09-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>字符串操作是个永远绕不过的题，截取和替换都是必不可少的</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shell 中截取字符串的方法很多</span></span><br><span class="line"><span class="variable">$&#123;var#*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var##*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># shell 字符串变量值的替换</span></span><br><span class="line"><span class="variable">$&#123;var/sct/dst&#125;</span></span><br><span class="line"><span class="variable">$&#123;var//sct/dst&#125;</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200915-w36/">Read More...</a>
                     </p>
                     
                 </div>

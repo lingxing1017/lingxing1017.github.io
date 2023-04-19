@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(72)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -167,11 +167,11 @@
                     
                     <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(8)</small></a></li>
                     
-                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(13)</small></a></li>
                     
                     <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(2)</small></a></li>
                     
                     <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
                     
@@ -287,6 +287,82 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200626-d27/">断开 ssh 继续运行命令</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-06-26T13:00:31.000Z" itemprop="datePublished">
+          2020-06-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>为什么 ssh 断开后运行的命令会退出呢？</p>
+<p><strong>明确元凶：</strong></p>
+<pre><code>SIGHUP 信号
+</code></pre>
+<p><strong>简单的来说：</strong></p>
+<pre><code>因为所有进程都得有个父进程。当 ssh 到一个服务器上时，打开的 shell 就是所有执行命令的父进程，当断开 ssh 连接后，在 ssh 中运行命令的父进程就没了。如果处理不当，这些进程就会收到 SIGTERM 信号，全被干掉了
+</code></pre>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200626-d27/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200603-d26/">debian10 安装 docker</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-06-03T08:46:14.000Z" itemprop="datePublished">
+          2020-06-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/docker/'>docker</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>起初不知 docker 滋味，一尝才知其好滋味，在 python 项目上来说，其实跟 pipenv 也是差不了太多。最初使用 docker 的目的其实是用 flask run 的方式部署 flask 项目，不过在 flask 的官方文档中发现了部署一章节，其实也不用这么麻烦了，不过在多个项目同时隔离运行上感觉还是有点用处的</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200603-d26/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -460,81 +536,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200531-m23/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200525-m22/">python 的 LEGB 规则</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-05-25T03:52:58.000Z" itemprop="datePublished">
-          2020-05-25
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>LEGB 含义：</p>
-<pre><code>L-Local(function)；函数内的名字空间
-E-Enclosing function locals；外部嵌套函数的名字空间(例如closure)
-G-Global(module)；函数定义所在模块（文件）的名字空间
-B-Builtin(Python)；Python内置模块的名字空间
-</code></pre>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200525-m22/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200521-m21/">sqlite3 占位符引发的惨案</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-05-21T06:55:18.000Z" itemprop="datePublished">
-          2020-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/sql/'>sql</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>记录一下在 python 中调用 sqlite3 使用 like 进行模糊查询时引发的惨案</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200521-m21/">Read More...</a>
                     </p>
                     
                 </div>

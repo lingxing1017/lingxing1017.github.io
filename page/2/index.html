@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(72)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -167,11 +167,11 @@
                     
                     <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(8)</small></a></li>
                     
-                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(13)</small></a></li>
                     
                     <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(2)</small></a></li>
                     
                     <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
                     
@@ -287,6 +287,80 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230223-m66/">gdb 打印变量类型和所在文件</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-02-23T06:47:10.000Z" itemprop="datePublished">
+          2023-02-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/gdb/'>gdb</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">child</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she</span> = &#123;</span> <span class="string">&quot;Jerry&quot;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she1</span> = &#123;</span> <span class="string">&quot;Jerry1&quot;</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she2</span> = &#123;</span> <span class="string">&quot;Jerry2&quot;</span> &#125;;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230223-m66/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230221-m65/">cpp17 的 variant</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-02-21T14:35:15.000Z" itemprop="datePublished">
+          2023-02-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/c/'>c++</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="std-variant">std::variant</h2>
+<p>std::variant 是 C++17 中一个新加入标准函式库的 template 容器，使用时需要 #include <variant></p>
+<p>它的概念基本上是和 union 一样，是一个可以用来储存多种型别资料的容器；和 union 不同的是，std::variant 是 type-safe 的，再加上有许多函数可以搭配使用，所以在使用上应该算是相对安全</p>
+<p>由于它是标准函式库的 template class，在使用时不需要另外去宣告一个新的类型</p>
+<p>std::variant 在储存数据的时候，内部会有一个索引值来记录目前存储的是哪一个类型的数据</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230221-m65/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -464,79 +538,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20221214-m60/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20221214-m59/">更换 ssh 公钥算法</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-12-14T01:40:55.000Z" itemprop="datePublished">
-          2022-12-14
-      </time>
-    
-    
-    | 
-    <a href='/tags/ssh/'>ssh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>事出有因必作妖，大概是 macOS 更新的时候自动更新了 ssh 版本，直接破天荒的来到了 9.0，于是我电脑连接几个公司服务器的私钥都报了认证失败</p>
-<p>虽然 OpenSSH 团队在 8.8 版本便已经宣布了将默认禁用 ssh-rsa 的签名方案，但是在真遇到问题之前谁又会以为然呢</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20221214-m59/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20221207-m58/">强制删除描述文件</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-12-07T12:47:04.000Z" itemprop="datePublished">
-          2022-12-07
-      </time>
-    
-    
-    | 
-    <a href='/tags/macOS/'>macOS</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>MDM（移动设备管理）是一种软件应用程序，用于管理企业中的终端，如笔记本电脑、智能手机、平板电脑等</p>
-<p>自从安装公司门户，在 MacBook 上安装了不少描述文件，但是当我在公司门户上删除了设备的时候，公司门户却没有完全把描述文件给删除干净，但是这些描述文件却是管理员账户也无法删除的</p>
-<p>这时候只能找找看有没有暴力重置所有已安装描述文件（profile）的方法</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20221207-m58/">Read More...</a>
                     </p>
                     
                 </div>

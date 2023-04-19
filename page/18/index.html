@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(72)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -167,11 +167,11 @@
                     
                     <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(8)</small></a></li>
                     
-                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(13)</small></a></li>
                     
                     <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(2)</small></a></li>
                     
                     <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
                     
@@ -287,6 +287,76 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20190528-m2/">python 中 is 与 == 的区别</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-05-28T02:57:14.000Z" itemprop="datePublished">
+          2019-05-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/python/'>python</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>记录下在 Python 中踩到的坑：is not 和 != 的区别
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20190528-m2/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20190523-d23/">修改 grub 默认启动项</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-05-23T05:37:09.000Z" itemprop="datePublished">
+          2019-05-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/grub/'>grub</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>修改 grub 默认启动项，简要记录下
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20190523-d23/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -458,83 +528,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20190219-d21/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20181129-d20/">update-initramfs 报 no matching swap device</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-11-29T08:47:18.000Z" itemprop="datePublished">
-          2018-11-29
-      </time>
-    
-    
-    | 
-    <a href='/tags/system/'>system</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p><strong>问题描述：</strong></p>
-<pre><code>update-initramfs: Generating /boot/initrd.img
-W: initramfs-tools configuration sets RESUME=UUID=
-W: but no matching swap device is available.
-I: The initramfs will attempt to resume from /dev/sda3
-I: (UUID=6ec96574-ac9f-406e-a62c-2b514aa1a0e4)
-I: Set the RESUME variable to override this.
-</code></pre>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20181129-d20/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20181030-d19/">nmcli 连 wifi——从安装完驱动开始</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-10-30T04:39:50.000Z" itemprop="datePublished">
-          2018-10-30
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>之前提到过 wpa_supplicant 连接 wifi，但那是需要很多前提条件的，比如无线网卡启动等等问题，这次换成 networkmanager 工具来实现命令行联网，并且将常见排除问题的操作也附上。
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20181030-d19/">Read More...</a>
                     </p>
                     
                 </div>

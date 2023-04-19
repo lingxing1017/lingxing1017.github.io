@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(72)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -167,11 +167,11 @@
                     
                     <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(8)</small></a></li>
                     
-                    <li><a href="/tags/system/" class="animsition-link">system<small>(12)</small></a></li>
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(13)</small></a></li>
                     
                     <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(1)</small></a></li>
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(2)</small></a></li>
                     
                     <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
                     
@@ -287,6 +287,77 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200919-w37/">让 Jenkins 忽略 sh 的执行失败</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-19T01:06:39.000Z" itemprop="datePublished">
+          2020-09-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/ci/'>ci</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>19 年开始接触 Jenkins，但是并没有跟 jf 有过多的交道，今年又碰到了它，并且和 jf 有了初步的接触，于是问题也是接踵而来，比如今天讨论的这个问题：在 jf 中执行 shell 脚本，当 shell 脚本遇到错误的时候，Jenkins 会忽略后续所有的步骤，为啥？咋办？</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200919-w37/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200915-w36/">Shell 字符串截取和替换</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-15T06:27:31.000Z" itemprop="datePublished">
+          2020-09-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>字符串操作是个永远绕不过的题，截取和替换都是必不可少的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shell 中截取字符串的方法很多</span></span><br><span class="line"><span class="variable">$&#123;var#*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var##*/&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var%%/*&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:start&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start:len&#125;</span></span><br><span class="line"><span class="variable">$&#123;var:0-start&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># shell 字符串变量值的替换</span></span><br><span class="line"><span class="variable">$&#123;var/sct/dst&#125;</span></span><br><span class="line"><span class="variable">$&#123;var//sct/dst&#125;</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200915-w36/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -459,79 +530,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200822-m27/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200820-w33/">git 之 HEAD 寻亲记</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-20T06:26:34.000Z" itemprop="datePublished">
-          2020-08-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>入乡随俗，git 来到了一个父系社会的国度，也免不了有自己的家族史，HEAD 作为这一代的 “头头”，自然也是要知道自己从哪儿来，祖宗十八代都得安排上，这时候就有个问题，如果只是单纯的画图，等找到太爷爷那一代图就已经变得画不下了，肯定得找个文字记录的方法，这时候，<code>^</code> 和 <code>~</code> 标记就出现了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200820-w33/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200817-m26/">自定义终端标题</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-17T15:12:49.000Z" itemprop="datePublished">
-          2020-08-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <h2 id="起因">起因</h2>
-<p>在定制 Win10 terminal 中的 git bash 的时候，想要在 title 中显示当前操作的目录来区分各个终端，然后是开始各种搜索，网上大多给出的解决方法都是如下方案</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> -ne <span class="string">&quot;\033]0;title\007&quot;</span>  <span class="comment"># -e 使转义字符生效；-n 内容输出后不换行</span></span><br></pre></td></tr></table></figure>
-<p>这时候，终端的 title 就会变成 title 了</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200817-m26/">Read More...</a>
                     </p>
                     
                 </div>
