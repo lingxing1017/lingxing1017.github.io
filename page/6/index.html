@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(75)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -146,6 +146,8 @@
                     <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
                     
                     <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(1)</small></a></li>
                     
                     <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(4)</small></a></li>
                     
@@ -285,6 +287,47 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210927-w62/">sed 与替换</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-09-27T06:08:22.000Z" itemprop="datePublished">
+          2021-09-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>只是介绍一下 sed 用作文本替换时的常见做法</p>
+<p>sed(stream editor) 的基本工作方式：</p>
+<ol>
+<li>将文件以<code>行</code>为单位读取到内存(模式空间)</li>
+<li>使用 sed 的<code>每个脚本</code>对该行进行操作</li>
+<li>处理完成后输出该行</li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210927-w62/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -497,43 +540,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20210531-w56/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210517-w55/">向 Python 切片再进一步</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-05-17T06:44:18.000Z" itemprop="datePublished">
-          2021-05-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <h2 id="切片是什么？">切片是什么？</h2>
-<p>切片操作基本表达式：object[start_index:end_index:step]</p>
-<p>一个完整的切片表达式包含两个 <code>:</code>，用于分隔三个参数 (start_index、end_index、step)；当只有一个 : 时，默认第三个参数 step=1；当一个 : 也没有时，表示切取 start_index 指定的那个元素
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210517-w55/">Read More...</a>
                     </p>
                     
                 </div>

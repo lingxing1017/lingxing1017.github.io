@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(75)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -146,6 +146,8 @@
                     <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
                     
                     <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(1)</small></a></li>
                     
                     <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(4)</small></a></li>
                     
@@ -285,6 +287,45 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210113-m36/">认识下端口</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-01-13T06:05:12.000Z" itemprop="datePublished">
+          2021-01-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/net/'>net</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="端口简介">端口简介</h2>
+<p>在网络技术中，端口（Port）包括逻辑端口和物理端口两种类型</p>
+<p>物理端口：物理存在的端口，如 ADSL Modem、集线器、交换机、路由器上用于连接其他网络设备的接口</p>
+<p>逻辑端口：逻辑意义上用于区分服务的端口，如 TCP/IP 协议中的服务端口，端口号的范围从 0 到 65535，比如用于浏览网页服务的 80 端口，用于 FTP 服务的 21 端口等</p>
+<p>由于物理端口和逻辑端口数量较多，为了对端口进行区分，将每个端口进行了编号，这就是端口号</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210113-m36/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -492,49 +533,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201203-w50/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201127-w49/">shell 中的整数运算</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-27T03:55:58.000Z" itemprop="datePublished">
-          2020-11-27
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>话在前头，为什么本文是整数运算，因为 bash 本身不支持浮点型的运算，换言之，bash 本身能做的也就整数类型的运算</p>
-<p>谈一谈在 shell 中进行整数运算的几种方案</p>
-<ol>
-<li>r=$((1+2*3))</li>
-<li>r=`expr 1 \+ 2 \* 3`</li>
-<li>r=$[1+2] |</li>
-<li>declare -i r=1+2*3 |</li>
-<li>let r=1+2 |</li>
-</ol>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201127-w49/">Read More...</a>
                     </p>
                     
                 </div>

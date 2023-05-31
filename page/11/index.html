@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(75)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -146,6 +146,8 @@
                     <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
                     
                     <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(1)</small></a></li>
                     
                     <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(4)</small></a></li>
                     
@@ -285,6 +287,54 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200920-w38/">一部分输出重定向</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-09-20T10:26:30.000Z" itemprop="datePublished">
+          2020-09-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>本次讨论的是下面几个输出重定向（bash）：</p>
+<ul>
+<li>2&gt;&amp;-</li>
+<li>2&gt;/dev/null</li>
+<li>|&amp;</li>
+<li>&amp;&gt;/dev/null</li>
+<li>&gt;/dev/null 2&gt;&amp;1</li>
+</ul>
+<p>首先要清楚：</p>
+<ul>
+<li>1 是 standard out (stdout)</li>
+<li>2 是 standard error (stderr)</li>
+<li>如果没有给出明确的数字，bash 会假定给的是 1</li>
+</ul>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200920-w38/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -492,42 +542,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200823-m28/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200822-m27/">探索 Bash 中的 Prompt</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-22T08:13:36.000Z" itemprop="datePublished">
-          2020-08-22
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在开始探索之前，还是得再次夸一夸 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/">Arch 的 wiki</a>，虽然自己日常用的是 macOS 和 debian，但是好几次终端有关的问题，却都是通过 Arch 的 wiki 找到了我想要的答案，这次，兜兜转转，也还是让<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Bash/Prompt_customization">它</a>又出了一份力</p>
-<p>本文围绕的东西有：PS1、PS2、PS3、PS4、PROMOTE_COMMAND、ANSI escape code</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200822-m27/">Read More...</a>
                     </p>
                     
                 </div>

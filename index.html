@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(75)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -146,6 +146,8 @@
                     <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
                     
                     <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(1)</small></a></li>
                     
                     <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(4)</small></a></li>
                     
@@ -285,6 +287,44 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230527-m74/">jf 环境变量的作用范围、获取、设置</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-05-27T08:50:19.000Z" itemprop="datePublished">
+          2023-05-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/jenkins/'>jenkins</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>Jenkins 环境变量是通过 env 变量公开的全局变量，可以在 Jenkins 文件中的任何位置使用</p>
+<p>存储在 env 变量中的任何值都存储为字符串类型</p>
+<p>环境变量可以在 pipeline 顶层、特定 stage 或 script 块内部设置</p>
+<h2 id="环境变量的作用范围">环境变量的作用范围</h2>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230527-m74/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -508,42 +548,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20230302-m68/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20230223-m67/">修改远端 repo 的默认分支</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-02-23T15:16:07.000Z" itemprop="datePublished">
-          2023-02-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>搭建 Git 服务器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir test.git  <span class="comment"># 创建 Git 资源的存储目录 test.git</span></span><br><span class="line">$ git init --bare test.git  <span class="comment"># 在 test.git 目录中初始化 Git 的基本配置信息</span></span><br><span class="line"><span class="comment"># 添加系统用户和用户组，如 test_git:test_git_grp</span></span><br><span class="line">$ chown -R test_git:test_git_grp test.git  <span class="comment"># -R ：递归，表示递归 test.git 中的所有文件归属到指定用户 test_git 上</span></span><br><span class="line">$ git <span class="built_in">clone</span> test_git@7.7.7.7:/home/test_git/test.git <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20230223-m67/">Read More...</a>
                     </p>
                     
                 </div>

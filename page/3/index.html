@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(74)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(75)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -146,6 +146,8 @@
                     <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(1)</small></a></li>
                     
                     <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(1)</small></a></li>
                     
                     <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(4)</small></a></li>
                     
@@ -285,6 +287,42 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20221214-m60/">探 ssh_config</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-12-14T02:07:41.000Z" itemprop="datePublished">
+          2022-12-14
+      </time>
+    
+    
+    | 
+    <a href='/tags/ssh/'>ssh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>SSH Client 的参数值来源主要有 3 个，分别是<code>命令行选项</code>，<code>~/.ssh/config</code> 和 <code>/etc/ssh/ssh_config</code></p>
+<p>最近用上了 vscode 的 ssh remote 插件，不得不用上 ssh_config 文件，所以初步了解一下 ~/.ssh/config、/etc/ssh/ssh_config</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20221214-m60/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -497,43 +535,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20221019-m55/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20220726-m54/">nmcli 配置静态 IP</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-07-26T14:35:46.000Z" itemprop="datePublished">
-          2022-07-26
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>不知道什么时候开始 network-manager 成了 debian 默认管理网络连接的工具，可能是因为我装了桌面环境吧</p>
-<p>起初，连接 wifi 是用的 wpa_supplicant，后来 nm 出来以后，连同着命令行也要换了，成了 nmcli</p>
-<p>最近，希望把 debian 的 ip 固定下来，方便每次连接 wifi 的时候自动分配到同一个 ip，以做家里的小服务器 ip</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20220726-m54/">Read More...</a>
                     </p>
                     
                 </div>
