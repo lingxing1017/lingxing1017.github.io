@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(75)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(76)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -149,7 +149,7 @@
                     
                     <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(4)</small></a></li>
+                    <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(5)</small></a></li>
                     
                     <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
                     
@@ -287,6 +287,43 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20220303-m48/">requests 和 ca 证书的故事</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-03T05:19:08.000Z" itemprop="datePublished">
+          2022-03-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/python/'>python</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>受制于人最大的坏处就是处处落后一步，凡事都只能见招拆招</p>
+<p>这不，实验室订阅系统更新了，更换了 url 不说，还改成了 https 协议，免不了增加证书，旧时 requests 访问直接不可用</p>
+<p>趁这个机会，也复习了一下 requests 关于 ca 证书的一个使用</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20220303-m48/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -501,44 +538,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20211115-m42/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20211014-m41/">在任意路径 git 指定库</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-10-14T01:55:42.000Z" itemprop="datePublished">
-          2021-10-14
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>标题中的 git 是一个动词，标题的意思是可以在任意路径下，对想操作的 git 库文件夹操作</p>
-<p>问题：假设有一天，需要在 ~ 目录下对 /mnt/test 进行 git 操作，无论是需要 pull 还是 push，又或者是其他的什么操作</p>
-<p>看到这个问题，想当然的大概就会选择 cd 过去，那么如果在不能 cd 的情况下，要怎么办？</p>
-<p>这或许不是个值得思考的问题，但是 git 的作者也给出了对应的答案，那就是 git 的两个选项 git-dir 和 work-tree</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20211014-m41/">Read More...</a>
                     </p>
                     
                 </div>
