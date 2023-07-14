@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(76)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(77)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -159,7 +159,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(43)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(44)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -287,6 +287,47 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230713-m76/">bash 引号与转义</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-07-13T09:08:54.000Z" itemprop="datePublished">
+          2023-07-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>之前简单的总结过 <a href="../20200814-w30/index.html">bash 中单引号与双引号</a>，但是并没有对单双引号的区别进行细致的描述，更多的偏向于解释 shell 特定功能的保留字，今天看到了一篇对于 bash 的单双引号内内容转义讲述更详细的文章，故而更新记形成此记录</p>
+<p>bash 引号的语义可由下述三句描述简单归纳：</p>
+<ol>
+<li>反斜线用来转义除换行之外的所有字符，反斜线加换行为连行</li>
+<li><code>单引号</code>用来<code>直出字面量</code>，其<code>内容</code>部分<code>不允许转义，包括单引号</code>转义也不允许</li>
+<li><code>双引号</code>内<code>允许命令替换和对特定几个字符转义，双引号内的反斜线对其他字符没有特殊含义，会被当作字面量处理</code></li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230713-m76/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -513,42 +554,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20230321-m70/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20230320-m69/">匿名 namespace</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-03-20T03:17:17.000Z" itemprop="datePublished">
-          2023-03-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/c/'>c++</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namespce</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这是啥？命名空间的名字呢？这个 c 要怎么在其他地方调用？</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20230320-m69/">Read More...</a>
                     </p>
                     
                 </div>

@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(76)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(77)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -159,7 +159,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(43)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(44)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -287,6 +287,42 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20201208-w51/">bash 中的数组和数组</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-12-08T09:28:33.000Z" itemprop="datePublished">
+          2020-12-08
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>定这个标题的时候还是过了一下脑子的，本来想叫它 “bash 中的数组和字典”，但是转念一想，在 bash 中，似乎并不是直接叫它们数组和字典，而是称之为 indexed arrays 和 associative arrays，所以就改成了 “bash 中的数组和数组” 了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用方法</span></span><br><span class="line">$ <span class="built_in">declare</span> -a array_name</span><br><span class="line">$ <span class="built_in">declare</span> -A array_name  <span class="comment"># 关联数组，bash4.0 版本之后开始支持</span></span><br><span class="line"><span class="comment"># 注意：普通数组不用事先声明就可以使用，但关联数组必须提前声明才能使用，且两者不可相互转换</span></span><br></pre></td></tr></table></figure>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20201208-w51/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -505,53 +541,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20201113-w45/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201102-w44/">shell 中各种括号的功能</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-11-02T05:19:05.000Z" itemprop="datePublished">
-          2020-11-02
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>shell 中能遇到的括号很多，本次涉及的括号有 ()、(())、[]、[[]]、{}，后续遇到更多的括号再补充</p>
-<p>在入正题之前，先说说 $ 后的一些括号</p>
-<ol>
-<li>
-<p>${variable} 变量 variable 的值, 在不引起歧义的情况下可以省略大括号</p>
-</li>
-<li>
-<p>$(command) 命令替换，和 `command` 效果相同，结果为 shell 命令 command 的输出，但是某些版本的 shell 不支持 $() 形式的命令替换, 如 tcsh</p>
-</li>
-<li>
-<p>$((expression))、$[expression] 和 `expr expression` 效果相同，计算数学表达式 exp 的数值，其中 exp 只要符合 C 语言的运算规则即可，三目运算符和逻辑表达式都可以计算</p>
-</li>
-</ol>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201102-w44/">Read More...</a>
                     </p>
                     
                 </div>
