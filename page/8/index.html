@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(78)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(79)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -169,7 +169,7 @@
                     
                     <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(2)</small></a></li>
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(3)</small></a></li>
                     
                     <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
                     
@@ -285,6 +285,43 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210304-m40/">bash 启动加载了谁</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-03-04T06:52:37.000Z" itemprop="datePublished">
+          2021-03-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>书接上文，“bashrc 里修改环境变量要加 export 吗” 结尾提到 “至此，定义环境变量的时候为什么需要加 export 结”，但是原问题涉及的 bashrc 并没有解决掉</p>
+<p>以前粗浅的知道 bash 启动是会加载 ~/.bashrc 文件的，那么如果是在 bashrc 中设置了一个变量，照往常的粗浅理解应该是会加载一遍 ~/.bashrc 文件从而使得其中的变量都生效的，按这个逻辑来看，bashrc 中的变量无论环境变量还是普通变量都应该可以生效，那么为什么实际实验后发现，没有生效呢？为什么还要加 export 呢</p>
+<p>那么 bash 启动的时候是什么样的规则，又去加载了谁呢</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210304-m40/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -494,42 +531,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20210104-w52/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20210103-m33/">命令行设置关盖不休眠</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-01-03T12:12:23.000Z" itemprop="datePublished">
-          2021-01-03
-      </time>
-    
-    
-    | 
-    <a href='/tags/system/'>system</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>这事儿是这么个由来，我拿大学的一个笔记本当成自己的局域网服务器，所以自然就有了盖上盖子不能休眠的需求，然后问题就来了，我设置过一次，也查过一次文章，但今天我更新的时候把某个配置文件更新了，于是保存的设置又丢失了，不知情的我还以为是开机不能自动联网了，结果当我打开盖子又可以连上 ssh 了，所以问题就很明显了，我刚刚更新配置文件的时候把我的配置用更新的软件包中的配置文件覆盖了，更可气的是这个配置我曾经搜索过，但是由于篇幅比较短，没有记录，现在又要重新搜索了，于是乎还是做下笔记吧</p>
-<p>配置文件：/etc/systemd/logind.conf
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20210103-m33/">Read More...</a>
                     </p>
                     
                 </div>

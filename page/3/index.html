@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(78)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(79)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -169,7 +169,7 @@
                     
                     <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(2)</small></a></li>
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(3)</small></a></li>
                     
                     <li><a href="/tags/小技巧/" class="animsition-link">小技巧<small>(1)</small></a></li>
                     
@@ -285,6 +285,45 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230221-m64/">软硬快捷方式</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-02-21T13:08:55.000Z" itemprop="datePublished">
+          2023-02-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>ln 命令用于给文件创建链接，链接的方式分为以下 2 种：</p>
+<ol>
+<li>软链接：类似于 Windows 系统中给文件创建快捷方式，即产生一个特殊的文件，该文件用来指向另一个文件，此链接方式同样适用于目录</li>
+<li>硬链接：文件的基本信息都存储在 inode 中，而硬链接指的就是给一个文件的 inode 分配多个文件名，通过任何一个文件名，都可以找到此文件的 inode，从而读取该文件的数据信息</li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230221-m64/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -496,42 +535,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20221207-m58/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20221128-m57/">新 case 分支</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-11-28T14:57:08.000Z" itemprop="datePublished">
-          2022-11-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>bash 的多选复合命令称为 case，它的语法规则如下所示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> word <span class="keyword">in</span></span><br><span class="line">    [pattern [| pattern]...) commands ;;]...</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20221128-m57/">Read More...</a>
                     </p>
                     
                 </div>
