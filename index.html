@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(79)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(80)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -157,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(44)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(45)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -285,6 +285,42 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20240816-m79/">shell ~ 踩坑</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2024-08-16T08:45:51.000Z" itemprop="datePublished">
+          2024-08-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ SSH_CONF=<span class="string">&quot;~/.ssh/config&quot;</span></span><br><span class="line">$ grep -Eq <span class="string">&quot;Host&quot;</span> <span class="string">&quot;<span class="variable">$&#123;SSH_CONF&#125;</span>&quot;</span> &amp;&amp; <span class="built_in">echo</span> ok</span><br><span class="line">grep: ~/.ssh/config: No such file or directory</span><br><span class="line"></span><br><span class="line">$ SSH_CONF=<span class="string">&quot;<span class="variable">$&#123;HOME&#125;</span>/.ssh/config&quot;</span></span><br><span class="line">$ grep -Eq <span class="string">&quot;Host&quot;</span> <span class="string">&quot;<span class="variable">$&#123;SSH_CONF&#125;</span>&quot;</span> &amp;&amp; <span class="built_in">echo</span> ok</span><br><span class="line">ok</span><br></pre></td></tr></table></figure>
+<p>这是为什么，这个文件手动检查过，不应该不存在的，而且用 ${HOME} 变量也确实访问到了这个文件</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20240816-m79/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -510,49 +546,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20230419-m73/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20230418-m72/">vim map 介绍</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-04-18T13:58:12.000Z" itemprop="datePublished">
-          2023-04-18
-      </time>
-    
-    
-    | 
-    <a href='/tags/vim/'>vim</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>vim 的模式，细分之下有 6 种分别为：</p>
-<ol>
-<li>Normal Mode（普通模式）：默认进入 vim 之后处于这种模式</li>
-<li>Visual Mode（可视模式）：在这种模式下选定一些字符、行、多列；普通模式下可以按 v 进入</li>
-<li>Insert Mode（插入模式）：处在编辑输入的状态；普通模式下可以按 i 进入</li>
-<li>Select Mode（选择模式）：用鼠标拖选区域的时候，就进入了选择模式，和可视模式不同的是，在这个模式下，选择完了高亮区域后，敲任何按键就直接输入并替换选择的文本了；普通模式下可以按 gh 进入</li>
-<li>Command-Line Mode（命令行模式）：可以输入各种命令；普通模式下按冒号进入 Command-Line 模式</li>
-<li>Ex Mode（Ex 模式）：普通模式下按 Q 进入 Ex 模式，就是多行的 Command-Line 模式</li>
-</ol>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20230418-m72/">Read More...</a>
                     </p>
                     
                 </div>

@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(79)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(80)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -157,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(44)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(45)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -285,6 +285,49 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230418-m72/">vim map 介绍</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-04-18T13:58:12.000Z" itemprop="datePublished">
+          2023-04-18
+      </time>
+    
+    
+    | 
+    <a href='/tags/vim/'>vim</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>vim 的模式，细分之下有 6 种分别为：</p>
+<ol>
+<li>Normal Mode（普通模式）：默认进入 vim 之后处于这种模式</li>
+<li>Visual Mode（可视模式）：在这种模式下选定一些字符、行、多列；普通模式下可以按 v 进入</li>
+<li>Insert Mode（插入模式）：处在编辑输入的状态；普通模式下可以按 i 进入</li>
+<li>Select Mode（选择模式）：用鼠标拖选区域的时候，就进入了选择模式，和可视模式不同的是，在这个模式下，选择完了高亮区域后，敲任何按键就直接输入并替换选择的文本了；普通模式下可以按 gh 进入</li>
+<li>Command-Line Mode（命令行模式）：可以输入各种命令；普通模式下按冒号进入 Command-Line 模式</li>
+<li>Ex Mode（Ex 模式）：普通模式下按 Q 进入 Ex 模式，就是多行的 Command-Line 模式</li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230418-m72/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -500,45 +543,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20230223-m66/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20230221-m65/">Cpp17 variant</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-02-21T14:35:15.000Z" itemprop="datePublished">
-          2023-02-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/cpp/'>cpp</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <h2 id="std-variant">std::variant</h2>
-<p>std::variant 是 C++17 中一个新加入标准函式库的 template 容器，使用时需要 #include <variant></p>
-<p>它的概念基本上是和 union 一样，是一个可以用来储存多种型别资料的容器；和 union 不同的是，std::variant 是 type-safe 的，再加上有许多函数可以搭配使用，所以在使用上应该算是相对安全</p>
-<p>由于它是标准函式库的 template class，在使用时不需要另外去宣告一个新的类型</p>
-<p>std::variant 在储存数据的时候，内部会有一个索引值来记录目前存储的是哪一个类型的数据</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20230221-m65/">Read More...</a>
                     </p>
                     
                 </div>
