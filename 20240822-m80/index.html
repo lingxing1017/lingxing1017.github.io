@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2019/3 | X</title>
+  <title>查看 Linux 配置的常用命令 | X</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -74,7 +74,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -282,59 +282,92 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190309-d22/">gnome topbar 透明度设置</a></h4>
-                            
-                            <p><time datetime="2019-03-09T09:00:53.000Z"><a href="/20190309-d22/">2019-03-09</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190309-w20/">在 Python 上调用 cmd 中文乱码</a></h4>
-                            
-                            <p><time datetime="2019-03-09T08:45:05.000Z"><a href="/20190309-w20/">2019-03-09</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20190309-m0/">打开原生的 NTFS 读写功能</a></h4>
-                            
-                            <p><time datetime="2019-03-09T07:56:37.000Z"><a href="/20190309-m0/">2019-03-09</a></time></p>
-                        </div>
-                    
-                </div>
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2024-08-22T06:05:56.000Z" itemprop="datePublished">
+          2024-08-22
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                <h1>查看 Linux 配置的常用命令</h1>
             </div>
         </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>整理一下查看 Linux 配置的几个常用命令，顺便认识一个新的 <code>dmidecode</code></p>
+<h2 id="操作系统">操作系统</h2>
+<p>查看当前操作系统发行版信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /etc/os-release</span><br><span class="line">PRETTY_NAME=<span class="string">&quot;Debian GNU/Linux 12 (bookworm)&quot;</span></span><br><span class="line">NAME=<span class="string">&quot;Debian GNU/Linux&quot;</span></span><br><span class="line">VERSION_ID=<span class="string">&quot;12&quot;</span></span><br><span class="line">VERSION=<span class="string">&quot;12 (bookworm)&quot;</span></span><br><span class="line">VERSION_CODENAME=bookworm</span><br><span class="line">ID=debian</span><br><span class="line">HOME_URL=<span class="string">&quot;https://www.debian.org/&quot;</span></span><br><span class="line">SUPPORT_URL=<span class="string">&quot;https://www.debian.org/support&quot;</span></span><br><span class="line">BUG_REPORT_URL=<span class="string">&quot;https://bugs.debian.org/&quot;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>查看操作系统发行版详细信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ lsb_release -a  <span class="comment"># 如果系统安装了 LSB（Linux Standard Base）</span></span><br><span class="line">Distributor ID:	Debian</span><br><span class="line">Description:	Debian GNU/Linux 12 (bookworm)</span><br><span class="line">Release:	12</span><br><span class="line">Codename:	bookworm</span><br><span class="line"></span><br><span class="line">$ lsb_release -d  <span class="comment"># 只查看发行版描述</span></span><br><span class="line">Description:	Debian GNU/Linux 12 (bookworm)</span><br></pre></td></tr></table></figure>
+<p>查看操作系统内核的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">uname</span> -a  <span class="comment"># 显示所有信息</span></span><br><span class="line">Linux Debian 6.1.0-22-amd64 <span class="comment">#1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux</span></span><br><span class="line">$ <span class="built_in">uname</span> -r  <span class="comment"># 显示内核版本</span></span><br><span class="line">6.1.0-22-amd64</span><br></pre></td></tr></table></figure>
+<h2 id="CPU">CPU</h2>
+<p>查看 CPU 的详细信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ lscpu</span><br><span class="line">$ <span class="built_in">cat</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+<p>查看 CPU 型号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">&#x27;model name&#x27;</span> /proc/cpuinfo | <span class="built_in">uniq</span> -c | <span class="built_in">cut</span> -f2 -d:</span><br><span class="line"> Intel(R) Core(TM) i3-4030U CPU @ 1.90GHz</span><br></pre></td></tr></table></figure>
+<p>查看物理 CPU 个数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /proc/cpuinfo | grep <span class="string">&quot;physical id&quot;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> | <span class="built_in">wc</span> -l</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>查看每个物理 CPU 中 core 的个数（即核数）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /proc/cpuinfo | grep <span class="string">&quot;cpu cores&quot;</span> | <span class="built_in">uniq</span> | <span class="built_in">cut</span> -f2 -d:</span><br><span class="line"> 2</span><br></pre></td></tr></table></figure>
+<p>查看逻辑 CPU 的个数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /proc/cpuinfo | grep <span class="string">&quot;processor&quot;</span> | <span class="built_in">wc</span> -l</span><br><span class="line">4</span><br><span class="line">$ <span class="built_in">nproc</span></span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<h2 id="内存">内存</h2>
+<p>查看空闲和已用内存，包括物理内存和交换内存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ free -h</span><br><span class="line">               total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:           3.7Gi       865Mi       247Mi        10Mi       2.9Gi       2.9Gi</span><br><span class="line">Swap:          1.9Gi        62Mi       1.8Gi</span><br></pre></td></tr></table></figure>
+<p>查看内存的详细统计数据，包括总内存、空闲内存和已使用内存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vmstat -s</span><br></pre></td></tr></table></figure>
+<p>查看内存硬件信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> dmidecode -t memory</span><br></pre></td></tr></table></figure>
+<p>通过读取 <code>/proc/meminfo</code> 文件查看内存的详细信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /proc/meminfo</span><br></pre></td></tr></table></figure>
+<p>查看内存的插槽数，已经使用多少插槽，每条内存多大</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> dmidecode | grep -A5 <span class="string">&quot;Memory Device&quot;</span> | grep Size | grep -v Range</span><br><span class="line">	Size: 2 GB</span><br><span class="line">	Size: 2 GB</span><br></pre></td></tr></table></figure>
+<h2 id="硬盘">硬盘</h2>
+<p>列出所有块设备，包括硬盘和分区，显示设备的层次结构</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ lsblk</span><br><span class="line">NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS</span><br><span class="line">sda       8:0    0 465.8G  0 disk</span><br><span class="line">├─sda1    8:1    0   9.3G  0 part /boot/efi</span><br><span class="line">├─sda2    8:2    0   9.3G  0 part /</span><br><span class="line">├─sda3    8:3    0   1.9G  0 part [SWAP]</span><br><span class="line">├─sda4    8:4    0   954M  0 part</span><br><span class="line">├─sda5    8:5    0 171.8G  0 part /home</span><br><span class="line">├─sda6    8:6    0    70G  0 part /usr</span><br><span class="line">├─sda7    8:7    0    16M  0 part</span><br><span class="line">├─sda8    8:8    0 102.5G  0 part</span><br><span class="line">├─sda9    8:9    0    95G  0 part</span><br><span class="line">└─sda10   8:10   0     5G  0 part</span><br></pre></td></tr></table></figure>
+<p>显示和管理磁盘分区表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fdisk -l</span><br></pre></td></tr></table></figure>
+<p>查看文件系统的磁盘使用情况，显示每个分区的总空间、已用空间、可用空间以及挂载点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">df</span> -h</span><br><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">udev            1.9G     0  1.9G   0% /dev</span><br><span class="line">tmpfs           384M  3.3M  381M   1% /run</span><br><span class="line">/dev/sda2       9.1G  2.6G  6.0G  30% /</span><br><span class="line">/dev/sda6        69G  7.4G   58G  12% /usr</span><br><span class="line">tmpfs           1.9G     0  1.9G   0% /dev/shm</span><br><span class="line">tmpfs           5.0M     0  5.0M   0% /run/lock</span><br><span class="line">/dev/sda1       9.4G   27M  9.3G   1% /boot/efi</span><br><span class="line">/dev/sda5       169G   56G  105G  35% /home</span><br><span class="line">tmpfs           384M   52K  384M   1% /run/user/1000</span><br></pre></td></tr></table></figure>
+<p>查看目录或文件占用的磁盘空间</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">du</span> -sh /home/test</span><br><span class="line">44K	/home/test</span><br></pre></td></tr></table></figure>
+<h2 id="其他">其他</h2>
+<p>列出系统中所有通过 PCI 总线连接的硬件设备的信息，比如显卡、网络适配器、USB 控制器等</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lspci</span><br></pre></td></tr></table></figure>
+<h3 id="dmidecode">dmidecode</h3>
+<p>dmidecode 从计算机的 DMI (Desktop Management Interface) 表中提取系统硬件信息，DMI 表包含了很多与系统硬件相关的信息，比如 BIOS、处理器、内存、主板、系统序列号等</p>
+<p>服务器型号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> dmidecode -t</span><br><span class="line">dmidecode: option requires an argument -- <span class="string">&#x27;t&#x27;</span></span><br><span class="line">Type number or keyword expected</span><br><span class="line">Valid <span class="built_in">type</span> keywords are:</span><br><span class="line">  bios</span><br><span class="line">  system</span><br><span class="line">  baseboard</span><br><span class="line">  chassis</span><br><span class="line">  processor</span><br><span class="line">  memory</span><br><span class="line">  cache</span><br><span class="line">  connector</span><br><span class="line">  slot</span><br><span class="line">$ <span class="built_in">sudo</span> dmidecode -s</span><br><span class="line">dmidecode: option requires an argument -- <span class="string">&#x27;s&#x27;</span></span><br><span class="line">String keyword expected</span><br><span class="line">Valid string keywords are:</span><br><span class="line">  bios-vendor</span><br><span class="line">  bios-version</span><br><span class="line">  bios-release-date</span><br><span class="line">  bios-revision</span><br><span class="line">  firmware-revision</span><br><span class="line">  system-manufacturer</span><br><span class="line">  system-product-name</span><br><span class="line">  system-version</span><br><span class="line">  system-serial-number</span><br><span class="line">  system-uuid</span><br><span class="line">  system-sku-number</span><br><span class="line">  system-family</span><br><span class="line">  baseboard-manufacturer</span><br><span class="line">  baseboard-product-name</span><br><span class="line">  baseboard-version</span><br><span class="line">  baseboard-serial-number</span><br><span class="line">  baseboard-asset-tag</span><br><span class="line">  chassis-manufacturer</span><br><span class="line">  chassis-type</span><br><span class="line">  chassis-version</span><br><span class="line">  chassis-serial-number</span><br><span class="line">  chassis-asset-tag</span><br><span class="line">  processor-family</span><br><span class="line">  processor-manufacturer</span><br><span class="line">  processor-version</span><br><span class="line">  processor-frequency</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>be slow to promise and quick to perform.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
         <nav class="pagination" role="pagination">
-            
-            
-        </nav>
+    
+    
+    <a class="pull-right" href="/20240816-m79/">
+        shell ~ 踩坑 →
+    </a>
+    
+</nav>
+
     </div>
 </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>the only present love demands is love</p>
-        </div>
-    </div>
-</section>
+
       
 <!-- ============================ Footer =========================== -->
 

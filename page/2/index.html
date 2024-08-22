@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(80)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(81)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -165,7 +165,7 @@
                     
                     <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(8)</small></a></li>
                     
-                    <li><a href="/tags/system/" class="animsition-link">system<small>(13)</small></a></li>
+                    <li><a href="/tags/system/" class="animsition-link">system<small>(14)</small></a></li>
                     
                     <li><a href="/tags/ut/" class="animsition-link">ut<small>(1)</small></a></li>
                     
@@ -285,6 +285,42 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20230419-m73/">四个内存的 SS</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-04-19T06:22:43.000Z" itemprop="datePublished">
+          2023-04-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>四个内存的 SS 分别是 VSS、RSS、PSS、USS</p>
+<p>一般来说内存占用大小有如下规律：VSS(Virtual Set Size) &gt;= RSS(Resident Set Size) &gt;= PSS(Proportional Set Size) &gt;= USS(Unique Set Size)</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20230419-m73/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -508,41 +544,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20230223-m67/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20230223-m66/">gdb 打印变量类型和所在文件</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-02-23T06:47:10.000Z" itemprop="datePublished">
-          2023-02-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/gdb/'>gdb</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">child</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she</span> = &#123;</span> <span class="string">&quot;Jerry&quot;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she1</span> = &#123;</span> <span class="string">&quot;Jerry1&quot;</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">child</span> <span class="title">she2</span> = &#123;</span> <span class="string">&quot;Jerry2&quot;</span> &#125;;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20230223-m66/">Read More...</a>
                     </p>
                     
                 </div>
