@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(82)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(83)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -117,8 +117,6 @@
                     
                     <li><a href="/tags/Android/" class="animsition-link">Android<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
-                    
                     <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
                     
                     <li><a href="/tags/Win10/" class="animsition-link">Win10<small>(17)</small></a></li>
@@ -130,6 +128,8 @@
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/cpp/" class="animsition-link">cpp<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/debian/" class="animsition-link">debian<small>(6)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
                     
@@ -285,6 +285,50 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20200628-d29/">介绍几个进程</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-06-28T03:00:28.000Z" itemprop="datePublished">
+          2020-06-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/system/'>system</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>进程、僵尸进程、孤儿进程、进程组、前台进程组、后台进程组、孤儿进程组、会话</p>
+<p>由于不同的 shell 对使用管道线时创建子进程的顺序不同，故本族谱选用 bash 为例，它是支持作业控制的 shell 的典型代表</p>
+<p>文中用到的缩写：</p>
+<ul>
+<li>PID：进程 ID （由内核根据延迟重用算法生成）</li>
+<li>PPID：父进程 ID（只能由内核修改）</li>
+<li>PGID：进程组 ID（子进程、父进程都能修改）</li>
+<li>SID：会话 ID（进程自身可以修改，但有限制）</li>
+<li>TPGID：控制终端进程组 ID（由控制终端修改，用于指示当前前台进程组）</li>
+</ul>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20200628-d29/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -447,7 +491,7 @@
     
     
     | 
-    <a href='/tags/Debian-个性化/'>Debian 个性化</a>
+    <a href='/tags/debian/'>debian</a>
     
     
 </span>
@@ -483,7 +527,7 @@
     
     
     | 
-    <a href='/tags/Debian-个性化/'>Debian 个性化</a>
+    <a href='/tags/debian/'>debian</a>
     
     
 </span>
@@ -499,42 +543,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20200531-d24/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20200531-m24/">更换国内 pip 镜像源</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-05-31T14:28:40.000Z" itemprop="datePublished">
-          2020-05-31
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在使用 python 的时候需要安装各种模块，而 pip 是很强大的模块安装工具，npm 都更换国内镜像提速了，还缺个 pip 吗？</p>
-<p>举个例子清华大学的 pip 源，它是官网 pypi 的镜像，每隔 5 分钟同步一次，地址为 <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20200531-m24/">Read More...</a>
                     </p>
                     
                 </div>

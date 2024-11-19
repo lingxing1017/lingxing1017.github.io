@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: Debian 个性化 | X</title>
+  <title>在 Debian12 上禁用自动睡眠 | X</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -74,7 +74,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(82)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(83)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -117,8 +117,6 @@
                     
                     <li><a href="/tags/Android/" class="animsition-link">Android<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
-                    
                     <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
                     
                     <li><a href="/tags/Win10/" class="animsition-link">Win10<small>(17)</small></a></li>
@@ -130,6 +128,8 @@
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/cpp/" class="animsition-link">cpp<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/debian/" class="animsition-link">debian<small>(6)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
                     
@@ -282,80 +282,78 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20200601-d25/">Debian9.5 Samba 配置说明</a></h4>
-                            
-                            <p><time datetime="2020-06-01T14:12:49.000Z"><a href="/20200601-d25/">2020-06-01</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20200531-d24/">NetworkManager 随机生成 MAC 地址</a></h4>
-                            
-                            <p><time datetime="2020-05-31T15:03:16.000Z"><a href="/20200531-d24/">2020-05-31</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20180824-d16/">bash 自动补全忽略大小写</a></h4>
-                            
-                            <p><time datetime="2018-08-24T11:32:36.000Z"><a href="/20180824-d16/">2018-08-24</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20171206-d8/">配置不同语言 man</a></h4>
-                            
-                            <p><time datetime="2017-12-06T03:02:47.000Z"><a href="/20171206-d8/">2017-12-06</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/20171125-d7/">打字时禁用触摸板</a></h4>
-                            
-                            <p><time datetime="2017-11-25T10:39:35.000Z"><a href="/20171125-d7/">2017-11-25</a></time></p>
-                        </div>
-                    
-                </div>
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2024-11-16T16:02:17.000Z" itemprop="datePublished">
+          2024-11-17
+      </time>
+    
+    
+    | 
+    <a href='/tags/debian/'>debian</a>
+    
+    
+</span>
+                <h1>在 Debian12 上禁用自动睡眠</h1>
             </div>
         </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>不知道为何最近使用老电脑的 debian 时总是下面类似的情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ ping 192.168.1.96</span><br><span class="line">PING 192.168.1.2 (192.168.1.2): 56 data bytes</span><br><span class="line">ping: sendto: Host is down</span><br><span class="line">ping: sendto: Host is down</span><br><span class="line">Request <span class="built_in">timeout</span> <span class="keyword">for</span> icmp_seq 0</span><br><span class="line">ping: sendto: Host is down</span><br><span class="line">Request <span class="built_in">timeout</span> <span class="keyword">for</span> icmp_seq 1</span><br><span class="line">ping: sendto: Host is down</span><br><span class="line">Request <span class="built_in">timeout</span> <span class="keyword">for</span> icmp_seq 2</span><br><span class="line">Request <span class="built_in">timeout</span> <span class="keyword">for</span> icmp_seq 3</span><br><span class="line">64 bytes from 192.168.1.2: icmp_seq=10 ttl=64 time=82.199 ms</span><br><span class="line">64 bytes from 192.168.1.2: icmp_seq=11 ttl=64 time=96.991 ms</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>网上查资料，说是 debian12 默认开启了自动休眠，然后就是巴拉巴拉几个方案，方案倒是可以一试，就是无从缺人是不是 debian12 默认开启了该功能</p>
+<p>翻找的多了，也有说是因为 debian 重启以后并不直接通过物理机没有登录，只是通过 ssh 和部署的服务使用</p>
+<p>本文也只是记录一下找到的几个方案，并不好说是否一定能生效，目前尝试的是第一种方案，并且确实暂没有再遇到 ping 需要等待的情况了</p>
+<h2 id="方案-1">方案 1</h2>
+<p>创建一个 /etc/systemd/sleep.conf.d/nosuspend.conf 文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[Sleep]</span><br><span class="line">AllowSuspend=no</span><br><span class="line">AllowHibernation=no</span><br><span class="line">AllowSuspendThenHibernate=no</span><br><span class="line">AllowHybridSleep=no</span><br></pre></td></tr></table></figure>
+<p>但是完整这些步骤后，似乎不需要重启什么服务</p>
+<p>上面的配置内容适用于 Debian10 Buster 及更高版本</p>
+<h2 id="方案-2">方案 2</h2>
+<ol>
+<li>编辑 /etc/systemd/logind.conf 文件</li>
+<li>修改以下配置内容</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#IdleAction=ignore</span><br><span class="line">#IdleActionSec=30min</span><br><span class="line">IdleAction=ignore</span><br><span class="line">IdleActionSec=0</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>重新加载 systemd-logind 服务</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl restart systemd-logind</span><br></pre></td></tr></table></figure>
+<h2 id="方案-3">方案 3</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target</span><br></pre></td></tr></table></figure>
+<h3 id="番外">番外</h3>
+<p>这个方案虽然老旧，但是 mask 是什么作用？</p>
+<blockquote>
+<p>systemctl mask 是 systemd 的一个命令，用于屏蔽服务，防止它被启动，无论是手动还是自动。它的主要作用是通过创建一个符号链接，将服务的单元文件指向 /dev/null，从而使其无法加载和启动</p>
+</blockquote>
+<p>相比 disable，阻止服务的自动启动，但仍然可以手动启动，mask 是完全禁止启动</p>
+<blockquote>
+<p>be slow to promise and quick to perform.</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
         <nav class="pagination" role="pagination">
-            
-            
-        </nav>
+    
+    <a class="pull-left" href="/20241117-m81/" style="float: left;">
+        ← git 本地仓库同时推到多个远程仓库
+    </a>
+    
+    
+    <a class="pull-right" href="/20240822-m80/">
+        查看 Linux 配置的常用命令 →
+    </a>
+    
+</nav>
+
     </div>
 </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>the only present love demands is love</p>
-        </div>
-    </div>
-</section>
+
       
 <!-- ============================ Footer =========================== -->
 

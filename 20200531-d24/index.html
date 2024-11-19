@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(82)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(83)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -117,8 +117,6 @@
                     
                     <li><a href="/tags/Android/" class="animsition-link">Android<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
-                    
                     <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
                     
                     <li><a href="/tags/Win10/" class="animsition-link">Win10<small>(17)</small></a></li>
@@ -130,6 +128,8 @@
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/cpp/" class="animsition-link">cpp<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/debian/" class="animsition-link">debian<small>(6)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
                     
@@ -293,7 +293,7 @@
     
     
     | 
-    <a href='/tags/Debian-个性化/'>Debian 个性化</a>
+    <a href='/tags/debian/'>debian</a>
     
     
 </span>
@@ -332,7 +332,7 @@
 <ol>
 <li>
 <p>要将随机的 MAC 地址默认地用于所有的 Wi-Fi 连接，需要创建 /etc/NetworkManager/conf.d/00-macrandomize.conf 这个文件：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[device]</span><br><span class="line">wifi.scan-rand-mac-address&#x3D;yes</span><br><span class="line"></span><br><span class="line">[connection]</span><br><span class="line">wifi.cloned-mac-address&#x3D;stable</span><br><span class="line">ethernet.cloned-mac-address&#x3D;stable</span><br><span class="line">connection.stable-id&#x3D;CONNECTION&#x2F;CONNECTION&#x2F;&#123;BOOT&#125;</span><br><span class="line"></span><br><span class="line"># 将 cloned-mac-address 的值设置为 stable 就可以在每次 NetworkManager 激活连接的时候都生成相同的 MAC 地址，但连接时使用不同的 MAC 地址。如果要在每次激活连接时也获得随机的 MAC 地址，需要将 cloned-mac-address 的值设置为 random</span><br><span class="line"></span><br><span class="line"># 设置为 stable 可以从 DHCP 获取相同的 IP 地址，也可以让 Wi-Fi 的 强制主页 (captive portal) 根据 MAC 地址记住你的登录状态。如果设置为 random ，在每次连接的时候都需要重新认证（或者点击“我同意”），在使用机场 Wi-Fi 的时候会需要到这种 random 模式</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[device]</span><br><span class="line">wifi.scan-rand-mac-address=yes</span><br><span class="line"></span><br><span class="line">[connection]</span><br><span class="line">wifi.cloned-mac-address=stable</span><br><span class="line">ethernet.cloned-mac-address=stable</span><br><span class="line">connection.stable-id=CONNECTION/CONNECTION/&#123;BOOT&#125;</span><br><span class="line"></span><br><span class="line"># 将 cloned-mac-address 的值设置为 stable 就可以在每次 NetworkManager 激活连接的时候都生成相同的 MAC 地址，但连接时使用不同的 MAC 地址。如果要在每次激活连接时也获得随机的 MAC 地址，需要将 cloned-mac-address 的值设置为 random</span><br><span class="line"></span><br><span class="line"># 设置为 stable 可以从 DHCP 获取相同的 IP 地址，也可以让 Wi-Fi 的 强制主页 (captive portal) 根据 MAC 地址记住你的登录状态。如果设置为 random ，在每次连接的时候都需要重新认证（或者点击“我同意”），在使用机场 Wi-Fi 的时候会需要到这种 random 模式</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>重启 NetworkManager</p>
@@ -348,7 +348,7 @@
 <pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ nmcli c | grep wifi</span><br><span class="line">Amtrak_WiFi 5f4b9f75-9e41-47f8-8bac-25dae779cd87 wifi –</span><br><span class="line">StaplesHotspot de57940c-32c2-468b-8f96-0a3b9a9b0a5e wifi –</span><br><span class="line">MyHome e8c79829-1848-4563-8e44-466e14a3223d wifi wlp1s0</span><br><span class="line"></span><br><span class="line">$ nmcli c show 5f4b9f75-9e41-47f8-8bac-25dae779cd87 | grep cloned</span><br><span class="line">802-11-wireless.cloned-mac-address: –</span><br><span class="line"></span><br><span class="line">$ nmcli c show e8c79829-1848-4563-8e44-466e14a3223d | grep cloned</span><br><span class="line">802-11-wireless.cloned-mac-address: stable</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上述例子在 Amtrak 使用完全随机 MAC 地址（使用默认配置）和 MyHome 的永久 MAC 地址（使用 stable 配置）。永久 MAC 地址是在硬件生产的时候分配到网络接口上的，网络管理员能够根据永久 MAC 地址来查看 设备的制造商 ID</span></span><br></pre></td></tr></table></figure>
 </code></pre>
 <p>更改配置并重新连接活动的接口：</p>
-<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ nmcli c modify 5f4b9f75-9e41-47f8-8bac-25dae779cd87 802-11-wireless.cloned-mac-address random</span><br><span class="line"></span><br><span class="line">$ nmcli c modify e8c79829-1848-4563-8e44-466e14a3223d 802-11-wireless.cloned-mac-address permanent</span><br><span class="line"></span><br><span class="line">$ nmcli c down e8c79829-1848-4563-8e44-466e14a3223d</span><br><span class="line"></span><br><span class="line">$ nmcli c up e8c79829-1848-4563-8e44-466e14a3223d</span><br><span class="line"></span><br><span class="line">$ ip link</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ nmcli c modify 5f4b9f75-9e41-47f8-8bac-25dae779cd87 802-11-wireless.cloned-mac-address random</span><br><span class="line"></span><br><span class="line">$ nmcli c modify e8c79829-1848-4563-8e44-466e14a3223d 802-11-wireless.cloned-mac-address permanent</span><br><span class="line"></span><br><span class="line">$ nmcli c down e8c79829-1848-4563-8e44-466e14a3223d</span><br><span class="line"></span><br><span class="line">$ nmcli c up e8c79829-1848-4563-8e44-466e14a3223d</span><br><span class="line"></span><br><span class="line">$ ip <span class="built_in">link</span></span><br></pre></td></tr></table></figure>
 </code></pre>
 <blockquote>
 <p>either I will find a way, or I will make one.</p>

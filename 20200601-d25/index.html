@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(82)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(83)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -117,8 +117,6 @@
                     
                     <li><a href="/tags/Android/" class="animsition-link">Android<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/Debian-个性化/" class="animsition-link">Debian 个性化<small>(5)</small></a></li>
-                    
                     <li><a href="/tags/Kali-使用/" class="animsition-link">Kali 使用<small>(1)</small></a></li>
                     
                     <li><a href="/tags/Win10/" class="animsition-link">Win10<small>(17)</small></a></li>
@@ -130,6 +128,8 @@
                     <li><a href="/tags/ci/" class="animsition-link">ci<small>(1)</small></a></li>
                     
                     <li><a href="/tags/cpp/" class="animsition-link">cpp<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/debian/" class="animsition-link">debian<small>(6)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
                     
@@ -293,7 +293,7 @@
     
     
     | 
-    <a href='/tags/Debian-个性化/'>Debian 个性化</a>
+    <a href='/tags/debian/'>debian</a>
     
     
 </span>
@@ -320,18 +320,18 @@
 <ol>
 <li>
 <p>查看服务状态，如果没有启动启动他</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl status nmbd.service</span><br><span class="line">$ sudo systemctl status smbd.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> systemctl status nmbd.service</span><br><span class="line">$ <span class="built_in">sudo</span> systemctl status smbd.service</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>设置服务器开机启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl <span class="built_in">enable</span> nmbd.service</span><br><span class="line">$ sudo systemctl <span class="built_in">enable</span> smbd.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> nmbd.service</span><br><span class="line">$ <span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> smbd.service</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="Samba-服务器配置">Samba 服务器配置</h3>
 <p>在安装了 Samba 服务软件后，会自动在 Linux 系统中生成一系列的配置文件，了解它们的用途是配置 Samba 服务器所必须的</p>
 <p>主要配置文件 <code>/etc/Samba/smb.conf</code></p>
 <p>这是 Samba 服务的主配置文件，文件由一系列段和选项构成，一个段由一对方括号中的段名开始，直到下一个段名结束，主要由全局设置（Global Settings）和共享定义（Share Definitions）两部分组成。其中全局设置定义了对影响整个Samba系统运行的全局选项，用于设置整个系统的规则，如果在其他段中没有再对这些选项进行重新设置的话，就以全局选项为主：共享定义则是对系统中共享资源进行定义，该部分可以由多个段组成，其中常见的包括：用户主目录段，共享目录和打印机段，每个段中可以再定义详细的共享选项。smb.conf 文件的格式如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Global Settings &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">[global]      #全局选项  </span><br><span class="line">#&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Share Definitions &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">[homes]       #共享选项</span><br><span class="line"></span><br><span class="line">[printers]    #共享选项</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#======================= Global Settings =======================</span><br><span class="line">[global]      #全局选项  </span><br><span class="line">#======================= Share Definitions =======================</span><br><span class="line">[homes]       #共享选项</span><br><span class="line"></span><br><span class="line">[printers]    #共享选项</span><br></pre></td></tr></table></figure>
 <p>smb.conf 配置文件中使用 <code>;</code>和 <code>#</code>作为注释符，凡是使用这两个符号开头的行都会被 Samba 视为注释行而忽略处理，这个配置文件中，大小写是没关系的，因为 Windows 不分大小写</p>
 <h3 id="常用的全局选项及说明如下所示">常用的全局选项及说明如下所示</h3>
 <p>先说一下 samba 定义的变量：</p>
@@ -362,105 +362,105 @@
 <blockquote>
 <p>该选项设置 Samba 服务器所属工作组名称，通过网上邻居可以从该工作组中找到该 Samba 服务器。默认设置如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workgroup &#x3D; WORKGROUP</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workgroup = WORKGROUP</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>wins support</p>
 <blockquote>
 <p>该选项设置 Samba 服务器是否作为 WINS 服务器。如果要启用该选项，则不能设置 wins server 选项，默认设置 (默认被注释掉) 如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#   wins support &#x3D; no</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#   wins support = no</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>wins serve</p>
 <blockquote>
 <p>该选项指定 WINS 服务器的 IP 地址或主机名。默认设置 (默认被注释掉) 如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;   wins server &#x3D; w.x.y.z</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;   wins server = w.x.y.z</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>interfaces 和 bind interfaces only = yes</p>
 <blockquote>
 <p>如果服务器有多个 IP 地址或网络接口，可以使用 interfaces 选项把 IP 地址或网络接口列出来。如果 bind interfaces only 选项设置为 yes，则表示 Samba 将绑定（监听）interfaces 选项所设置的 IP 地址或网络接口，只通过这个些 IP 地址或网络接口提供服务，默认设置 (默认被注释掉) 如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">;   interfaces &#x3D; 127.0.0.0&#x2F;8 eth0</span><br><span class="line"></span><br><span class="line">;   bind interfaces only &#x3D; yes</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">;   interfaces = 127.0.0.0/8 eth0</span><br><span class="line"></span><br><span class="line">;   bind interfaces only = yes</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>dns proxy</p>
 <blockquote>
 <p>该选项设置是否启用 DNS 代理功能，默认设置如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dns proxy &#x3D; no</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dns proxy = no</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>log file</p>
 <blockquote>
 <p>该选项用来设置 Samba 日志文件的存放位置和文件名称，这个选项中的 .%m 是 Samba 配置文件的保留变量，表示客户端的 NetBIOS 名称。默认设置如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log file &#x3D; &#x2F;var&#x2F;log&#x2F;samba&#x2F;log.%m</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log file = /var/log/samba/log.%m</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>max log size</p>
 <blockquote>
 <p>日志文件最大能达到多少 Kbytes，如果超过该限制，则 Samba 自动在当前的日志文件名后面加上 “.old” 然后创建一个新的日志文件继续写入。如果为 0 则表示没有大小限制。默认设置如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max log size &#x3D; 1000</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max log size = 1000</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>syslog only</p>
 <blockquote>
 <p>设置Samba只通过syslog进行日志记录。默认设置 (默认被注释掉) 如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#   syslog only &#x3D; no   </span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#   syslog only = no   </span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>syslog</p>
 <blockquote>
 <p>syslog 的 日志级 (0,err)(1,warning)(2,notice)(3,ifno)(4 或以上，debug)。默认设置如下：</p>
 </blockquote>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syslog &#x3D; 0</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syslog = 0</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>server role</p>
 <blockquote>
 <p>服务器角色。定义 Samba 将以何种模式操作。可能的值是 “独立服务器”、“成员服务器”、“经典主域服务器”、“经典备份域控制器”、“活动目录域控制器&quot;，默认设置如下：</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server role &#x3D; standalone server</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server role = standalone server</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>passdb backend</p>
 <blockquote>
 <p>密码数据库格式，之前 samba 服务器的用户信息都是以数据文件信息存放，为了加快速度，目前密码文件已经转为使用数据库了，默认的数据库格式为 <code>tdbsam</code>，存放在 <code>/var/lib/samba/private/passdb.tdb</code>，早期使用 smbpasswd 命令来管理用户密码，后来使用 TDB 数据库，因此建议使用新的 pdbedit 指令来管理用户数据，smbpasswd 仍然可以使用。默认设置如下：</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passdb backend &#x3D; tdbsam</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passdb backend = tdbsam</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>obey pam restrictions</p>
 <blockquote>
 <p>在 Samba 中集成 PAM 的访问控制功能。默认设置如下：</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obey pam restrictions &#x3D; yes</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obey pam restrictions = yes</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>unix password sync = yes</p>
 <blockquote>
 <p>当用户改变 samba 加密的密码时，SAMBA 会试着更新 UNIX 用户密码。默认设置如下：</p>
 </blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unix password sync &#x3D; yes</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unix password sync = yes</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>passwd program</p>
 <blockquote>
 <p>指定更改密码的命令。默认设置如下：</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd program &#x3D; &#x2F;usr&#x2F;bin&#x2F;passwd %u</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd program = /usr/bin/passwd %u</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>passwd chat</p>
 <blockquote>
 <p>更改密码时的对话。默认设置如下：</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd chat &#x3D; *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>pam password change</p>
@@ -469,28 +469,28 @@
 </blockquote>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pam password change &#x3D; yes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pam password change = yes</span><br></pre></td></tr></table></figure>
 <ol start="17">
 <li>
 <p>map to guest</p>
 <blockquote>
 <p>这个配置的意思是将所有 samba 系统主机所不能正确识别的用户都映射成 guest 用户。默认设置如下：</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map to guest &#x3D; bad user</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map to guest = bad user</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>usershare max shares</p>
 <blockquote>
 <p>最大用户共享数量，0表示禁用用户共享。默认设置如下：</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usershare max shares &#x3D; 100</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usershare max shares = 100</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>usershare allow guests</p>
 <blockquote>
 <p>是否允许guest用户访问，这相当于在共享定义中设置guest ok = yes选项,最终以共享中的设置为准。</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usershare allow guests &#x3D; yes</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usershare allow guests = yes</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>以下是 smb.conf 配置文件中没有提到的，但是可以通过 testparm -v 命令查看到默认设置，如果不符合自己的实际设置，可以在配置文件中加入相应的选项</p>
@@ -698,11 +698,11 @@
 <ol>
 <li>
 <p>编辑 smb.conf 文件，在 [global] 部分添加用户映射文件（该文件由用户手动创建，可以把他放在系统可以访问的任何位置），添加内容如下所示：</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username map &#x3D; &#x2F;etc&#x2F;samba&#x2F;smbusers  # 一般文件都放在这里</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username map = /etc/samba/smbusers  # 一般文件都放在这里</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>手动创建用户映射文件 /etc/samba/smbusers，该文件的格式如下：</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Samba 用户帐号 &#x3D; 需要映射的用户列表  # 列表中的用户名之间以空格进行分割，如下所示</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Samba 用户帐号 = 需要映射的用户列表  # 列表中的用户名之间以空格进行分割，如下所示</span><br></pre></td></tr></table></figure>
 <p>举例：</p>
    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vim.tiny /etc/samba/smbusers</span><br><span class="line"></span><br><span class="line">laopi = administrator admin</span><br></pre></td></tr></table></figure>
 </li>
@@ -714,7 +714,7 @@
 <ol>
 <li>
 <p>不需要密码的共享，有时候需要将某个目录共享给所有人访问，要求 /home/share1 目录所有人都可以读写，/home/share2 目录所有人只读，需要先把这两个目录的权限给成 777，这样任何人才可以对目录进行操作，smb.conf 配置文件如下：</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">#&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Global Settings &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">[global]</span><br><span class="line"></span><br><span class="line">workgroup &#x3D; WORKGROUP</span><br><span class="line"></span><br><span class="line">dns proxy &#x3D; no</span><br><span class="line"></span><br><span class="line">log file &#x3D; &#x2F;var&#x2F;log&#x2F;samba&#x2F;log.%m</span><br><span class="line"></span><br><span class="line">max log size &#x3D; 1000</span><br><span class="line"></span><br><span class="line">syslog &#x3D; 0</span><br><span class="line"></span><br><span class="line">panic action &#x3D; &#x2F;usr&#x2F;share&#x2F;samba&#x2F;panic-action %d</span><br><span class="line"></span><br><span class="line">server role &#x3D; standalone server</span><br><span class="line"></span><br><span class="line">passdb backend &#x3D; tdbsam</span><br><span class="line"></span><br><span class="line">obey pam restrictions &#x3D; yes</span><br><span class="line"></span><br><span class="line">unix password sync &#x3D; yes</span><br><span class="line"></span><br><span class="line">passwd program &#x3D; &#x2F;usr&#x2F;bin&#x2F;passwd %u</span><br><span class="line">passwd chat &#x3D; *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .</span><br><span class="line"></span><br><span class="line">pam password change &#x3D; yes</span><br><span class="line"></span><br><span class="line">map to guest &#x3D; bad user                    #这行很重要决定任何用户是否可以访问</span><br><span class="line"></span><br><span class="line">usershare allow guests &#x3D; yes               #这行没什么用主要由共享段的设置决定</span><br><span class="line"></span><br><span class="line">netbios name &#x3D; SAMBA-DEBIAN                #这行上面的都是系统默认配置的保持不变即可</span><br><span class="line"></span><br><span class="line">#&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Share Definitions &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">[share1]</span><br><span class="line">comment &#x3D; guest</span><br><span class="line">browseable &#x3D; yes</span><br><span class="line">path &#x3D; &#x2F;home&#x2F;share1</span><br><span class="line">available &#x3D; yes</span><br><span class="line">guest ok &#x3D; yes</span><br><span class="line">writable &#x3D; yes</span><br><span class="line">create mask &#x3D; 0700</span><br><span class="line">directory mask &#x3D; 0700</span><br><span class="line"></span><br><span class="line">[share2]</span><br><span class="line">comment &#x3D; guest</span><br><span class="line">browseable &#x3D; yes</span><br><span class="line">path &#x3D; &#x2F;home&#x2F;share2</span><br><span class="line">available &#x3D; yes</span><br><span class="line">guest ok &#x3D; yes</span><br><span class="line">read only &#x3D; yes</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">#======================= Global Settings =======================</span><br><span class="line"></span><br><span class="line">[global]</span><br><span class="line"></span><br><span class="line">workgroup = WORKGROUP</span><br><span class="line"></span><br><span class="line">dns proxy = no</span><br><span class="line"></span><br><span class="line">log file = /var/log/samba/log.%m</span><br><span class="line"></span><br><span class="line">max log size = 1000</span><br><span class="line"></span><br><span class="line">syslog = 0</span><br><span class="line"></span><br><span class="line">panic action = /usr/share/samba/panic-action %d</span><br><span class="line"></span><br><span class="line">server role = standalone server</span><br><span class="line"></span><br><span class="line">passdb backend = tdbsam</span><br><span class="line"></span><br><span class="line">obey pam restrictions = yes</span><br><span class="line"></span><br><span class="line">unix password sync = yes</span><br><span class="line"></span><br><span class="line">passwd program = /usr/bin/passwd %u</span><br><span class="line">passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .</span><br><span class="line"></span><br><span class="line">pam password change = yes</span><br><span class="line"></span><br><span class="line">map to guest = bad user                    #这行很重要决定任何用户是否可以访问</span><br><span class="line"></span><br><span class="line">usershare allow guests = yes               #这行没什么用主要由共享段的设置决定</span><br><span class="line"></span><br><span class="line">netbios name = SAMBA-DEBIAN                #这行上面的都是系统默认配置的保持不变即可</span><br><span class="line"></span><br><span class="line">#======================= Share Definitions =======================</span><br><span class="line"></span><br><span class="line">[share1]</span><br><span class="line">comment = guest</span><br><span class="line">browseable = yes</span><br><span class="line">path = /home/share1</span><br><span class="line">available = yes</span><br><span class="line">guest ok = yes</span><br><span class="line">writable = yes</span><br><span class="line">create mask = 0700</span><br><span class="line">directory mask = 0700</span><br><span class="line"></span><br><span class="line">[share2]</span><br><span class="line">comment = guest</span><br><span class="line">browseable = yes</span><br><span class="line">path = /home/share2</span><br><span class="line">available = yes</span><br><span class="line">guest ok = yes</span><br><span class="line">read only = yes</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="防火墙设置">防火墙设置</h3>
