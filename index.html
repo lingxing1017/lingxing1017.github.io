@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(83)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(84)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -151,7 +151,7 @@
                     
                     <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
                     
-                    <li><a href="/tags/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+                    <li><a href="/tags/npm/" class="animsition-link">npm<small>(2)</small></a></li>
                     
                     <li><a href="/tags/python/" class="animsition-link">python<small>(21)</small></a></li>
                     
@@ -285,6 +285,47 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20241215-m83/">npm 更新包</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2024-12-15T13:28:42.000Z" itemprop="datePublished">
+          2024-12-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/npm/'>npm</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="包版本号组成">包版本号组成</h2>
+<p>npm (Node Package Manager) 是一种应用于 JavaScript 编程语言的包管理器，也是 Node.js 的 JavaScript 运行时环境的默认包管理器</p>
+<p>在一个项目中，其包依赖项列表保存在 package.json 文件中，每个已安装的包都被分配了一个版本号，一般由 3 部分组成：<code>major.minor.patch</code>：</p>
+<ol>
+<li><code>major</code> 表示非兼容的重大 API 改变（主要的）</li>
+<li><code>minor</code> 表示向后兼容的功能性改变（次要的）</li>
+<li><code>patch</code> 表示向后兼容的 bug 修正（修补的）
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20241215-m83/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -509,47 +550,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20240601-m76/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20230713-m76/">bash 引号与转义</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-07-13T09:08:54.000Z" itemprop="datePublished">
-          2023-07-13
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>之前简单的总结过 <a href="../20200814-w30/index.html">bash 中单引号与双引号</a>，但是并没有对单双引号的区别进行细致的描述，更多的偏向于解释 shell 特定功能的保留字，今天看到了一篇对于 bash 的单双引号内内容转义讲述更详细的文章，故而更新记形成此记录</p>
-<p>bash 引号的语义可由下述三句描述简单归纳：</p>
-<ol>
-<li>反斜线用来转义除换行之外的所有字符，反斜线加换行为连行</li>
-<li><code>单引号</code>用来<code>直出字面量</code>，其<code>内容</code>部分<code>不允许转义，包括单引号</code>转义也不允许</li>
-<li><code>双引号</code>内<code>允许命令替换和对特定几个字符转义，双引号内的反斜线对其他字符没有特殊含义，会被当作字面量处理</code></li>
-</ol>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20230713-m76/">Read More...</a>
                     </p>
                     
                 </div>
