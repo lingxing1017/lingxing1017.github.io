@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(84)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(85)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -147,7 +147,7 @@
                     
                     <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(5)</small></a></li>
+                    <li><a href="/tags/macOS/" class="animsition-link">macOS<small>(6)</small></a></li>
                     
                     <li><a href="/tags/net/" class="animsition-link">net<small>(7)</small></a></li>
                     
@@ -285,6 +285,41 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20210304-m39/">bashrc 里修改环境变量要加 export 吗</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-03-04T06:51:44.000Z" itemprop="datePublished">
+          2021-03-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>老问题重提，很早之前就遗留下了这个问题，在 .bashrc 中修改环境变量的时候需要 export 吗？当我设置一个变量在脚本中，直接将它 source 以后，可以发现这个变量就可以直接可以用了，当一个 bash 启动的时候，是会加载 .bashrc 的（这里的说法可能不那么严谨，但在 GUI 打开一个终端窗口时且默认的 shell 是 bash 时，那么它是会加载 .bashrc 的），那么在这个文件中的变量包括环境变量其实是直接可以生效的，问题来了，为什么在这个文件里定义环境变量的时候还需要加 export</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20210304-m39/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -495,41 +530,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20210103-m33/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20201228-m33/">tar 从 basename 打包</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-12-28T08:42:11.000Z" itemprop="datePublished">
-          2020-12-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>在用 tar 打包一个文件夹的时候，发现了一个问题，因为这个文件夹的层级比较深，直接 tar -czvf ./test.tar.gz /path/to/dir 以后，在用 tar xzvf ./test.tar.gz 解压的时候就发现了问题，它居然在当前目录下生成了 ./path/to/dir 文件夹来保存解压后的文件</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20201228-m33/">Read More...</a>
                     </p>
                     
                 </div>
