@@ -309,29 +309,29 @@
 <ol>
 <li>
 <p>从 sshd_config 入手</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/ssh/sshd_config  <span class="comment"># sshd_config 中已经允许公钥认证</span></span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /etc/ssh/sshd_config  <span class="comment"># sshd_config 中已经允许公钥认证</span></span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span></span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>检查 authorized_keys 内容，与公钥一致没有区别，从其他服务器 scp authorized_keys 文件也做了尝试，一样没有起效</p>
 </li>
 <li>
 <p>检查 authorized_keys 文件权限</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l .ssh/authorized_keys</span><br><span class="line">-rw------- 1 <span class="built_in">test</span> <span class="built_in">test</span> 1306 11月 25 17:45 .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -l .ssh/authorized_keys</span><br><span class="line">-rw------- 1 <span class="built_in">test</span> <span class="built_in">test</span> 1306 11月 25 17:45 .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>检查 .ssh 目录权限</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls -ld .ssh</span><br><span class="line">drwx------ 2 <span class="built_in">test</span> <span class="built_in">test</span> 4096 11月 25 17:45 .ssh</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -ld .ssh</span><br><span class="line">drwx------ 2 <span class="built_in">test</span> <span class="built_in">test</span> 4096 11月 25 17:45 .ssh</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>新学到的调试方式：直接在 server 上配置好私钥和 authorized_keys，ssh -vvv server_ip</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ssh -vvv server_ip</span><br><span class="line">debug1: Next authentication method: publickey</span><br><span class="line">debug1: Trying private key: /home/<span class="built_in">test</span>/.ssh/id_rsa</span><br><span class="line">debug3: sign_and_send_pubkey: RSA SHA256:Ozm2xtHqupKfmjGFL09hd8FnHM9V264cSoq26tWc0N4</span><br><span class="line">debug3: send packet: <span class="built_in">type</span> 50</span><br><span class="line">debug2: we sent a publickey packet, <span class="built_in">wait</span> <span class="keyword">for</span> reply</span><br><span class="line">debug3: receive packet: <span class="built_in">type</span> 51</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ssh -vvv server_ip</span><br><span class="line">debug1: Next authentication method: publickey</span><br><span class="line">debug1: Trying private key: /home/test/.ssh/id_rsa</span><br><span class="line">debug3: sign_and_send_pubkey: RSA SHA256:Ozm2xtHqupKfmjGFL09hd8FnHM9V264cSoq26tWc0N4</span><br><span class="line">debug3: send packet: <span class="built_in">type</span> 50</span><br><span class="line">debug2: we sent a publickey packet, <span class="built_in">wait</span> <span class="keyword">for</span> reply</span><br><span class="line">debug3: receive packet: <span class="built_in">type</span> 51</span><br></pre></td></tr></table></figure>
 <p>对比了正常可登录的服务器日志，最后一句日志应该是 receive packet: type 52</p>
 </li>
 <li>
 <p>通过 auth.log 获取 ssh 登录的 debug 信息</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 sshd_config 配置 debug 信息，此处需要重启 sshd</span></span><br><span class="line">$ sudo vim /etc/ssh/sshd_config</span><br><span class="line">SyslogFacility AUTH</span><br><span class="line">LogLevel DEBUG</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 sshd_config 配置 debug 信息，此处需要重启 sshd</span></span><br><span class="line">$ <span class="built_in">sudo</span> vim /etc/ssh/sshd_config</span><br><span class="line">SyslogFacility AUTH</span><br><span class="line">LogLevel DEBUG</span><br></pre></td></tr></table></figure>
 <p>一顿操作猛如虎，还经历了 auth.log 不存在的问题之后，终于见到了 ssh 登录认证的 debug 信息</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/<span class="built_in">log</span>/auth.log</span><br><span class="line">debug1: trying public key file /root/.ssh/authorized_keys  <span class="comment"># 仅截取了有问题的日志</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/log/auth.log</span><br><span class="line">debug1: trying public key file /root/.ssh/authorized_keys  <span class="comment"># 仅截取了有问题的日志</span></span><br></pre></td></tr></table></figure>
 <p>很奇怪，明明是非 root 用户登录的，为什么会去找 root 的 authorized_keys，/root 下没有这个目录，自然是认证失败，这是为什么呢？（因为期间还有奇奇怪怪的尝试，所以这可能已经不是最初的问题了）</p>
 </li>
 </ol>
@@ -340,7 +340,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ restorecon -FRvv ~/.ssh</span><br></pre></td></tr></table></figure></p>
 <h2 id="学到了还没来得及用到">学到了还没来得及用到</h2>
 <p>这种方式两边都可以看到 debug 日志<br>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># server 端操作</span></span><br><span class="line">$ sudo /usr/sbin/sshd -p 2222 -d  <span class="comment"># 在服务端启动一个临时的 sshd 服务，这个服务只能被连接一次，端口为 2222，开启 debug 模式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># client 端操作</span></span><br><span class="line">$ ssh -vvv server_ip -p 2222</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># server 端操作</span></span><br><span class="line">$ <span class="built_in">sudo</span> /usr/sbin/sshd -p 2222 -d  <span class="comment"># 在服务端启动一个临时的 sshd 服务，这个服务只能被连接一次，端口为 2222，开启 debug 模式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># client 端操作</span></span><br><span class="line">$ ssh -vvv server_ip -p 2222</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>be slow to promise and quick to perform.</p>
 </blockquote>

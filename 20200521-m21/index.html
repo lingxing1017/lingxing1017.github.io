@@ -304,11 +304,11 @@
       		<p>记录一下在 python 中调用 sqlite3 使用 like 进行模糊查询时引发的惨案</p>
 <span id="more"></span>
 <p>一条普通的 sqlite3 like 查询语法如下：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> id_data <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">&quot;%1%&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name <span class="keyword">FROM</span> id_data <span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> &quot;%1%&quot;</span><br></pre></td></tr></table></figure>
 <p>在 py 代码中，使用 sqlite3 的查询语句想当然的变成下面这样:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conn.execute(</span><br><span class="line">    <span class="string">&#x27;SELECT name FROM database WHERE name LIKE &quot;%?%&quot;&#x27;</span>, (value,)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>然鹅，执行以后报错了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.</span><br></pre></td></tr></table></figure>
 <p>不对呀，我明明用了一个占位符，为啥说不需要用参数呢</p>
 <p>终于，在网上找到解释，因为 statement 占位符 “?” 处在双引号和单引号的双重包裹之中，检测不出来是个占位符</p>
 <p>那咋办，直接用 python 的字符串操作？</p>

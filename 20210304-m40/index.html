@@ -361,7 +361,7 @@
 <ol>
 <li>
 <p>那 non-option arguments 怎么理解？</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls -a -l /path</span><br><span class="line"><span class="comment"># 首先 -a -l 是 ls 的选项，那么剩下的 /path 就是 ls 的非选项参数</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -a -l /path</span><br><span class="line"><span class="comment"># 首先 -a -l 是 ls 的选项，那么剩下的 /path 就是 ls 的非选项参数</span></span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>白话文就是：一个不带非选项参数（-s 是一个例外，它可以携带非选项参数），也不带 -c（这是一个选项，而不是非选项参数），并且标准输入流和错误流都连接到终端（这里可以粗略的理解为，从终端获取输入，错误输出到终端）的 shell；或者是带 -i 选项启动的 shell</p>
@@ -371,11 +371,11 @@
 <ol>
 <li>
 <p>判断变量 “-”，如果值中含有字母 “i”，表示交互式</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> $-</span><br><span class="line">himBH</span><br><span class="line"></span><br><span class="line">$ vim test.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> $-</span><br><span class="line">$ bash test.sh</span><br><span class="line">hB</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> $-</span><br><span class="line">himBH</span><br><span class="line"></span><br><span class="line">$ vim test.sh</span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> $-</span><br><span class="line">$ bash test.sh</span><br><span class="line">hB</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>判断变量 PS1，如果值非空，则为交互式，否则为非交互式，因为非交互式会清空该变量</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PS1</span></span><br><span class="line">\s-\v\$</span><br><span class="line"></span><br><span class="line">$ vim test.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PS1</span></span><br><span class="line">$ bash test.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PS1</span></span><br><span class="line">\s-\v\$</span><br><span class="line"></span><br><span class="line">$ vim test.sh</span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PS1</span></span><br><span class="line">$ bash test.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="login-shell-or-with-login">login shell or with --login</h2>

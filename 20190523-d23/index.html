@@ -305,7 +305,7 @@
 <ol>
 <li>
 <pre><code class="language-bash"> sudo vim /etc/default/grub
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 其中的 &#96;GRUB_DEFAULT&#x3D;0&#96; 就是设置的默认启动项。GRUB 启动项是按照启动菜单依次使用数字进行索引了，起始数字为 0。结合前面的系统启动菜单，Win10 的启动项在第 3 项，因此这里就需要修改为 2（因为第一项是从 0 开始的）。</span><br><span class="line"></span><br><span class="line">3. 修改完成，保存退出</span><br><span class="line"></span><br><span class="line">4. &#96;&#96;&#96;bash</span><br><span class="line">	sudo update-grub # 来重新生成GRUB启动配置项</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 其中的 `GRUB_DEFAULT=0` 就是设置的默认启动项。GRUB 启动项是按照启动菜单依次使用数字进行索引了，起始数字为 0。结合前面的系统启动菜单，Win10 的启动项在第 3 项，因此这里就需要修改为 2（因为第一项是从 0 开始的）。</span><br><span class="line"></span><br><span class="line">3. 修改完成，保存退出</span><br><span class="line"></span><br><span class="line">4. ```bash</span><br><span class="line">	sudo update-grub # 来重新生成GRUB启动配置项</span><br></pre></td></tr></table></figure>
 
 
 </code></pre>

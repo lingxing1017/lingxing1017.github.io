@@ -528,7 +528,7 @@
                     <p>
                       
                         <p>在 leetcode 刷题时，有些题目会标注需要原地修改 list，而不产生新的内存占用，这里提一个骚操作</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">L[:] = L[::<span class="number">-1</span>]</span><br><span class="line"><span class="comment"># 原 list 倒序，原地修改</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">L[:] = L[::-<span class="number">1</span>]</span><br><span class="line"><span class="comment"># 原 list 倒序，原地修改</span></span><br></pre></td></tr></table></figure>
 <p><strong>注：</strong> string 和 list 很像，但是这个用法就不适用，因为 string（区别于list）是不可变对象，不要试图用下标的方法去改变字符串的值</p>
                       
                     </p>

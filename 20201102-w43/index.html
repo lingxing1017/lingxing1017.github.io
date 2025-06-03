@@ -324,37 +324,37 @@
 <li>
 <p>单个用户</p>
 <p>假设要 username 这个用户能运行 root 的全部操作</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username ALL&#x3D;(ALL) ALL</span><br><span class="line">username ALL&#x3D;(ALL) NOPASSWD:ALL  # 不需要输入当前账户的密码</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username ALL=(ALL) ALL</span><br><span class="line">username ALL=(ALL) NOPASSWD:ALL  # 不需要输入当前账户的密码</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>用户组</p>
 <p>假设要 usergroup 这个用户组能运行 root 的全部操作</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%usergroup ALL&#x3D;(ALL) ALL</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%usergroup ALL=(ALL) ALL</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>限制用户权限</p>
 <p>实际中常常不需要用户有那么大的权限，仅仅要让其具有负责范围的权限就能够了，比如管理 password 的人，就仅仅让其能进行 password 的管理，而没有别的权限，这就需要权限的控制了</p>
 <p>假设需要当前用户来管理 password，即 username 这个用户能使用 passwd 这个命令来帮 root 改动用户 password</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username ALL&#x3D;(root) &#x2F;usr&#x2F;bin&#x2F;passwd</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username ALL=(root) /usr/bin/passwd</span><br></pre></td></tr></table></figure>
 <p>假设仅仅是运行 sudo passwd 命令，改动的就是 root 的password，当然不希望普通用户能具有改动 root password 的权限，那么在 visudo 的时候就需要将命令的參数限制好，比如改成这样：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username ALL&#x3D;(root) !&#x2F;usr&#x2F;bin&#x2F;passwd, &#x2F;usr&#x2F;bin&#x2F;passwd [A-Za-z]*, !&#x2F;usr&#x2F;bin&#x2F;passwd root</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username ALL=(root) !/usr/bin/passwd, /usr/bin/passwd [A-Za-z]*, !/usr/bin/passwd root</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>通过别名设置 visudo</p>
 <p>查看 sudoers 这个文件的时候，会看见一些别名，User_Alias 表示具有 sudo 权限的用户列表，Host_Alias 表示主机的列表，Cmnd_Alias 表示同意运行命令的列表，Runas_Alias，表示用户以什么身份登录。别名需要大写字母开头</p>
 <p>假设有几个 password 管理员，加上如下配置：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User_Alias PWMNG &#x3D; manager1, manager2, manager3</span><br><span class="line">Cmnd_Alias PWCMD &#x3D; !&#x2F;usr&#x2F;bin&#x2F;passwd, &#x2F;usr&#x2F;bin&#x2F;passwd [A-Za-z]*, !&#x2F;usr&#x2F;bin&#x2F;passwd root</span><br><span class="line">PWMNG    ALL&#x3D;(root)    PWCMD</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User_Alias PWMNG = manager1, manager2, manager3</span><br><span class="line">Cmnd_Alias PWCMD = !/usr/bin/passwd, /usr/bin/passwd [A-Za-z]*, !/usr/bin/passwd root</span><br><span class="line">PWMNG    ALL=(root)    PWCMD</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>sudo 搭配 su</p>
 <p>不难看出，sudo 仅仅是切换到别的用户然后运行命令，接着切回原来的账户，假设想要像 su 那样直接切换到 root，然后干自己想干的，这个时候就要将命令改成 /bin/su -，例如以下配置：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username    ALL&#x3D;(root)    &#x2F;bin&#x2F;su -</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username    ALL=(root)    /bin/su -</span><br></pre></td></tr></table></figure>
 <p>当然这个是需要小心的，因为这样配置后，username 就直接切换到 root 了</p>
 </li>
 <li>
 <p>sudo 输入密码的过期时间设置</p>
 <p>当希望 sudo 输入过一次密码以后，后续一段时间内都可以不再验证，就需要如下配置了：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Defaults env_reset, timestamp_timeout&#x3D;20  # 20 分钟内不验证密码</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Defaults env_reset, timestamp_timeout=20  # 20 分钟内不验证密码</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <blockquote>

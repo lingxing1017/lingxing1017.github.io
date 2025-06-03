@@ -309,7 +309,7 @@
 <ol>
 <li>
 <p>利用 dircolors 命令，查看我们的系统当前的文件名称显示颜色的值，然后利用管道重定向到用户目录下的任意一个文件（这里我们创建了一个 .dircolors 文件）</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dircolors -p &gt; .dircolors</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">dircolors</span> -p &gt; .<span class="built_in">dircolors</span></span><br></pre></td></tr></table></figure>
 <p><strong>配色解释：</strong></p>
 <pre><code> # Attribute codes: 字符属性
  # 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed

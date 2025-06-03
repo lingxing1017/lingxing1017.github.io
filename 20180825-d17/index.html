@@ -309,11 +309,11 @@
 <ul>
 <li>
 <p>直接新建一个 wlan.conf，名字可以自定义，路径也可以自定义</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">network &#x3D; &#123;</span><br><span class="line">	ssid&#x3D;&quot;test&quot; # wifi名称</span><br><span class="line">	psk&#x3D;&quot;testtest&quot; # wifi密码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">network = &#123;</span><br><span class="line">	ssid=&quot;test&quot; # wifi名称</span><br><span class="line">	psk=&quot;testtest&quot; # wifi密码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>通过 wpa_passphrase 生成</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wpa_passphrase <span class="built_in">test</span> testtest &gt; /Workspace/<span class="built_in">test</span>/wlan.conf</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wpa_passphrase <span class="built_in">test</span> testtest &gt; /Workspace/test/wlan.conf</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -332,7 +332,7 @@
 </li>
 <li>
 <p>启动 wpa_supplicant</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wpa_supplicant -i wlan0 -c /Workspace/<span class="built_in">test</span>/wlan.conf -B</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wpa_supplicant -i wlan0 -c /Workspace/test/wlan.conf -B</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>如果是 dhcp 的，还需要以下命令刷新 ip 地址才可以上网</p>

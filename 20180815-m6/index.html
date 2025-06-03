@@ -316,7 +316,7 @@
 <h2 id="1-localhost">1.localhost</h2>
 <p>首先 localhost 是一个域名，在过去它指向 127.0.0.1 这个 IP 地址。在操作系统支持 ipv6 后，它同时还指向ipv6的地址[::1]<br>
 在 Windows 中，这个域名是预定义的，从 hosts 文件中可以看出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># localhost name resolution is handled within DNS itself.</span><br><span class="line"># 127.0.0.1 localhost</span><br><span class="line"># ::1 localhost</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># localhost name resolution is handled within DNS itself.</span><br><span class="line"># 127.0.0.1 localhost</span><br><span class="line"># ::1 localhost</span><br></pre></td></tr></table></figure>
 <p>而在 Linux 中，其定义位于 /etc/hosts 中：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 localhost</span><br></pre></td></tr></table></figure>
 <p>注意这个值是可修改的，比如把它改成</p>

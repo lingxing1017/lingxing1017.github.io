@@ -310,7 +310,7 @@
 </ol>
 <span id="more"></span>
 <p>以下的例子均使用下述测试文件 test.txt</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cat test.txt</span><br><span class="line">1 a b c</span><br><span class="line">2 b c d</span><br><span class="line">3 x y z</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> test.txt</span><br><span class="line">1 a b c</span><br><span class="line">2 b c d</span><br><span class="line">3 x y z</span><br></pre></td></tr></table></figure>
 <p>sed 的替换 s</p>
 <ol>
 <li>
@@ -319,7 +319,7 @@
 </li>
 <li>
 <p>替换并写入文件：sed ‘s/old/new/’ -i filename</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">&#x27;s/a/*/&#x27;</span> -i test.txt</span><br><span class="line">$ cat test.txt</span><br><span class="line">1 * b c</span><br><span class="line">2 b c d</span><br><span class="line">3 x y z</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">&#x27;s/a/*/&#x27;</span> -i test.txt</span><br><span class="line">$ <span class="built_in">cat</span> test.txt</span><br><span class="line">1 * b c</span><br><span class="line">2 b c d</span><br><span class="line">3 x y z</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>结合正则表达式的替换：sed ‘s/正则表达式/new/’ filename 或 sed -E ‘s/扩展正则表达式/new/’ filename</p>
@@ -338,7 +338,7 @@
 </li>
 <li>
 <p>标志位：w 将替换后的内容写入文件</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">&#x27;s/[a-d]/*/w test_w.txt&#x27;</span> test.txt  <span class="comment"># 将每一行第一个属于 a-d 范围内的字符替换为 *，并写入 test_w.txt</span></span><br><span class="line">1 * b c</span><br><span class="line">2 * c d</span><br><span class="line">3 x y z</span><br><span class="line">$ cat test_w.txt</span><br><span class="line">1 * b c</span><br><span class="line">2 * c d</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">&#x27;s/[a-d]/*/w test_w.txt&#x27;</span> test.txt  <span class="comment"># 将每一行第一个属于 a-d 范围内的字符替换为 *，并写入 test_w.txt</span></span><br><span class="line">1 * b c</span><br><span class="line">2 * c d</span><br><span class="line">3 x y z</span><br><span class="line">$ <span class="built_in">cat</span> test_w.txt</span><br><span class="line">1 * b c</span><br><span class="line">2 * c d</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>sed 的替换 s 学会寻址之后，即只对指定行操作，多条命令用 <code>&#123;&#125;</code></p>

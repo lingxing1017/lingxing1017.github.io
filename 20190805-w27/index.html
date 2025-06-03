@@ -302,7 +302,7 @@
         </div>
         <div class="col-md-8 col-md-offset-2">
       		<p>用 bat 的方式调用 Py 脚本，发现一个问题，输出没有及时显示在 cmd 中，因为输出的时候用了下面的方式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;*&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
 <p>程序是如何将数据输出到终端的呢？事实上，print 的内部实现了标准的输出流，先将数据输出到缓冲区，再将缓冲区里的数据刷新到终端显示。</p>
 <p>数据从缓冲区刷新到终端：</p>
@@ -316,7 +316,7 @@
 <p>所以只需要在 Py 代码中加上下面这句，就可以实时输出了</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sys.stdout.flush() <span class="comment"># 将缓冲区里的数据刷新到终端，但是不会清空缓冲区</span></span><br></pre></td></tr></table></figure>
 <p>除此之外，本身 print 中加个参数也是可以实现同样效果</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;*&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>, flush=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>, flush=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>be yourself, everyone else is already taken.</p>
 </blockquote>

@@ -327,17 +327,17 @@
 <li>
 <p>数字与符号之间要有空白</p>
 <p>例：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> `expr 2%3`</span><br><span class="line">2%3</span><br><span class="line">$ <span class="built_in">echo</span> `expr 2 %3`</span><br><span class="line">expr: syntax error: unexpected argument ‘%3’</span><br><span class="line">$ <span class="built_in">echo</span> `expr 2 % 3`</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> `<span class="built_in">expr</span> 2%3`</span><br><span class="line">2%3</span><br><span class="line">$ <span class="built_in">echo</span> `<span class="built_in">expr</span> 2 %3`</span><br><span class="line"><span class="built_in">expr</span>: syntax error: unexpected argument ‘%3’</span><br><span class="line">$ <span class="built_in">echo</span> `<span class="built_in">expr</span> 2 % 3`</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>没有乘幂</p>
 <p>例：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> `expr 2 \*\* 3`</span><br><span class="line">expr: syntax error: unexpected argument ‘**’</span><br><span class="line">$ <span class="built_in">echo</span> `expr 2 \** 3`</span><br><span class="line">expr: syntax error: unexpected argument ‘**’</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> `<span class="built_in">expr</span> 2 \*\* 3`</span><br><span class="line"><span class="built_in">expr</span>: syntax error: unexpected argument ‘**’</span><br><span class="line">$ <span class="built_in">echo</span> `<span class="built_in">expr</span> 2 \** 3`</span><br><span class="line"><span class="built_in">expr</span>: syntax error: unexpected argument ‘**’</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>乘号要用转义符</p>
 <p>例：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> `expr 2 * 3`</span><br><span class="line">expr: syntax error: unexpected argument ‘’</span><br><span class="line">$ <span class="built_in">echo</span> `expr 2 \* 3`</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> `<span class="built_in">expr</span> 2 * 3`</span><br><span class="line"><span class="built_in">expr</span>: syntax error: unexpected argument ‘’</span><br><span class="line">$ <span class="built_in">echo</span> `<span class="built_in">expr</span> 2 \* 3`</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>expr 是外部程序</p>

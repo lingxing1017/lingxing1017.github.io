@@ -308,7 +308,7 @@
 <li>Use Kali as Primary Operating System without worrying about breaking it all the time.<span id="more"></span></li>
 </ol>
 <p>First of all let’s confirm which version of Linux and Kernel I’m <a target="_blank" rel="noopener" href="http://running.In">running.In</a> command prompt type in</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ uname –a</span><br><span class="line">$ lsb_release –a</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">uname</span> –a</span><br><span class="line">$ lsb_release –a</span><br></pre></td></tr></table></figure>
 <p>Now let’s add user. Open terminal and type following to create new user (replace user1 with your desired user name)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ useradd -m username</span><br></pre></td></tr></table></figure>
 <p>(Note: -m means create home directory which is usually /home/username)</p>
@@ -316,7 +316,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ passwd username</span><br></pre></td></tr></table></figure>
 <p>Enter desired password twice</p>
 <p>Add user to sudo group (to allow user to install software, allow printing, use privileged mode etc.)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ usermod -a -G sudo username</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ usermod -a -G <span class="built_in">sudo</span> username</span><br></pre></td></tr></table></figure>
 <p>(Note: -a means append or add and –G mean to specified group/groups)</p>
 <p>Change default shell of previously created user to bash</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chsh -s /bin/bash username</span><br></pre></td></tr></table></figure>

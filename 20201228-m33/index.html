@@ -305,7 +305,7 @@
 <span id="more"></span>
 <p>这显然不是我要的结果，既然我从某个路径把它打包了，解压的时候自然是希望可以直接将 dir 解压在当前目录下，生成 ./dir 就可以，所以现状下应该怎么办？</p>
 <p>这时候需要在打包的时候使用参数 -C，通过切换目录的方式解决这个问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -czvf ./test.tar.gz -C /path/to dir</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -czvf ./test.tar.gz -C /path/to <span class="built_in">dir</span></span><br></pre></td></tr></table></figure>
 <p>此外，解释下上文中使用的几个参数</p>
 <ol>
 <li>-c：创建包</li>

@@ -316,27 +316,27 @@ swap的uuid变动导致和/etc/initramfs-tools/conf.g/resume文件中的uuid对�
 <p><strong>第一种</strong><br>
 分区的建立和修改就不说了，推荐用fdisk，其他的修改分区的工具都行，当分区建立好之后，需要做以下几件事：</p>
 <ol>
-<li>把原来的swap关掉. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo swapoff -a</span><br></pre></td></tr></table></figure>
+<li>把原来的swap关掉. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> swapoff -a</span><br></pre></td></tr></table></figure>
 </li>
 <li>把/etc/fstab下的swap注释掉</li>
-<li>查找新分区的UUID <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo blkid</span><br></pre></td></tr></table></figure>
+<li>查找新分区的UUID <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> blkid</span><br></pre></td></tr></table></figure>
 </li>
 <li>修改/etc/fstab，把新swap加上</li>
-<li>激活新swap(这里假定新分区为sda5) <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo swapon /dev/sda5</span><br></pre></td></tr></table></figure>
+<li>激活新swap(这里假定新分区为sda5) <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> swapon /dev/sda5</span><br></pre></td></tr></table></figure>
 </li>
 <li>修改<code>/etc/initramfs-tools/conf.d/resume</code>上的UUID为新分区的UUID</li>
-<li>重建initrd档 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-initramfs -u</span><br></pre></td></tr></table></figure>
+<li>重建initrd档 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> update-initramfs -u</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><strong>第二种</strong></p>
 <ol>
-<li>创建Swap文件 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir swap</span><br><span class="line">$ <span class="built_in">cd</span> swap</span><br><span class="line">$ sudo dd <span class="keyword">if</span>=/dev/zero of=swapfile bs=1024 count=100000</span><br></pre></td></tr></table></figure>
+<li>创建Swap文件 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> swap</span><br><span class="line">$ <span class="built_in">cd</span> swap</span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=swapfile bs=1024 count=100000</span><br></pre></td></tr></table></figure>
 </li>
-<li>把生成的文件转换成Swap文件 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mkswap swapfile</span><br><span class="line">Setting up swapspace version 1, size = 102395 kB</span><br><span class="line">no label, UUID=09fde987-5567-498a-a60b-477e302a988b</span><br></pre></td></tr></table></figure>
+<li>把生成的文件转换成Swap文件 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> mkswap swapfile</span><br><span class="line">Setting up swapspace version 1, size = 102395 kB</span><br><span class="line">no label, UUID=09fde987-5567-498a-a60b-477e302a988b</span><br></pre></td></tr></table></figure>
 </li>
-<li>激活Swap文件。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo swapon swapfile</span><br></pre></td></tr></table></figure>
+<li>激活Swap文件。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> swapon swapfile</span><br></pre></td></tr></table></figure>
 </li>
-<li>如果需要一直保持这个swap,可以把它写入/etc/fstab文件。(查看UUID同上) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapfilepath swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+<li>如果需要一直保持这个swap,可以把它写入/etc/fstab文件。(查看UUID同上) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapfilepath swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><strong>优化swap</strong><br>
@@ -345,11 +345,11 @@ swappiness=0的时候表示最大限度使用物理内存，然后才是 swap空
 swappiness＝100的时候表示积极的使用swap分区，并且把内存上的数据及时的搬运到swap空间里面。<br>
 两个极端，对于ubuntu的默认设置，这个值等于60，建议修改为10。具体这样做：</p>
 <ol>
-<li>查看你的系统里面的swappiness <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /proc/sys/vm/swappiness</span><br></pre></td></tr></table></figure>
+<li>查看你的系统里面的swappiness <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /proc/sys/vm/swappiness</span><br></pre></td></tr></table></figure>
 不出意外的话，应该看到是 60</li>
-<li>修改swappiness值为10 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo sysctl vm.swappiness=10</span><br></pre></td></tr></table></figure>
+<li>修改swappiness值为10 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> sysctl vm.swappiness=10</span><br></pre></td></tr></table></figure>
 但是这只是临时性的修改，在重启系统后会恢复默认的60，所以，还要做一步： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim  /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
-在这个文档的最后加上这样一行: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm.swappiness&#x3D;10</span><br></pre></td></tr></table></figure>
+在这个文档的最后加上这样一行: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm.swappiness=10</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>然后保存，重启。</p>

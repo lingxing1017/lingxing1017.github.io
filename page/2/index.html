@@ -392,7 +392,7 @@
                       
                         <p><strong>为什么 macOS 在 /usr/bin/ 下会有 python3？</strong></p>
 <p>这个问题的思考起源于今天在使用 requests 的时候，一直报这个模块不存在的错误，但是明明在 pip3 list 中就是存在这个模块的，只好往系统中包含了多个不同 python 版本的方向去考虑</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls -la@Oh /usr/bin | grep python3</span><br><span class="line">-rwxr-xr-x   76 root   wheel  restricted,compressed  163K  6 15 18:08 python3</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -la@Oh /usr/bin | grep python3</span><br><span class="line">-rwxr-xr-x   76 root   wheel  restricted,compressed  163K  6 15 18:08 python3</span><br></pre></td></tr></table></figure>
                       
                     </p>
                     

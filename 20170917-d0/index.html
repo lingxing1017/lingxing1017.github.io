@@ -329,7 +329,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">kill</span> -s 9 1827</span><br></pre></td></tr></table></figure>
 <p>无论使用 ps 然后慢慢查找进程 PID 还是用 grep 查找包含相应字符串的进程，亦或者用 pgrep 直接查找包含相应字符串的进程 PID，然后手动输入给 kill 杀掉，都稍显麻烦。有没有更方便的方法？有！</p>
 <p><strong>改进 ４：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef | grep firefox | grep -v grep | cut -c 9-15 | xargs <span class="built_in">kill</span> -s 9</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef | grep firefox | grep -v grep | <span class="built_in">cut</span> -c 9-15 | xargs <span class="built_in">kill</span> -s 9</span><br></pre></td></tr></table></figure>
 <p>说明：</p>
 <ul>
 <li><code>grep firefox</code> 的输出结果是，所有含有关键字 firefox 的进程。</li>

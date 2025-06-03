@@ -325,7 +325,7 @@
 </li>
 <li>
 <p>如果不想或者不需要一个后台的 mongodb 服务，可以采用下方命令手动启动 mongodb 服务</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongod --config /usr/<span class="built_in">local</span>/etc/mongod.conf</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongod --config /usr/local/etc/mongod.conf</span><br></pre></td></tr></table></figure>
 <p>⚠️：如果没有加 <code>--config 配置文件路径</code> ，那么 mongodb 服务会使用 <code>/data/db</code> 作为数据目录路径，brew 安装的默认路径为 <code>/usr/local/etc/mongod.conf</code>，所以如果采用手动方案，最好是加上这个配置路径</p>
 </li>
 <li>

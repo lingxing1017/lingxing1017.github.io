@@ -320,7 +320,7 @@
 <li>
 <p>另开命令组</p>
 <p>例：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ (ls)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ (<span class="built_in">ls</span>)</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>开启一个子 shell</code> 独立运行小括号中的内容</li>
 <li>括号中以分号连接，最后一个命令不需要分号</li>
@@ -346,7 +346,7 @@
 <li>
 <p>省去 $ 符号的算术运算</p>
 <p>例：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span>((i=0;i&lt;5;i++)); <span class="keyword">if</span> ((<span class="variable">$i</span>&lt;5)); a=5; ((a++))  <span class="comment"># 可将 $a 重定义为 6</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span>((i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)); <span class="keyword">if</span> ((<span class="variable">$i</span>&lt;<span class="number">5</span>)); a=5; ((a++))  <span class="comment"># 可将 $a 重定义为 6</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>括号内支持多个表达式用逗号分开</li>
 </ul>

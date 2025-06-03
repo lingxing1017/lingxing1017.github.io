@@ -301,12 +301,12 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namespce</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      		<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namespce</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这是啥？命名空间的名字呢？这个 c 要怎么在其他地方调用？</p>
 <span id="more"></span>
 <p>当定义一个命名空间时，可以忽略这个命名空间的名称，成为一个匿名命名空间，并且编译器在内部会为这个命名空间生成一个唯一的名字，而且还会为这个匿名的命名空间生成一条 using 指令</p>
 <p>所以上面的代码在效果上等同于：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> __UNIQUE_NAME_</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __UNIQUE_NAME_;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> __UNIQUE_NAME_</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __UNIQUE_NAME_;</span><br></pre></td></tr></table></figure>
 <p>在匿名命名空间中声明的名称也将被编译器转换，与编译器为这个匿名命名空间生成的唯一内部名称（即这里的 _<em>UNIQUE_NAME</em>）绑定在一起</p>
 <p>还有一点很重要，<strong><code>在匿名命名空间中声明的名称具有 internal 链接属性，这和声明为 static 的全局名称的链接属性是相同的，即名称的作用域被限制在当前文件中，无法通过在另外的文件中使用 extern 声明来进行链接</code></strong></p>
 <p>注意：<code>命名空间都是具有 external 连接属性的，只是匿名的命名空间产生的 __UNIQUE_NAME_ 在别的文件中无法得到，因为这个唯一的名字是不可见的</code></p>

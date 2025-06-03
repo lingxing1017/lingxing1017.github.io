@@ -305,18 +305,18 @@
 <p><strong>方法一：</strong></p>
 <ol>
 <li>创建文件.git-credentials</li>
-<li>进入C:\Users\用户名\，编辑文件，输入并保存 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;&#123;username&#125;:&#123;password&#125;@github.com</span><br></pre></td></tr></table></figure>
+<li>进入C:\Users\用户名\，编辑文件，输入并保存 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://&#123;username&#125;:&#123;password&#125;@github.com</span><br></pre></td></tr></table></figure>
 </li>
 <li>在git终端下输入生效 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
 </li>
-<li>检查是否生效，打开~/.gitconfig文件，会发现多了一项 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[credential]</span><br><span class="line">helper &#x3D; store</span><br></pre></td></tr></table></figure>
+<li>检查是否生效，打开~/.gitconfig文件，会发现多了一项 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[credential]</span><br><span class="line">helper = store</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><strong>方法二：</strong></p>
 <ol>
 <li>在windows中添加一个HOME环境变量，<code>变量名：HOME，变量值：%USERPROFILE%</code></li>
 <li>创建git用户名和密码存储文件<br>
-进入%HOME%目录，新建一个名为<code>_netrc</code>的文件，文件中内容格式如下： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">machine &#123;git account name&#125;.github.com</span><br><span class="line">login your-usernmae</span><br><span class="line">password your-password</span><br></pre></td></tr></table></figure>
+进入%HOME%目录，新建一个名为<code>_netrc</code>的文件，文件中内容格式如下： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">machine &#123;git account name&#125;.github.com</span><br><span class="line">login your-usernmae</span><br><span class="line">password your-password</span><br></pre></td></tr></table></figure>
 </li>
 <li>新打开git bash即可，无需再输入用户名和密码</li>
 </ol>
