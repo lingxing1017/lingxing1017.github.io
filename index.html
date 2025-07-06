@@ -101,7 +101,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(85)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(86)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -157,7 +157,7 @@
                     
                     <li><a href="/tags/reg/" class="animsition-link">reg<small>(3)</small></a></li>
                     
-                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(45)</small></a></li>
+                    <li><a href="/tags/sh/" class="animsition-link">sh<small>(46)</small></a></li>
                     
                     <li><a href="/tags/software/" class="animsition-link">software<small>(5)</small></a></li>
                     
@@ -285,6 +285,41 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20250706-m85/">qemu 中部署 fnOS</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2025-07-06T19:25:10.000Z" itemprop="datePublished">
+          2025-07-06
+      </time>
+    
+    
+    | 
+    <a href='/tags/sh/'>sh</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>有好长时间不更新博客了，其实折腾还是在折腾的，就是每次折腾都不深入，于是就没有什么特别的内容值得被记录，这篇也是犹犹豫豫，迟疑之中写的。一方面是因为涉及到了一个新的工具 qemu，在命令行里开虚拟机这还是第一次，另一方面也是希望把最初在 debian 上用 docker 部署 qemu 容器，容器里部署 fnOS 这部分内容做一个备份。这两个方面的折腾都花了不少时间，只是硬件限制，所以两层套壳的部署方案最终被直接在 debian 上运行 qemu 部署 fnOS 替代了</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20250706-m85/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -506,44 +541,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20240816-m79/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20240725-m78/">vim 配置文件加载顺序</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2024-07-25T13:04:29.000Z" itemprop="datePublished">
-          2024-07-25
-      </time>
-    
-    
-    | 
-    <a href='/tags/vim/'>vim</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>想要定制自己的 vim，就需要了解一下它启动时会加载哪些配置文件，以及这些配置文件被加载的顺序</p>
-<h2 id="寻找配置文件">寻找配置文件</h2>
-<p>vim 启动时会寻找哪些配置文件路径的这一过程，可以通过 <code>vim --version</code> 或者打开 vim 后，输入 <code>:version</code> 查看</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ vim --verison</span><br><span class="line">VIM - Vi IMproved 9.0 (2022 Jun 28, compiled May 04 2023 10:24:44)</span><br><span class="line">...</span><br><span class="line">   system vimrc file: <span class="string">&quot;/etc/vim/vimrc&quot;</span></span><br><span class="line">     user vimrc file: <span class="string">&quot;<span class="variable">$HOME</span>/.vimrc&quot;</span></span><br><span class="line"> 2nd user vimrc file: <span class="string">&quot;~/.vim/vimrc&quot;</span></span><br><span class="line">      user exrc file: <span class="string">&quot;<span class="variable">$HOME</span>/.exrc&quot;</span></span><br><span class="line">       defaults file: <span class="string">&quot;<span class="variable">$VIMRUNTIME</span>/defaults.vim&quot;</span></span><br><span class="line">  fall-back <span class="keyword">for</span> <span class="variable">$VIM</span>: <span class="string">&quot;/usr/share/vim&quot;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20240725-m78/">Read More...</a>
                     </p>
                     
                 </div>
