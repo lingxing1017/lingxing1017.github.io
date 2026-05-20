@@ -95,6 +95,8 @@
         		<a class="sb-toggle-submenu">CATEGORIES<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
+				    <li><a href="/categories/MacOS/" class="animsition-link">MacOS<small>(1)</small></a></li>
+				    
 				    <li><a href="/categories/android/" class="animsition-link">android<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/debian/" class="animsition-link">debian<small>(30)</small></a></li>
@@ -131,7 +133,7 @@
                     
                     <li><a href="/tags/debian/" class="animsition-link">debian<small>(6)</small></a></li>
                     
-                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(1)</small></a></li>
+                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
                     
                     <li><a href="/tags/gdb/" class="animsition-link">gdb<small>(1)</small></a></li>
                     
@@ -285,6 +287,42 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20260520-m86/">docker 配置代理</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2026-05-20T18:48:14.000Z" itemprop="datePublished">
+          2026-05-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/docker/'>docker</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>在 linux 的 Docker 中配置代理通常需要区分不同的<strong>应用场景</strong>，因为 Docker 的不同组件（下载镜像、容器内抓取数据、编译打包）读取代理配置的位置是不同的。</p>
+<p>以下是三种最常见的 Docker 代理配置方法：
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20260520-m86/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -505,42 +543,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20240822-m80/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20240816-m79/">shell ~ 踩坑</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2024-08-16T16:45:51.000Z" itemprop="datePublished">
-          2024-08-16
-      </time>
-    
-    
-    | 
-    <a href='/tags/sh/'>sh</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ SSH_CONF=<span class="string">&quot;~/.ssh/config&quot;</span></span><br><span class="line">$ grep -Eq <span class="string">&quot;Host&quot;</span> <span class="string">&quot;<span class="variable">$&#123;SSH_CONF&#125;</span>&quot;</span> &amp;&amp; <span class="built_in">echo</span> ok</span><br><span class="line">grep: ~/.ssh/config: No such file or directory</span><br><span class="line"></span><br><span class="line">$ SSH_CONF=<span class="string">&quot;<span class="variable">$&#123;HOME&#125;</span>/.ssh/config&quot;</span></span><br><span class="line">$ grep -Eq <span class="string">&quot;Host&quot;</span> <span class="string">&quot;<span class="variable">$&#123;SSH_CONF&#125;</span>&quot;</span> &amp;&amp; <span class="built_in">echo</span> ok</span><br><span class="line">ok</span><br></pre></td></tr></table></figure>
-<p>这是为什么，这个文件手动检查过，不应该不存在的，而且用 ${HOME} 变量也确实访问到了这个文件</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20240816-m79/">Read More...</a>
                     </p>
                     
                 </div>
