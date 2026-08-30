@@ -333,7 +333,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-A INPUT -p tcp -m tcp --dport 443 -m conntrack --ctstate NEW -j ACCEPT</span><br></pre></td></tr></table></figure>
 <p>注意 <code>iptables-save</code> 输出里可能自动出现：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-m tcp</span><br></pre></td></tr></table></figure>
-<h1>方案二：直接编辑 <code>/etc/iptables/rules.v4</code></h1>
+<h2 id="方案二：直接编辑-etc-iptables-rules-v4">方案二：直接编辑 <code>/etc/iptables/rules.v4</code></h2>
 <p>这种方式不先改当前内核规则，而是直接修改持久化配置。</p>
 <h3 id="1-备份">1. 备份</h3>
 <p>建议先：</p>
