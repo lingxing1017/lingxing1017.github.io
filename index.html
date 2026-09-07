@@ -103,7 +103,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(87)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(88)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -131,7 +131,7 @@
                     
                     <li><a href="/tags/cpp/" class="animsition-link">cpp<small>(9)</small></a></li>
                     
-                    <li><a href="/tags/debian/" class="animsition-link">debian<small>(6)</small></a></li>
+                    <li><a href="/tags/debian/" class="animsition-link">debian<small>(7)</small></a></li>
                     
                     <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
                     
@@ -287,6 +287,56 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20260907-m88/">Linux TTY 熄屏</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2026-09-07T09:51:37.000Z" itemprop="datePublished">
+          2026-09-07
+      </time>
+    
+    
+    | 
+    <a href='/tags/debian/'>debian</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="问题描述">问题描述</h2>
+<p>这台机器环境如下：</p>
+<ul>
+<li>Intel MacBook Pro，带 Apple T2 芯片</li>
+<li>Debian Trixie 系统</li>
+<li>T2 Linux 内核：<code>7.2.3-1-t2-trixie</code></li>
+<li>Intel 核显，使用 <code>i915</code></li>
+<li>没有运行桌面环境，主要使用 Linux TTY，本机显示的是 <code>tty1</code></li>
+<li>日常主要通过 SSH 管理机器</li>
+</ul>
+<p>因为机器大部分时间作为服务器运行，没有必要让 MacBook 内置屏幕一直亮着</p>
+<p>目标有两个：</p>
+<ol>
+<li><code>tty1</code> 长时间没人操作时自动熄屏；</li>
+<li>需要的时候可以立即熄屏，而且之后按一下本机键盘就能重新亮屏</li>
+</ol>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20260907-m88/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -505,42 +555,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20241117-m81/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20241117-m82/">在 Debian12 上禁用自动睡眠</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2024-11-17T00:02:17.000Z" itemprop="datePublished">
-          2024-11-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/debian/'>debian</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>不知道为何最近使用老电脑的 debian 时总是下面类似的情况</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ ping 192.168.1.96</span><br><span class="line">PING 192.168.1.2 (192.168.1.2): 56 data bytes</span><br><span class="line">ping: sendto: Host is down</span><br><span class="line">ping: sendto: Host is down</span><br><span class="line">Request <span class="built_in">timeout</span> <span class="keyword">for</span> icmp_seq 0</span><br><span class="line">ping: sendto: Host is down</span><br><span class="line">Request <span class="built_in">timeout</span> <span class="keyword">for</span> icmp_seq 1</span><br><span class="line">ping: sendto: Host is down</span><br><span class="line">Request <span class="built_in">timeout</span> <span class="keyword">for</span> icmp_seq 2</span><br><span class="line">Request <span class="built_in">timeout</span> <span class="keyword">for</span> icmp_seq 3</span><br><span class="line">64 bytes from 192.168.1.2: icmp_seq=10 ttl=64 <span class="keyword">time</span>=82.199 ms</span><br><span class="line">64 bytes from 192.168.1.2: icmp_seq=11 ttl=64 <span class="keyword">time</span>=96.991 ms</span><br></pre></td></tr></table></figure>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20241117-m82/">Read More...</a>
                     </p>
                     
                 </div>
