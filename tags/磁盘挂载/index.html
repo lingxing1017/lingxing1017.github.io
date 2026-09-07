@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Tag: 磁盘挂载 | X</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="X">
+    <meta name="author" content="LingXing">
+    <meta name="description" content="the self-cultivation of the programmer" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="X" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/googlecode.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="home-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">HOME</a></li>
+            <li><a href="/archives" class="animsition-link" title="Archives">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">CATEGORIES<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/MacOS/" class="animsition-link">MacOS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/debian/" class="animsition-link">debian<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(88)</small></a></li>
+				    
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/win10/" class="animsition-link">win10<small>(63)</small></a></li>
+				    
+				</ul>
+        	</li>
+	
+            
+            <li>
+                <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/adb/" class="animsition-link">adb<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/android/" class="animsition-link">android<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/anydesk/" class="animsition-link">anydesk<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/apt/" class="animsition-link">apt<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/bash/" class="animsition-link">bash<small>(17)</small></a></li>
+                    
+                    <li><a href="/tags/batch/" class="animsition-link">batch<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/chrome/" class="animsition-link">chrome<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/cpp/" class="animsition-link">cpp<small>(9)</small></a></li>
+                    
+                    <li><a href="/tags/dns/" class="animsition-link">dns<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/fnos/" class="animsition-link">fnos<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/gdb/" class="animsition-link">gdb<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/git/" class="animsition-link">git<small>(15)</small></a></li>
+                    
+                    <li><a href="/tags/gnome/" class="animsition-link">gnome<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/google-play/" class="animsition-link">google-play<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/grub/" class="animsition-link">grub<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/gtest/" class="animsition-link">gtest<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/hardware/" class="animsition-link">hardware<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/homebrew/" class="animsition-link">homebrew<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/http/" class="animsition-link">http<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/initramfs/" class="animsition-link">initramfs<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/iptables/" class="animsition-link">iptables<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/iterm2/" class="animsition-link">iterm2<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/itunes/" class="animsition-link">itunes<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/kali/" class="animsition-link">kali<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/linux/" class="animsition-link">linux<small>(10)</small></a></li>
+                    
+                    <li><a href="/tags/ls/" class="animsition-link">ls<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/macos/" class="animsition-link">macos<small>(6)</small></a></li>
+                    
+                    <li><a href="/tags/man/" class="animsition-link">man<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/mime/" class="animsition-link">mime<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/mongodb/" class="animsition-link">mongodb<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/networkmanager/" class="animsition-link">networkmanager<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/npm/" class="animsition-link">npm<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/ntfs/" class="animsition-link">ntfs<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/openssl/" class="animsition-link">openssl<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/pip/" class="animsition-link">pip<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/python/" class="animsition-link">python<small>(23)</small></a></li>
+                    
+                    <li><a href="/tags/qemu/" class="animsition-link">qemu<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/requests/" class="animsition-link">requests<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/rsyslog/" class="animsition-link">rsyslog<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/samba/" class="animsition-link">samba<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/screen/" class="animsition-link">screen<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/sed/" class="animsition-link">sed<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/shell/" class="animsition-link">shell<small>(11)</small></a></li>
+                    
+                    <li><a href="/tags/sql/" class="animsition-link">sql<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/sqlite/" class="animsition-link">sqlite<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/ssh/" class="animsition-link">ssh<small>(7)</small></a></li>
+                    
+                    <li><a href="/tags/sublime-text/" class="animsition-link">sublime-text<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/sudo/" class="animsition-link">sudo<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/swap/" class="animsition-link">swap<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/systemd/" class="animsition-link">systemd<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/tar/" class="animsition-link">tar<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/tty/" class="animsition-link">tty<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/vim/" class="animsition-link">vim<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/wifi/" class="animsition-link">wifi<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/windows/" class="animsition-link">windows<small>(21)</small></a></li>
+                    
+                    <li><a href="/tags/wpa-supplicant/" class="animsition-link">wpa_supplicant<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/zsh/" class="animsition-link">zsh<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/代理/" class="animsition-link">代理<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/作用域/" class="animsition-link">作用域<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/内存管理/" class="animsition-link">内存管理<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/分支管理/" class="animsition-link">分支管理<small>(4)</small></a></li>
+                    
+                    <li><a href="/tags/包管理/" class="animsition-link">包管理<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/单元测试/" class="animsition-link">单元测试<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/参数展开/" class="animsition-link">参数展开<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/命令提示符/" class="animsition-link">命令提示符<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/命令行/" class="animsition-link">命令行<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/命令补全/" class="animsition-link">命令补全<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/字符编码/" class="animsition-link">字符编码<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/字节序/" class="animsition-link">字节序<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/对象拷贝/" class="animsition-link">对象拷贝<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/引号与转义/" class="animsition-link">引号与转义<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/归档压缩/" class="animsition-link">归档压缩<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/快捷键/" class="animsition-link">快捷键<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/撤销与恢复/" class="animsition-link">撤销与恢复<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/数值运算/" class="animsition-link">数值运算<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/文件共享/" class="animsition-link">文件共享<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/文件管理/" class="animsition-link">文件管理<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/文件系统/" class="animsition-link">文件系统<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/文件链接/" class="animsition-link">文件链接<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/文本处理/" class="animsition-link">文本处理<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/日志管理/" class="animsition-link">日志管理<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/本地化/" class="animsition-link">本地化<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/注册表/" class="animsition-link">注册表<small>(7)</small></a></li>
+                    
+                    <li><a href="/tags/测试设计/" class="animsition-link">测试设计<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/环境变量/" class="animsition-link">环境变量<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/用户权限/" class="animsition-link">用户权限<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/电源管理/" class="animsition-link">电源管理<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/磁盘挂载/" class="animsition-link">磁盘挂载<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/端口/" class="animsition-link">端口<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/系统信息/" class="animsition-link">系统信息<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/系统启动/" class="animsition-link">系统启动<small>(3)</small></a></li>
+                    
+                    <li><a href="/tags/终端/" class="animsition-link">终端<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/终端会话/" class="animsition-link">终端会话<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/终端配色/" class="animsition-link">终端配色<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/网络基础/" class="animsition-link">网络基础<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/网络诊断/" class="animsition-link">网络诊断<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/网络配置/" class="animsition-link">网络配置<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/网络隐私/" class="animsition-link">网络隐私<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/脚本调试/" class="animsition-link">脚本调试<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/触摸板/" class="animsition-link">触摸板<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/证书/" class="animsition-link">证书<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/资源管理器/" class="animsition-link">资源管理器<small>(6)</small></a></li>
+                    
+                    <li><a href="/tags/输入法/" class="animsition-link">输入法<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/边界值分析/" class="animsition-link">边界值分析<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/进程管理/" class="animsition-link">进程管理<small>(5)</small></a></li>
+                    
+                    <li><a href="/tags/远程桌面/" class="animsition-link">远程桌面<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/重定向/" class="animsition-link">重定向<small>(2)</small></a></li>
+                    
+                    <li><a href="/tags/防火墙/" class="animsition-link">防火墙<small>(1)</small></a></li>
+                    
+                    <li><a href="/tags/随机数/" class="animsition-link">随机数<small>(1)</small></a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">LINKS<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://lingxing1017.party/" class="animsition-link">L</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search">SEARCH</a></li>
+            
+            <li><a href="mailto:lingxing1017@gmail.com" title="Email" class="animsition-link">EMAIL</a></li>
+            <li><a href="/about.html" class="animsition-link" title="About">ABOUT</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link" title="Home">X</a></li>
+                            <li class="nolink"><span>Always Creative</span></li>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="mailto:lingxing1017@gmail.com" title="Email" target="_blank">📧</a></li>
+                            
+                            
+                            <li><a href="javascript:;" class="popup-trigger" title="Search">🔍</a></li>
+                            
+                            <li class="nolink">Welcome</li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>得之我幸  失之我命</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>when someone abandons you，it is him that gets loss because he lost someone who truly loves him but you just lost one who doesn’t love you.</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/20220504-m51/">禁止在 Win10 上自动挂在移动硬盘</a></h4>
+                            
+                            <p><time datetime="2022-05-04T14:09:50.000Z"><a href="/20220504-m51/">2022-05-04</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/20200920-m30/">Debian 开机自动挂载移动硬盘</a></h4>
+                            
+                            <p><time datetime="2020-09-20T21:37:02.000Z"><a href="/20200920-m30/">2020-09-20</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/20171112-d6/">Timed out waiting for device dev-disk-by\x2duuid-\*.device</a></h4>
+                            
+                            <p><time datetime="2017-11-12T21:01:12.000Z"><a href="/20171112-d6/">2017-11-12</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <nav class="pagination" role="pagination">
+            
+            
+        </nav>
+    </div>
+</section>
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>the only present love demands is love</p>
+        </div>
+    </div>
+</section>
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2017<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By LingXing. All Rights Reserved.
+                </p>
+                <p>Theme is TKL.</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+</footer>
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.lx'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>
