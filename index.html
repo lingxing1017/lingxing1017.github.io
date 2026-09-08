@@ -103,7 +103,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(88)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(89)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -459,6 +459,76 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/20260908-m89/">Debian BCM4364 无法连接 WPA3</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2026-09-08T14:13:21.000Z" itemprop="datePublished">
+          2026-09-08
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <h2 id="问题描述">问题描述</h2>
+<p>在 Intel MacBook Pro 上安装 Debian Trixie 后，使用 Broadcom BCM4364 无线网卡和 <code>brcmfmac</code> 驱动连接 Wi-Fi。家中有两个无线网络：</p>
+<ul>
+<li><code>Wi-Fi-2.4g</code>：使用 WPA2，可以正常连接。</li>
+<li><code>Wi-Fi-5g</code>：使用 WPA3-SAE，通过 NetworkManager 无法正常连接。</li>
+</ul>
+<p>出现问题时的系统环境如下：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>版本或型号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>操作系统</td>
+<td>Debian Trixie</td>
+</tr>
+<tr>
+<td>内核</td>
+<td><code>7.2.4-1-t2-trixie</code></td>
+</tr>
+<tr>
+<td>无线网卡</td>
+<td>Broadcom BCM4364</td>
+</tr>
+<tr>
+<td>驱动</td>
+<td><code>brcmfmac</code></td>
+</tr>
+<tr>
+<td>固件</td>
+<td><code>9.30.514.0.32.5.94</code></td>
+</tr>
+<tr>
+<td>wpa_supplicant</td>
+<td><code>2:2.10-24</code></td>
+</tr>
+</tbody>
+</table>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20260908-m89/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/20260907-m88/">Linux TTY 熄屏</a></h3>
                     <span>
                         <span class="post-meta">
@@ -696,47 +766,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20241215-m83/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20241117-m81/">git 本地仓库同时推到多个远程仓库</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2024-11-17T00:06:48.000Z" itemprop="datePublished">
-          2024-11-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/git/'>git</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>以前用 coding，后来它被企鹅收购了，也变了，虽然也不知道它是因为企鹅爸爸变了还是因为变了才受到企鹅爸爸的亲睐，总之是不好用了</p>
-<p>可能是它变差了，所以感觉 github 变好用了，就想着把一部分常用的仓库转移到 github 上去，但是又不想把鸡蛋放在同一个篮子里</p>
-<p>但是查了资料以后才发现，git 把一个本地仓库 push 到多个远程仓库也是可以分两种情况的：</p>
-<ol>
-<li>只有一个库可以 pull，其他库都只能 push，并且是一条命令里完成 push</li>
-<li>所有的库都可以 pull/push，但并不那么同时，至少一条 push 命令做不到</li>
-</ol>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20241117-m81/">Read More...</a>
                     </p>
                     
                 </div>
