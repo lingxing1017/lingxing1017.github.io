@@ -103,7 +103,7 @@
 				    
 				    <li><a href="/categories/kali/" class="animsition-link">kali<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(89)</small></a></li>
+				    <li><a href="/categories/macos/" class="animsition-link">macos<small>(90)</small></a></li>
 				    
 				    <li><a href="/categories/test/" class="animsition-link">test<small>(2)</small></a></li>
 				    
@@ -116,6 +116,8 @@
             <li>
                 <a class="sb-toggle-submenu">TAGS<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
+                    
+                    <li><a href="/tags/acme-sh/" class="animsition-link">acme.sh<small>(1)</small></a></li>
                     
                     <li><a href="/tags/adb/" class="animsition-link">adb<small>(1)</small></a></li>
                     
@@ -131,11 +133,13 @@
                     
                     <li><a href="/tags/chrome/" class="animsition-link">chrome<small>(1)</small></a></li>
                     
+                    <li><a href="/tags/cloudflare/" class="animsition-link">cloudflare<small>(1)</small></a></li>
+                    
                     <li><a href="/tags/cpp/" class="animsition-link">cpp<small>(9)</small></a></li>
                     
                     <li><a href="/tags/dns/" class="animsition-link">dns<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(3)</small></a></li>
+                    <li><a href="/tags/docker/" class="animsition-link">docker<small>(4)</small></a></li>
                     
                     <li><a href="/tags/fnos/" class="animsition-link">fnos<small>(1)</small></a></li>
                     
@@ -327,7 +331,7 @@
                     
                     <li><a href="/tags/触摸板/" class="animsition-link">触摸板<small>(1)</small></a></li>
                     
-                    <li><a href="/tags/证书/" class="animsition-link">证书<small>(1)</small></a></li>
+                    <li><a href="/tags/证书/" class="animsition-link">证书<small>(2)</small></a></li>
                     
                     <li><a href="/tags/资源管理器/" class="animsition-link">资源管理器<small>(6)</small></a></li>
                     
@@ -457,6 +461,51 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/20261004-m90/">HTTPS 证书申请与续期</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2026-10-04T21:58:11.000Z" itemprop="datePublished">
+          2026-10-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/docker/'>docker</a>,
+    
+    <a href='/tags/证书/'>证书</a>,
+    
+    <a href='/tags/acme-sh/'>acme.sh</a>,
+    
+    <a href='/tags/cloudflare/'>cloudflare</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        <p>本文记录使用 <a target="_blank" rel="noopener" href="http://acme.sh">acme.sh</a>，通过 Cloudflare DNS 验证申请 HTTPS 证书，并配置自动续期和服务重载的过程。以 Debian 上 Docker Compose 管理的 Navidrome 为例，体现如何在证书更新后配置服务自动重启</p>
+<h2 id="安装-acme-sh">安装 <a target="_blank" rel="noopener" href="http://acme.sh">acme.sh</a></h2>
+<p>在 Debian 上，可以通过软件包安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install acme.sh</span><br></pre></td></tr></table></figure>
+<p>检查安装结果：
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/20261004-m90/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -734,49 +783,6 @@
                     
                     <p class="pull-right readMore">
                         <a href="/20250220-m84/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/20241215-m83/">npm 更新包</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2024-12-15T21:28:42.000Z" itemprop="datePublished">
-          2024-12-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/npm/'>npm</a>,
-    
-    <a href='/tags/包管理/'>包管理</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <h2 id="包版本号组成">包版本号组成</h2>
-<p>npm (Node Package Manager) 是一种应用于 JavaScript 编程语言的包管理器，也是 Node.js 的 JavaScript 运行时环境的默认包管理器</p>
-<p>在一个项目中，其包依赖项列表保存在 package.json 文件中，每个已安装的包都被分配了一个版本号，一般由 3 部分组成：<code>major.minor.patch</code>：</p>
-<ol>
-<li><code>major</code> 表示非兼容的重大 API 改变（主要的）</li>
-<li><code>minor</code> 表示向后兼容的功能性改变（次要的）</li>
-<li><code>patch</code> 表示向后兼容的 bug 修正（修补的）
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/20241215-m83/">Read More...</a>
                     </p>
                     
                 </div>
